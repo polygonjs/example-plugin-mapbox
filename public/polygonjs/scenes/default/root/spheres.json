@@ -1,0 +1,80 @@
+{
+	"type": "geo",
+	"nodes": {
+		"plane1": {
+			"type": "plane",
+			"params": {
+				"size": [
+					2,
+					2
+				],
+				"stepSize": 0.18082
+			}
+		},
+		"sphere1": {
+			"type": "sphere",
+			"params": {
+				"radius": 0.09
+			}
+		},
+		"copy1": {
+			"type": "copy",
+			"inputs": [
+				"sphere1",
+				"plane1"
+			]
+		},
+		"plane2": {
+			"type": "plane",
+			"params": {
+				"size": [
+					2,
+					2
+				],
+				"center": [
+					0,
+					-0.12,
+					0
+				]
+			}
+		},
+		"merge1": {
+			"type": "merge",
+			"inputs": [
+				"copy1",
+				"plane2"
+			]
+		},
+		"occlusion1": {
+			"type": "occlusion",
+			"inputs": [
+				"merge1"
+			]
+		},
+		"material1": {
+			"type": "material",
+			"params": {
+				"material": "/MAT/meshBasicBuilder_OCCLUSION"
+			},
+			"inputs": [
+				"occlusion1"
+			],
+			"flags": {
+				"display": true
+			}
+		}
+	},
+	"params": {
+		"t": [
+			0,
+			0,
+			-1.5
+		]
+	},
+	"flags": {
+		"display": false
+	},
+	"selection": [
+		"plane2"
+	]
+}

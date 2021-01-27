@@ -1,0 +1,364 @@
+{
+	"nodes": {
+		"hemisphereLight1": {
+			"pos": [
+				450,
+				300
+			]
+		},
+		"polarTransform1": {
+			"pos": [
+				250,
+				200
+			]
+		},
+		"areaLight1": {
+			"pos": [
+				250,
+				300
+			]
+		},
+		"perspectiveCamera1": {
+			"pos": [
+				-200,
+				200
+			],
+			"nodes": {
+				"events1": {
+					"pos": [
+						-200,
+						50
+					],
+					"nodes": {
+						"cameraOrbitControls1": {
+							"pos": [
+								150,
+								50
+							]
+						}
+					}
+				}
+			}
+		},
+		"MAT": {
+			"pos": [
+				-200,
+				350
+			],
+			"nodes": {
+				"meshStandard_NO_OCCLUSION": {
+					"pos": [
+						0,
+						-150
+					]
+				},
+				"meshBasicBuilder_OCCLUSION": {
+					"pos": [
+						0,
+						-50
+					],
+					"nodes": {
+						"globals1": {
+							"pos": [
+								-450,
+								0
+							]
+						},
+						"output1": {
+							"pos": [
+								350,
+								0
+							]
+						},
+						"attribute1": {
+							"pos": [
+								-200,
+								-150
+							]
+						},
+						"complement1": {
+							"pos": [
+								0,
+								-150
+							]
+						},
+						"floatToVec3_1": {
+							"pos": [
+								100,
+								-150
+							]
+						},
+						"mix1": {
+							"pos": [
+								-100,
+								0
+							]
+						},
+						"paramOcclusionAmount": {
+							"pos": [
+								-250,
+								150
+							]
+						}
+					}
+				},
+				"meshStandardBuilder_OCCLUSION": {
+					"pos": [
+						0,
+						50
+					],
+					"nodes": {
+						"globals1": {
+							"pos": [
+								-450,
+								0
+							]
+						},
+						"output1": {
+							"pos": [
+								200,
+								0
+							]
+						},
+						"attribute1": {
+							"pos": [
+								-300,
+								-150
+							]
+						},
+						"complement1": {
+							"pos": [
+								-50,
+								-150
+							]
+						},
+						"floatToVec3_1": {
+							"pos": [
+								50,
+								-150
+							]
+						},
+						"mix1": {
+							"pos": [
+								-150,
+								-50
+							]
+						},
+						"paramOcclusionAmount": {
+							"pos": [
+								-300,
+								100
+							]
+						}
+					}
+				}
+			}
+		},
+		"dogWithOcclusion": {
+			"pos": [
+				-150,
+				-150
+			],
+			"nodes": {
+				"file1": {
+					"pos": [
+						-950,
+						-50
+					]
+				},
+				"hierarchy1": {
+					"pos": [
+						-950,
+						50
+					]
+				},
+				"occlusion1": {
+					"pos": [
+						-950,
+						400
+					],
+					"comment": "The occlusion node adds a 'occlusion' attribute to the geometry, which is then used by the material."
+				},
+				"attribCast1": {
+					"pos": [
+						-950,
+						150
+					],
+					"comment": "We need to cast the index attribute here, as the loaded geometry does not have a format that fits the occlusion node\\n"
+				},
+				"material1": {
+					"pos": [
+						-950,
+						600
+					]
+				}
+			}
+		},
+		"spheres": {
+			"pos": [
+				200,
+				-250
+			],
+			"nodes": {
+				"plane1": {
+					"pos": [
+						-50,
+						-200
+					]
+				},
+				"sphere1": {
+					"pos": [
+						-250,
+						-200
+					]
+				},
+				"copy1": {
+					"pos": [
+						-150,
+						0
+					]
+				},
+				"plane2": {
+					"pos": [
+						150,
+						0
+					]
+				},
+				"merge1": {
+					"pos": [
+						-50,
+						150
+					]
+				},
+				"occlusion1": {
+					"pos": [
+						-50,
+						300
+					]
+				},
+				"material1": {
+					"pos": [
+						-50,
+						400
+					]
+				}
+			}
+		},
+		"headWithOcclusion": {
+			"pos": [
+				200,
+				-150
+			],
+			"nodes": {
+				"attribCast1": {
+					"pos": [
+						-950,
+						150
+					]
+				},
+				"file1": {
+					"pos": [
+						-950,
+						-100
+					]
+				},
+				"hierarchy1": {
+					"pos": [
+						-950,
+						50
+					]
+				},
+				"material1": {
+					"pos": [
+						-950,
+						400
+					]
+				},
+				"occlusion1": {
+					"pos": [
+						-950,
+						300
+					]
+				}
+			}
+		},
+		"dogWithoutOcclusion": {
+			"pos": [
+				-150,
+				-250
+			],
+			"nodes": {
+				"file1": {
+					"pos": [
+						-950,
+						-150
+					]
+				},
+				"hierarchy1": {
+					"pos": [
+						-950,
+						-50
+					]
+				},
+				"material1": {
+					"pos": [
+						-950,
+						150
+					]
+				},
+				"transform1": {
+					"pos": [
+						-950,
+						50
+					]
+				}
+			}
+		},
+		"dogWithOcclusionAndLighting": {
+			"pos": [
+				-150,
+				-50
+			],
+			"nodes": {
+				"attribCast1": {
+					"pos": [
+						-950,
+						150
+					],
+					"comment": "We need to cast the index attribute here, as the loaded geometry does not have a format that fits the occlusion node\\n"
+				},
+				"file1": {
+					"pos": [
+						-950,
+						-150
+					]
+				},
+				"hierarchy1": {
+					"pos": [
+						-950,
+						-50
+					]
+				},
+				"material1": {
+					"pos": [
+						-950,
+						600
+					]
+				},
+				"occlusion1": {
+					"pos": [
+						-950,
+						400
+					],
+					"comment": "The occlusion node adds a 'occlusion' attribute to the geometry, which is then used by the material."
+				},
+				"transform1": {
+					"pos": [
+						-950,
+						50
+					]
+				}
+			}
+		}
+	}
+}

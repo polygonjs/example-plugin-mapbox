@@ -1,0 +1,14 @@
+{
+	"type": "materials",
+	"nodes": {
+		"meshStandard_NO_OCCLUSION": {
+			"type": "meshStandard",
+			"params": {
+				"metalness": 0
+			}
+		}
+	},
+	"selection": [
+		"meshStandardBuilder_OCCLUSION"
+	]
+}

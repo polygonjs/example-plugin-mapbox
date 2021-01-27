@@ -1,0 +1,62 @@
+{
+	"type": "geo",
+	"nodes": {
+		"attribCast1": {
+			"type": "attribCast",
+			"params": {
+				"castAttributes": false,
+				"castIndex": true,
+				"type": 5
+			},
+			"inputs": [
+				"hierarchy1"
+			]
+		},
+		"file1": {
+			"type": "file",
+			"params": {
+				"url": "/models/napoleon.glb"
+			}
+		},
+		"hierarchy1": {
+			"type": "hierarchy",
+			"params": {
+				"mode": 1
+			},
+			"inputs": [
+				"file1"
+			]
+		},
+		"material1": {
+			"type": "material",
+			"params": {
+				"material": "/MAT/meshBasicBuilder_OCCLUSION"
+			},
+			"inputs": [
+				"occlusion1"
+			],
+			"flags": {
+				"display": true
+			}
+		},
+		"occlusion1": {
+			"type": "occlusion",
+			"inputs": [
+				"attribCast1"
+			]
+		}
+	},
+	"params": {
+		"t": [
+			0,
+			0,
+			1
+		]
+	},
+	"flags": {
+		"display": false
+	},
+	"selection": [
+		"file1"
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"type": "geo",
+	"nodes": {
+		"file1": {
+			"type": "file",
+			"params": {
+				"url": "/models/Hundepaar.glb"
+			}
+		},
+		"hierarchy1": {
+			"type": "hierarchy",
+			"params": {
+				"mode": 1
+			},
+			"inputs": [
+				"file1"
+			]
+		},
+		"occlusion1": {
+			"type": "occlusion",
+			"inputs": [
+				"attribCast1"
+			]
+		},
+		"attribCast1": {
+			"type": "attribCast",
+			"params": {
+				"castAttributes": 0,
+				"castIndex": 1,
+				"type": 5
+			},
+			"inputs": [
+				"hierarchy1"
+			]
+		},
+		"material1": {
+			"type": "material",
+			"params": {
+				"material": "/MAT/meshBasicBuilder_OCCLUSION"
+			},
+			"inputs": [
+				"occlusion1"
+			],
+			"flags": {
+				"display": true
+			}
+		}
+	},
+	"flags": {
+		"display": true
+	},
+	"selection": [
+		"file1",
+		"hierarchy1",
+		"occlusion1",
+		"attribCast1",
+		"material1"
+	]
+}

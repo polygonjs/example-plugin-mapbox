@@ -1,0 +1,51 @@
+{
+	"type": "geo",
+	"nodes": {
+		"file1": {
+			"type": "file",
+			"params": {
+				"url": "/models/Hundepaar.glb"
+			}
+		},
+		"hierarchy1": {
+			"type": "hierarchy",
+			"params": {
+				"mode": 1
+			},
+			"inputs": [
+				"file1"
+			]
+		},
+		"material1": {
+			"type": "material",
+			"params": {
+				"material": "/MAT/meshStandard_NO_OCCLUSION"
+			},
+			"inputs": [
+				"transform1"
+			],
+			"flags": {
+				"display": true
+			}
+		},
+		"transform1": {
+			"type": "transform",
+			"params": {
+				"t": [
+					-1,
+					0,
+					-0.5
+				]
+			},
+			"inputs": [
+				"hierarchy1"
+			]
+		}
+	},
+	"flags": {
+		"display": true
+	},
+	"selection": [
+		"transform1"
+	]
+}
