@@ -1,8 +1,10 @@
-import { polyPluginOcclusion } from "@polygonjs/plugin-occlusion/dist/src/index";
+import { polyPluginMapbox } from "@polygonjs/plugin-mapbox/dist/src/index";
+import {token} from '../ExampleData'
 
 export function configurePolygonjs(poly) {
 	// configure the engine
-	poly.registerPlugin(polyPluginOcclusion);
+	poly.registerPlugin(polyPluginMapbox);
+	polyPluginMapbox.setToken(token);
 	poly.libs.setRoot('/three/js/libs');
 }
 export function configureScene(scene) {

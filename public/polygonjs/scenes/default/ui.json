@@ -1,362 +1,478 @@
 {
 	"nodes": {
+		"mapboxCamera1": {
+			"pos": [
+				-200,
+				100
+			]
+		},
 		"hemisphereLight1": {
 			"pos": [
-				450,
-				300
-			]
-		},
-		"polarTransform1": {
-			"pos": [
-				250,
+				50,
 				200
 			]
 		},
-		"areaLight1": {
+		"geo1": {
 			"pos": [
-				250,
-				300
-			]
-		},
-		"perspectiveCamera1": {
-			"pos": [
-				-200,
-				200
+				50,
+				100
 			],
 			"nodes": {
-				"events1": {
+				"add1": {
 					"pos": [
-						-200,
+						350,
+						-100
+					]
+				},
+				"transform1": {
+					"pos": [
+						350,
 						50
-					],
-					"nodes": {
-						"cameraOrbitControls1": {
-							"pos": [
-								150,
-								50
-							]
-						}
-					}
-				}
-			}
-		},
-		"MAT": {
-			"pos": [
-				-200,
-				350
-			],
-			"nodes": {
-				"meshStandard_NO_OCCLUSION": {
-					"pos": [
-						0,
-						-150
-					]
-				},
-				"meshBasicBuilder_OCCLUSION": {
-					"pos": [
-						0,
-						-50
-					],
-					"nodes": {
-						"globals1": {
-							"pos": [
-								-450,
-								0
-							]
-						},
-						"output1": {
-							"pos": [
-								350,
-								0
-							]
-						},
-						"attribute1": {
-							"pos": [
-								-200,
-								-150
-							]
-						},
-						"complement1": {
-							"pos": [
-								0,
-								-150
-							]
-						},
-						"floatToVec3_1": {
-							"pos": [
-								100,
-								-150
-							]
-						},
-						"mix1": {
-							"pos": [
-								-100,
-								0
-							]
-						},
-						"paramOcclusionAmount": {
-							"pos": [
-								-250,
-								150
-							]
-						}
-					}
-				},
-				"meshStandardBuilder_OCCLUSION": {
-					"pos": [
-						0,
-						50
-					],
-					"nodes": {
-						"globals1": {
-							"pos": [
-								-450,
-								0
-							]
-						},
-						"output1": {
-							"pos": [
-								200,
-								0
-							]
-						},
-						"attribute1": {
-							"pos": [
-								-300,
-								-150
-							]
-						},
-						"complement1": {
-							"pos": [
-								-50,
-								-150
-							]
-						},
-						"floatToVec3_1": {
-							"pos": [
-								50,
-								-150
-							]
-						},
-						"mix1": {
-							"pos": [
-								-150,
-								-50
-							]
-						},
-						"paramOcclusionAmount": {
-							"pos": [
-								-300,
-								100
-							]
-						}
-					}
-				}
-			}
-		},
-		"dogWithOcclusion": {
-			"pos": [
-				-150,
-				-150
-			],
-			"nodes": {
-				"file1": {
-					"pos": [
-						-950,
-						-50
-					]
-				},
-				"hierarchy1": {
-					"pos": [
-						-950,
-						50
-					]
-				},
-				"occlusion1": {
-					"pos": [
-						-950,
-						400
-					],
-					"comment": "The occlusion node adds a 'occlusion' attribute to the geometry, which is then used by the material."
-				},
-				"attribCast1": {
-					"pos": [
-						-950,
-						150
-					],
-					"comment": "We need to cast the index attribute here, as the loaded geometry does not have a format that fits the occlusion node\\n"
-				},
-				"material1": {
-					"pos": [
-						-950,
-						600
-					]
-				}
-			}
-		},
-		"spheres": {
-			"pos": [
-				200,
-				-250
-			],
-			"nodes": {
-				"plane1": {
-					"pos": [
-						-50,
-						-200
-					]
-				},
-				"sphere1": {
-					"pos": [
-						-250,
-						-200
 					]
 				},
 				"copy1": {
 					"pos": [
-						-150,
+						200,
+						550
+					]
+				},
+				"mapboxTransform1": {
+					"pos": [
+						350,
+						200
+					]
+				},
+				"transform2": {
+					"pos": [
+						100,
+						200
+					]
+				},
+				"file1": {
+					"pos": [
+						100,
+						-200
+					]
+				},
+				"hierarchy1": {
+					"pos": [
+						100,
+						-50
+					]
+				},
+				"objectProperties1": {
+					"pos": [
+						100,
+						300
+					]
+				},
+				"material1": {
+					"pos": [
+						100,
+						400
+					]
+				},
+				"restAttributes1": {
+					"pos": [
+						100,
+						50
+					]
+				},
+				"file2": {
+					"pos": [
+						650,
+						-300
+					]
+				},
+				"hierarchy2": {
+					"pos": [
+						650,
+						-150
+					]
+				},
+				"transform3": {
+					"pos": [
+						650,
+						200
+					]
+				},
+				"objectProperties2": {
+					"pos": [
+						650,
+						300
+					]
+				},
+				"restAttributes2": {
+					"pos": [
+						650,
+						50
+					]
+				},
+				"transform4": {
+					"pos": [
+						900,
 						0
 					]
 				},
-				"plane2": {
+				"mapboxTransform2": {
 					"pos": [
-						150,
-						0
+						900,
+						150
 					]
 				},
 				"merge1": {
 					"pos": [
-						-50,
-						150
+						400,
+						850
 					]
 				},
-				"occlusion1": {
+				"hexagons1": {
 					"pos": [
-						-50,
-						300
+						900,
+						-1000
 					]
 				},
-				"material1": {
+				"transform5": {
 					"pos": [
-						-50,
-						400
-					]
-				}
-			}
-		},
-		"headWithOcclusion": {
-			"pos": [
-				200,
-				-150
-			],
-			"nodes": {
-				"attribCast1": {
-					"pos": [
-						-950,
-						150
-					]
-				},
-				"file1": {
-					"pos": [
-						-950,
+						900,
 						-100
 					]
 				},
-				"hierarchy1": {
+				"normals1": {
 					"pos": [
-						-950,
-						50
+						900,
+						-650
 					]
 				},
-				"material1": {
+				"transform6": {
 					"pos": [
-						-950,
+						650,
+						-50
+					]
+				},
+				"transform8": {
+					"pos": [
+						900,
+						-200
+					]
+				},
+				"delete_points_close_to_center": {
+					"pos": [
+						900,
+						-550
+					]
+				},
+				"jitter1": {
+					"pos": [
+						900,
+						-900
+					]
+				},
+				"point_set_Py_to_0": {
+					"pos": [
+						900,
+						-750
+					]
+				},
+				"instance1": {
+					"pos": [
+						900,
+						600
+					]
+				},
+				"attribCreate1": {
+					"pos": [
+						900,
+						-450
+					]
+				},
+				"attribCreate2": {
+					"pos": [
+						900,
+						-350
+					]
+				},
+				"MAT": {
+					"pos": [
+						-300,
 						400
+					],
+					"nodes": {
+						"meshLambertBuilder_dinosaur1": {
+							"pos": [
+								-150,
+								200
+							],
+							"nodes": {
+								"globals1": {
+									"pos": [
+										-200,
+										0
+									]
+								},
+								"output1": {
+									"pos": [
+										200,
+										0
+									]
+								},
+								"texture1": {
+									"pos": [
+										-150,
+										400
+									]
+								},
+								"vec4ToVec3_1": {
+									"pos": [
+										0,
+										250
+									]
+								},
+								"colorCorrect1": {
+									"pos": [
+										-50,
+										400
+									]
+								}
+							}
+						},
+						"meshLambertBuilder_dinosaur2": {
+							"pos": [
+								-150,
+								300
+							],
+							"nodes": {
+								"colorCorrect1": {
+									"pos": [
+										-600,
+										0
+									]
+								},
+								"globals1": {
+									"pos": [
+										-900,
+										0
+									]
+								},
+								"output1": {
+									"pos": [
+										200,
+										0
+									]
+								},
+								"texture1": {
+									"pos": [
+										-700,
+										0
+									]
+								},
+								"vec4ToVec3_1": {
+									"pos": [
+										-450,
+										0
+									]
+								},
+								"instanceTransform1": {
+									"pos": [
+										0,
+										-300
+									]
+								},
+								"attribute1": {
+									"pos": [
+										-750,
+										-300
+									]
+								},
+								"floatToVec2_1": {
+									"pos": [
+										-450,
+										-300
+									]
+								},
+								"round1": {
+									"pos": [
+										-650,
+										-300
+									]
+								},
+								"random1": {
+									"pos": [
+										-350,
+										-300
+									]
+								},
+								"fitFrom01ToVariance1": {
+									"pos": [
+										-250,
+										-300
+									]
+								},
+								"floatToVec3_1": {
+									"pos": [
+										-150,
+										-300
+									]
+								},
+								"vec3ToFloat1": {
+									"pos": [
+										-1100,
+										700
+									]
+								},
+								"attribute2": {
+									"pos": [
+										-1300,
+										700
+									]
+								},
+								"twoWaySwitch1": {
+									"pos": [
+										-350,
+										800
+									]
+								},
+								"compare1": {
+									"pos": [
+										-500,
+										800
+									]
+								},
+								"attribute3": {
+									"pos": [
+										-1400,
+										900
+									]
+								},
+								"globals2": {
+									"pos": [
+										-850,
+										1150
+									]
+								},
+								"multAdd1": {
+									"pos": [
+										-700,
+										1350
+									]
+								},
+								"compare2": {
+									"pos": [
+										-550,
+										1150
+									]
+								},
+								"add1": {
+									"pos": [
+										-700,
+										850
+									]
+								},
+								"multAdd2": {
+									"pos": [
+										-800,
+										650
+									]
+								},
+								"multAdd3": {
+									"pos": [
+										-1250,
+										900
+									]
+								},
+								"attribute4": {
+									"pos": [
+										-1850,
+										1100
+									]
+								},
+								"floatToVec2_2": {
+									"pos": [
+										-1550,
+										1100
+									]
+								},
+								"round2": {
+									"pos": [
+										-1750,
+										1100
+									]
+								},
+								"random2": {
+									"pos": [
+										-1450,
+										1100
+									]
+								},
+								"fitFrom01ToVariance2": {
+									"pos": [
+										-1350,
+										1100
+									]
+								},
+								"add2": {
+									"pos": [
+										-1050,
+										1000
+									]
+								},
+								"multAdd4": {
+									"pos": [
+										-1200,
+										1100
+									]
+								},
+								"multAdd5": {
+									"pos": [
+										-950,
+										1050
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"COP": {
+			"pos": [
+				-200,
+				200
+			],
+			"nodes": {
+				"dinosaur1": {
+					"pos": [
+						-100,
+						200
 					]
 				},
-				"occlusion1": {
+				"dinosaur2": {
 					"pos": [
-						-950,
+						-100,
 						300
 					]
 				}
 			}
 		},
-		"dogWithoutOcclusion": {
+		"perspectiveCamera1": {
 			"pos": [
-				-150,
-				-250
+				-200,
+				0
 			],
 			"nodes": {
-				"file1": {
+				"events1": {
 					"pos": [
-						-950,
-						-150
-					]
-				},
-				"hierarchy1": {
-					"pos": [
-						-950,
-						-50
-					]
-				},
-				"material1": {
-					"pos": [
-						-950,
-						150
-					]
-				},
-				"transform1": {
-					"pos": [
-						-950,
-						50
-					]
-				}
-			}
-		},
-		"dogWithOcclusionAndLighting": {
-			"pos": [
-				-150,
-				-50
-			],
-			"nodes": {
-				"attribCast1": {
-					"pos": [
-						-950,
+						-100,
 						150
 					],
-					"comment": "We need to cast the index attribute here, as the loaded geometry does not have a format that fits the occlusion node\\n"
-				},
-				"file1": {
-					"pos": [
-						-950,
-						-150
-					]
-				},
-				"hierarchy1": {
-					"pos": [
-						-950,
-						-50
-					]
-				},
-				"material1": {
-					"pos": [
-						-950,
-						600
-					]
-				},
-				"occlusion1": {
-					"pos": [
-						-950,
-						400
-					],
-					"comment": "The occlusion node adds a 'occlusion' attribute to the geometry, which is then used by the material."
-				},
-				"transform1": {
-					"pos": [
-						-950,
-						50
-					]
+					"nodes": {
+						"cameraOrbitControls1": {
+							"pos": [
+								-100,
+								300
+							]
+						}
+					}
 				}
 			}
 		}

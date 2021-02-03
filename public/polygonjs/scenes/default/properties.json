@@ -1,5 +1,5 @@
 {
-	"frame": 58,
+	"frame": 1,
 	"frameRange": [
 		1,
 		100
@@ -9,5 +9,5 @@
 		false
 	],
 	"realtimeState": true,
-	"masterCameraNodePath": "/perspectiveCamera1"
+	"masterCameraNodePath": "/mapboxCamera1"
 }

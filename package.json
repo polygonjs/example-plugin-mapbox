@@ -1,12 +1,11 @@
 {
-  "name": "plugin-occlusion-example",
+  "name": "plugin-mapbox-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@polygonjs/plugin-occlusion": "^1.0.2",
-    "@polygonjs/polygonjs": "^1.1.56",
-    "polygonjs-editor": "^1.1.56-2"
+    "@polygonjs/plugin-mapbox": "^1.0.2",
+    "polygonjs-editor": "^1.1.59-1"
   },
   "devDependencies": {
     "snowpack": "^3.0.11"

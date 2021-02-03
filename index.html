@@ -22,22 +22,17 @@
 				position: absolute;
 				top: 10px;
 				left: 10px;
+				z-index: 100;
+				background-color: #eee;
+				padding: 10px;
 			}
 		</style>
 	</head>
 	<body>
 		<div id='controls'>
-			<label>Occlusion Amount</label>
-			<input type="range" min=0 max=1 step=0.01 value=1 oninput="setOcclusion(event.target.value)"></input>
+			<button onclick='scene.setFrame(1)'>Make Dinosaurs Appear Again!</button>
 		</div>
 		<div id="polygonjs-app"></div>
 	</body>
 	<script type="module" src="./src/polygonjs/load_template.js"></script>
-	<script>
-		function setOcclusion(occlusionAmount){
-			console.log("occlusionAmount", occlusionAmount)
-			scene.node('/MAT/meshBasicBuilder_OCCLUSION').p.occlusionAmount.set(occlusionAmount);
-			scene.node('/MAT/meshStandardBuilder_OCCLUSION').p.occlusionAmount.set(occlusionAmount);
-		}
-	</script>
 </html>

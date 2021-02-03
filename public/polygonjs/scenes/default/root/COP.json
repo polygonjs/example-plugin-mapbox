@@ -1,0 +1,20 @@
+{
+	"type": "cop",
+	"nodes": {
+		"dinosaur1": {
+			"type": "image",
+			"params": {
+				"url": "/tex/dinosaur1.png?`js('Date.now()')`"
+			}
+		},
+		"dinosaur2": {
+			"type": "image",
+			"params": {
+				"url": "/tex/dinosaur2.jpeg?`js('Date.now()')`"
+			}
+		}
+	},
+	"selection": [
+		"dinosaur2"
+	]
+}

@@ -32,6 +32,11 @@ async function loadPolygonjsScene(sceneName) {
         return;
     }
     cameraNode.createViewer(container);
+    // don't play immediately, wait for the map to appear
+    setTimeout(()=>{
+        scene.setFrame(1);
+        scene.play();
+    }, 1500);
 }
 
 document.addEventListener('DOMContentLoaded', ()=> {

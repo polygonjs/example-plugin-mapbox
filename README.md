@@ -1,17 +1,20 @@
-# Polygonjs Plugin Occlusion Example
+# Polygonjs Plugin Mapbox Example
 
-This repository shows how to use the [Occlusion Plugin](https://github.com/polygonjs/plugin-occlusion) for the WebGL engine [Polygonjs](https://github.com/polygonjs/polygonjs).
+This repository shows how to use the [Mapbox Plugin](https://github.com/polygonjs/plugin-mapbox) for the WebGL engine [Polygonjs](https://github.com/polygonjs/polygonjs).
 
-This plugin adds a node `SOP/Occlusion` which adds an occlusion attribute to a geometry (downloaded from [threedscans](http://threedscans.com/)), which in turn can be used in the material builder.
+![scene with 3D objects above a map](https://github.com/polygonjs/example-plugin-mapbox/blob/main/doc/mapbox_examples.jpg?raw=true)
 
-![Geometries with occlusion](https://github.com/polygonjs/example-plugin-occlusion/blob/main/doc/occlusion_examples.jpg?raw=true)
+models are from:
+
+- [https://sketchfab.com/3d-models/dinosaur-c743536f3c8e48049a00f19c8f8f6d4a](https://sketchfab.com/3d-models/dinosaur-c743536f3c8e48049a00f19c8f8f6d4a)
+- [https://sketchfab.com/3d-models/dinosaur-3e12af7c5c354ea6b01bccfb529a9c02](https://sketchfab.com/3d-models/dinosaur-3e12af7c5c354ea6b01bccfb529a9c02)
 ## Open the scene in the WebGL editor
 
 `yarn && yarn edit`
 
-This will open the scene saved in this repo. It is a simple scene with a few geometry, whose occlusion is added via the SOP/Occlusion node.
+This will open the scene saved in this repo.
 
-![Occlusion plugin from Polygonjs node-based Editor](https://github.com/polygonjs/example-plugin-occlusion/blob/main/doc/occlusion_example_in_editor.jpg?raw=true)
+![mapbox plugin from Polygonjs node-based Editor](https://github.com/polygonjs/example-plugin-mapbox/blob/main/doc/mapbox_example_in_editor.jpg?raw=true)
 
 ## Open the export scene without the editor
 
