@@ -10,7 +10,7 @@ models are from:
 - [https://sketchfab.com/3d-models/dinosaur-3e12af7c5c354ea6b01bccfb529a9c02](https://sketchfab.com/3d-models/dinosaur-3e12af7c5c354ea6b01bccfb529a9c02)
 ## Open the scene in the WebGL editor
 
-`yarn && yarn edit`
+`yarn && yarn polygon`
 
 This will open the scene saved in this repo.
 
