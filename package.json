@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@polygonjs/plugin-mapbox": "^1.0.2",
-    "polygonjs-editor": "^1.1.59-1"
+    "@polygonjs/plugin-mapbox": "^1.0.3",
+    "polygonjs-editor": "^1.1.67-1"
   },
   "devDependencies": {
     "snowpack": "^3.0.11"
   },
   "scripts": {
-    "edit": "node_modules/polygonjs-editor/build/index.js",
+    "polygon": "node_modules/polygonjs-editor/build/index.js",
     "dev": "snowpack dev"
   },
   "keywords": [],

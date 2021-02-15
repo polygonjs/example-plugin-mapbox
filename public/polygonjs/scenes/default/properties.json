@@ -1,13 +1,7 @@
 {
-	"frame": 1,
-	"frameRange": [
-		1,
-		100
-	],
-	"frameRangeLocked": [
-		true,
-		false
-	],
+	"frame": 0,
+	"maxFrame": 600,
+	"maxFrameLocked": false,
 	"realtimeState": true,
 	"masterCameraNodePath": "/mapboxCamera1"
 }
