@@ -12,6 +12,10 @@ models are from:
 
 `yarn && yarn polygon`
 
+and open your browser at
+
+`http://localhost:8091?scene=default`
+
 This will open the scene saved in this repo.
 
 ![mapbox plugin from Polygonjs node-based Editor](https://github.com/polygonjs/example-plugin-mapbox/blob/main/doc/mapbox_example_in_editor.jpg?raw=true)

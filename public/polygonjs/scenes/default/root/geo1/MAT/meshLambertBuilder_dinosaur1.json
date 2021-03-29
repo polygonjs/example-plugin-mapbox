@@ -73,7 +73,7 @@
 				"type": "Material",
 				"generator": "Material.toJSON"
 			},
-			"uuid": "E69710BF-8B3B-443A-9608-13EE2E153D43",
+			"uuid": "42CE74DB-D71F-48B8-9782-10289E4268DF",
 			"type": "ShaderMaterial",
 			"name": "/geo1/MAT/meshLambertBuilder_dinosaur1",
 			"color": 16777215,
@@ -318,7 +318,7 @@
 					"type": "Material",
 					"generator": "Material.toJSON"
 				},
-				"uuid": "4A9C9688-BB68-49C1-8D95-2B409B57A44F",
+				"uuid": "7466F6CD-9D4E-405C-AC50-0587DCC85AB5",
 				"type": "ShaderMaterial",
 				"depthFunc": 3,
 				"depthTest": true,
@@ -414,7 +414,7 @@
 					"type": "Material",
 					"generator": "Material.toJSON"
 				},
-				"uuid": "4F4797A7-F55B-4D12-BC99-3B0B024B1498",
+				"uuid": "FC6FDDCC-BE17-4FA6-B7CF-A6F6F7DE7C2B",
 				"type": "ShaderMaterial",
 				"depthFunc": 3,
 				"depthTest": true,
@@ -496,7 +496,7 @@
 					"type": "Material",
 					"generator": "Material.toJSON"
 				},
-				"uuid": "1E3B0A1C-B095-425C-B5B8-885A5E518FA9",
+				"uuid": "FDC233A3-CFB2-4DE0-8E90-5E640EF03A83",
 				"type": "ShaderMaterial",
 				"depthFunc": 3,
 				"depthTest": true,

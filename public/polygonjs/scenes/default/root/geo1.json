@@ -281,8 +281,5 @@
 	},
 	"flags": {
 		"display": true
-	},
-	"selection": [
-		"MAT"
-	]
+	}
 }

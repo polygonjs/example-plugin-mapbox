@@ -35,6 +35,7 @@ import {TransformSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/T
 export class PolyRegister {
 	static run() {
 		AllExpressionsRegister.run(Poly);
+		// modules
 		Poly.modulesRegister.register(
 			ModuleName.DRACOLoader,
 			import('@polygonjs/polygonjs/dist/src/modules/three/examples/jsm/loaders/DRACOLoader')

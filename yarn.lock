@@ -52,18 +52,18 @@
   resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.1.0.tgz#497c67a1cef50d1a2459ba60f315e448d2ad87fe"
   integrity sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
 
-"@polygonjs/plugin-mapbox@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@polygonjs/plugin-mapbox/-/plugin-mapbox-1.0.3.tgz#700648afb5e6aa50bf87b312f361e17cd9324b93"
-  integrity sha512-wKuo6x3ZM18ONUA9GGmgEg7BbZGI/IimAsqSDubt6KF79OoD64pMvPHdURf2YmOpo645q0zl8TSjSRd4dhDQug==
+"@polygonjs/plugin-mapbox@^1.0.4":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@polygonjs/plugin-mapbox/-/plugin-mapbox-1.0.5.tgz#df990f4b562aed3cce48b77b55070c33193fd745"
+  integrity sha512-x+sk+9RNjZHE1sykU/xkZEXwAOGPDDhBE+XmUBEmsJ/SO1wHAjX6D3CMRuMKGe4AkpANUscwT3wY1bcvVIiiLA==
   dependencies:
-    "@polygonjs/polygonjs" "^1.1.67"
+    "@polygonjs/polygonjs" "^1.1.118"
     mapbox-gl "2.0.1"
 
-"@polygonjs/polygonjs@1.1.67", "@polygonjs/polygonjs@^1.1.67":
-  version "1.1.67"
-  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.67.tgz#0d5bbdaf2444a6522e627478a0831c426a13268a"
-  integrity sha512-xPGW9l0iF4cI8Lh+RJLWSNHh9S1UVmRp5SB9H+QUzViABNQzHEgaNjmmy0ZY6VE0qBSOFYfQ0U2aJT6J4cM7Bw==
+"@polygonjs/polygonjs@1.1.118", "@polygonjs/polygonjs@^1.1.118":
+  version "1.1.118"
+  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.118.tgz#92872a9bf8b5377bce2536fc188b05934ad8ca65"
+  integrity sha512-3mjUTOyHYGDavWegaOHqeyhf/7Q1IcZcVy6jl23f55hK1IQfAJXaJ3/jL+t0j0e1mCnqmdYIEZn5E7Tf/P/aPQ==
   dependencies:
     gsap "3.5.1"
     jsep "0.3.5"
@@ -628,12 +628,12 @@ pbf@^3.0.5, pbf@^3.2.1:
     ieee754 "^1.1.12"
     resolve-protobuf-schema "^2.1.0"
 
-polygonjs-editor@^1.1.67-1:
-  version "1.1.67-1"
-  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.1.67-1.tgz#00eaef5865b7fbcce1e0830ea550fdf9f11fcc86"
-  integrity sha512-Lz/iZUs/k6JU1e/GZFOODaKvl5fiPafeD9QrOG5m01VCJRztNV2SuPeeVVWUs0Xsj0xl8wcjAXcLGoADmuTmbw==
+polygonjs-editor@^1.1.118-1:
+  version "1.1.118-1"
+  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.1.118-1.tgz#0ee7a603e7daf02144543687546645d67504c192"
+  integrity sha512-nIxrvVhnoy22zpzSxKJIFk3b28JNgXikzLV9MVAeONL8D4AyVul1v29eWG24hSe9WvBWepJ4Vzf5ZZfG2K1Wvg==
   dependencies:
-    "@polygonjs/polygonjs" "1.1.67"
+    "@polygonjs/polygonjs" "1.1.118"
     btoa "1.2.1"
     chalk "4.1.0"
     cors "2.8.5"
