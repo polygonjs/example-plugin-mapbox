@@ -24,3 +24,7 @@ This will open the scene saved in this repo.
 
 `yarn && yarn run snowpack dev`
 
+and open your browser at
+
+`http://localhost:8080`
+
