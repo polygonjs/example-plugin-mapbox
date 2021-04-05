@@ -150,9 +150,6 @@
 		},
 		"merge1": {
 			"type": "merge",
-			"params": {
-				"compact": 0
-			},
 			"inputs": [
 				"copy1",
 				"instance1"

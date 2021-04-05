@@ -1,5 +1,5 @@
 {
-	"type": "cop",
+	"type": "copNetwork",
 	"nodes": {
 		"dinosaur1": {
 			"type": "image",

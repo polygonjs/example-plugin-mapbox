@@ -1,7 +1,10 @@
 import {Poly} from '@polygonjs/polygonjs/dist/src/engine/Poly';
 import {AllExpressionsRegister} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/expressions/All';
 import {configurePolygonjs} from '../../PolyConfig';
-import {ModuleName} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/modules/_BaseRegister';
+// modules
+import {ModuleName} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/modules/Common';
+import {DRACOLoader} from '@polygonjs/polygonjs/dist/src/modules/three/examples/jsm/loaders/DRACOLoader';
+import {GLTFLoader} from '@polygonjs/polygonjs/dist/src/modules/three/examples/jsm/loaders/GLTFLoader';
 // cop
 import {ImageCopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/cop/Image';
 // event
@@ -9,7 +12,7 @@ import {CameraOrbitControlsEventNode} from '@polygonjs/polygonjs/dist/src/engine
 // mat
 import {MeshLambertBuilderMatNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/mat/MeshLambertBuilder';
 // obj
-import {CopObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/Cop';
+import {CopNetworkObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/CopNetwork';
 import {GeoObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo';
 import {HemisphereLightObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/HemisphereLight';
 import {PerspectiveCameraObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/PerspectiveCamera';
@@ -18,14 +21,14 @@ import {AddSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Add';
 import {AttribCreateSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/AttribCreate';
 import {CopySopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Copy';
 import {DeleteSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Delete';
-import {EventsSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Events';
+import {EventsNetworkSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/EventsNetwork';
 import {FileSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/File';
 import {HexagonsSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Hexagons';
 import {HierarchySopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Hierarchy';
 import {InstanceSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Instance';
 import {JitterSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Jitter';
 import {MaterialSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Material';
-import {MaterialsSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Materials';
+import {MaterialsNetworkSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/MaterialsNetwork';
 import {MergeSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge';
 import {NormalsSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Normals';
 import {ObjectPropertiesSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/ObjectProperties';
@@ -36,14 +39,8 @@ export class PolyRegister {
 	static run() {
 		AllExpressionsRegister.run(Poly);
 		// modules
-		Poly.modulesRegister.register(
-			ModuleName.DRACOLoader,
-			import('@polygonjs/polygonjs/dist/src/modules/three/examples/jsm/loaders/DRACOLoader')
-		);
-		Poly.modulesRegister.register(
-			ModuleName.GLTFLoader,
-			import('@polygonjs/polygonjs/dist/src/modules/three/examples/jsm/loaders/GLTFLoader')
-		);
+		Poly.modulesRegister.register(ModuleName.DRACOLoader, DRACOLoader);
+		Poly.modulesRegister.register(ModuleName.GLTFLoader, GLTFLoader);
 		// cop
 		Poly.registerNode(ImageCopNode);
 		// event
@@ -51,7 +48,7 @@ export class PolyRegister {
 		// mat
 		Poly.registerNode(MeshLambertBuilderMatNode);
 		// obj
-		Poly.registerNode(CopObjNode);
+		Poly.registerNode(CopNetworkObjNode);
 		Poly.registerNode(GeoObjNode);
 		Poly.registerNode(HemisphereLightObjNode);
 		Poly.registerNode(PerspectiveCameraObjNode);
@@ -60,14 +57,14 @@ export class PolyRegister {
 		Poly.registerNode(AttribCreateSopNode);
 		Poly.registerNode(CopySopNode);
 		Poly.registerNode(DeleteSopNode);
-		Poly.registerNode(EventsSopNode);
+		Poly.registerNode(EventsNetworkSopNode);
 		Poly.registerNode(FileSopNode);
 		Poly.registerNode(HexagonsSopNode);
 		Poly.registerNode(HierarchySopNode);
 		Poly.registerNode(InstanceSopNode);
 		Poly.registerNode(JitterSopNode);
 		Poly.registerNode(MaterialSopNode);
-		Poly.registerNode(MaterialsSopNode);
+		Poly.registerNode(MaterialsNetworkSopNode);
 		Poly.registerNode(MergeSopNode);
 		Poly.registerNode(NormalsSopNode);
 		Poly.registerNode(ObjectPropertiesSopNode);

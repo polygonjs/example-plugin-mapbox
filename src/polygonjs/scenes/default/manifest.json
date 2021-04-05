@@ -1,13 +1,13 @@
 {
-	"properties": "1617059825895",
+	"properties": "1617472807456",
 	"root": "1612314518215",
 	"nodes": {
-		"geo1": "1617059825895",
-		"geo1/MAT": "1613430602171",
-		"geo1/MAT/meshLambertBuilder_dinosaur1": "1617059825895",
-		"geo1/MAT/meshLambertBuilder_dinosaur2": "1617059825895",
-		"COP": "1612313473415",
+		"geo1": "1617471306194",
+		"geo1/MAT": "1617471306194",
+		"geo1/MAT/meshLambertBuilder_dinosaur1": "1617471306194",
+		"geo1/MAT/meshLambertBuilder_dinosaur2": "1617472807456",
+		"COP": "1617471306194",
 		"perspectiveCamera1": "1612314202673",
-		"perspectiveCamera1/events1": "1612314202673"
+		"perspectiveCamera1/events1": "1617471306194"
 	}
 }
