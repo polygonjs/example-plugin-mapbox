@@ -30,10 +30,10 @@
   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
   integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
 
-"@mapbox/tiny-sdf@^1.1.1":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@mapbox/tiny-sdf/-/tiny-sdf-1.2.2.tgz#536417dd04cd6af4d46eb0e65f932941a7540be1"
-  integrity sha512-GeJdumh5Do1JvnE2QbbLixZmJg6CzOfpzcAuS+qZadWK1Gj+yY/mj7IOVlgXCBg/yDqDmitGwSius+rrTpm8RA==
+"@mapbox/tiny-sdf@^1.2.3":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@mapbox/tiny-sdf/-/tiny-sdf-1.2.5.tgz#424c620a96442b20402552be70a7f62a8407cc59"
+  integrity sha512-cD8A/zJlm6fdJOk6DqPUV8mcpyJkRz2x2R+/fYcWDYG3oWbG7/L7Yl/WqQ1VZCjnL9OTIMAn6c+BC5Eru4sQEw==
 
 "@mapbox/unitbezier@^0.0.0":
   version "0.0.0"
@@ -52,18 +52,18 @@
   resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.1.0.tgz#497c67a1cef50d1a2459ba60f315e448d2ad87fe"
   integrity sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
 
-"@polygonjs/plugin-mapbox@1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@polygonjs/plugin-mapbox/-/plugin-mapbox-1.0.7.tgz#849f8592c825ab4a46eef7c6dbe9d4de1b15ae81"
-  integrity sha512-SBn4xKCtpa5gHRpR/mwUxz9nvSC1zIS+MOGwoxryO7gubjEonMacp+oyJCMWOhQDA6UHnbC8axdOYPQ9ezIO2Q==
+"@polygonjs/plugin-mapbox@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@polygonjs/plugin-mapbox/-/plugin-mapbox-1.0.8.tgz#51f808989d427d1af497ad9f7cd5e19530ea6ffd"
+  integrity sha512-5r47xWR1TUC71TRuBhjdmye/6z4LC+1oRggB0LmW+AcLWQdDFegBGAKYvugizM355jkPGccxJfMpvGt1AN4Iag==
   dependencies:
-    "@polygonjs/polygonjs" "^1.1.127"
-    mapbox-gl "2.0.1"
+    "@polygonjs/polygonjs" "^1.1.149"
+    mapbox-gl "2.1.1"
 
-"@polygonjs/polygonjs@1.1.127", "@polygonjs/polygonjs@^1.1.127":
-  version "1.1.127"
-  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.127.tgz#9c31ab3139b2d9f828ef4b85b7ffaa8c3cd3210e"
-  integrity sha512-JAroyhOnvP5XmLmLdHmnxSKaCCcUC1tu/6nY7K67G3LOeGyLsypbySbQ9CFM1nOQkWnWIm/HaTQQznaI9dFYXg==
+"@polygonjs/polygonjs@1.1.149", "@polygonjs/polygonjs@^1.1.149":
+  version "1.1.149"
+  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.149.tgz#56b65f2203977f6fb90b1efd485859059faaac46"
+  integrity sha512-NKruI0/l/+zvQk6HccTLTar06wM/dnOX8fKu2qxK3qV3OjEZHmL7duGh7wInf84UKT/IPqEzP+Y0apPHj6dOjA==
   dependencies:
     "@types/three" "^0.127.0"
     fflate "0.6.9"
@@ -534,17 +534,17 @@ lodash@4.17.21:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
-mapbox-gl@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.0.1.tgz#e081c075fca2473fbc0e3a28f57c1b68ced3d997"
-  integrity sha512-4sWRh4FztQakCPO/WN2JsMSDOVLKXPSQvHjJgXwIEQtnrxjyFB7Et0VX+h9rDxOA4EB6BRCG8mNgw648/dXNTg==
+mapbox-gl@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.1.1.tgz#3e29c44e5bd7499aa8829426a678fe472ac536f9"
+  integrity sha512-LUbXcjygNHbjahkhsB1I/KdZ8uoproe1u1ImrVJe88dyXYKJKOZoSBe23tm+ldu76l3G9XbgPOdUhkhqL172FQ==
   dependencies:
     "@mapbox/geojson-rewind" "^0.5.0"
     "@mapbox/geojson-types" "^1.0.2"
     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
     "@mapbox/mapbox-gl-supported" "^2.0.0"
     "@mapbox/point-geometry" "^0.1.0"
-    "@mapbox/tiny-sdf" "^1.1.1"
+    "@mapbox/tiny-sdf" "^1.2.3"
     "@mapbox/unitbezier" "^0.0.0"
     "@mapbox/vector-tile" "^1.3.1"
     "@mapbox/whoots-js" "^3.1.0"
@@ -559,7 +559,7 @@ mapbox-gl@2.0.1:
     potpack "^1.0.1"
     quickselect "^2.0.0"
     rw "^1.3.3"
-    supercluster "^7.1.0"
+    supercluster "^7.1.2"
     tinyqueue "^2.0.3"
     vt-pbf "^3.1.1"
 
@@ -710,12 +710,12 @@ pify@^2.3.0:
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
   integrity sha1-7RQaasBDqEnqWISY59yosVMw6Qw=
 
-polygonjs-editor@1.1.127-1:
-  version "1.1.127-1"
-  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.1.127-1.tgz#f335bc63415f9f6c512b61c39404899295e6f36b"
-  integrity sha512-prcyc1PNMXKABoY7/LA/9pejxsi60wZ6SWuQCBz4mMCh6tt0n5/+TXwsU5iPitLTwYLiBQgR6smnZYoBt7MdEw==
+polygonjs-editor@1.1.149-1:
+  version "1.1.149-1"
+  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.1.149-1.tgz#5cb2c3bc059ecc39ce7f27707f3193c7cbf9acda"
+  integrity sha512-7QygQjYLRJbWEnl3okjOllhEJ2Sb41cF1RGxqN/+JYfP9HQ5DnQI61SxLQW2GLUZX064hTCmfk69XE4ECSD89Q==
   dependencies:
-    "@polygonjs/polygonjs" "1.1.127"
+    "@polygonjs/polygonjs" "1.1.149"
     btoa "1.2.1"
     chalk "4.1.0"
     cors "2.8.5"
@@ -921,10 +921,10 @@ strip-ansi@^6.0.0:
   dependencies:
     ansi-regex "^5.0.0"
 
-supercluster@^7.1.0:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/supercluster/-/supercluster-7.1.2.tgz#cf02a60283a0118212024f3bf02e4e63bb148e2c"
-  integrity sha512-bGA0pk3DYMjLTY1h+rbh0imi/I8k/Lg0rzdBGfyQs0Xkiix7jK2GUmH1qSD8+jq6U0Vu382QHr3+rbbiHqdKJA==
+supercluster@^7.1.2:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/supercluster/-/supercluster-7.1.3.tgz#8c5412c7d7e53b010f7514e87f279544babc3425"
+  integrity sha512-7+bR4FbF5SYsmkHfDp61QiwCKtwNDyPsddk9TzfsDA5DQr5Goii5CVD2SXjglweFCxjrzVZf945ahqYfUIk8UA==
   dependencies:
     kdbush "^3.0.0"
 
