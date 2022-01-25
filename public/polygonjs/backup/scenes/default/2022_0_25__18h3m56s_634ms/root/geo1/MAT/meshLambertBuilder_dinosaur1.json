@@ -1,0 +1,513 @@
+{
+	"type": "meshLambertBuilder",
+	"nodes": {
+		"globals1": {
+			"type": "globals"
+		},
+		"output1": {
+			"type": "output",
+			"inputs": [
+				null,
+				null,
+				{
+					"index": 2,
+					"node": "vec4ToVec3_1",
+					"output": "vec3"
+				}
+			]
+		},
+		"texture1": {
+			"type": "texture",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "uv"
+				}
+			]
+		},
+		"vec4ToVec3_1": {
+			"type": "vec4ToVec3",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "colorCorrect1",
+					"output": "out"
+				}
+			]
+		},
+		"colorCorrect1": {
+			"type": "colorCorrect",
+			"params": {
+				"from": 2,
+				"to": 0
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "texture1",
+					"output": "rgba"
+				}
+			]
+		}
+	},
+	"params": {
+		"textureMap": {
+			"type": "node_path",
+			"default_value": "/COP/imageUv",
+			"options": {
+				"nodeSelection": {
+					"context": "cop"
+				},
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": "/COP/dinosaur1",
+			"overriden_options": {
+				"spare": "true",
+				"computeOnDirty": "true",
+				"cook": "false",
+				"callback": "{}"
+			}
+		},
+		"": {
+			"type": "node_path",
+			"default_value": "",
+			"options": {
+				"nodeSelection": {
+					"context": "cop"
+				},
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false,
+				"dependentOnFoundNode": true
+			}
+		}
+	},
+	"persisted_config": {
+		"material": {
+			"metadata": {
+				"version": 4.5,
+				"type": "Material",
+				"generator": "Material.toJSON"
+			},
+			"uuid": "/geo1/MAT/meshLambertBuilder_dinosaur1-main",
+			"type": "ShaderMaterial",
+			"name": "/geo1/MAT/meshLambertBuilder_dinosaur1",
+			"color": 16777215,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"colorWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680,
+			"glslVersion": null,
+			"uniforms": {
+				"diffuse": {
+					"type": "c",
+					"value": 16777215
+				},
+				"opacity": {
+					"value": 1
+				},
+				"map": {
+					"value": null
+				},
+				"uvTransform": {
+					"type": "m3",
+					"value": [
+						1,
+						0,
+						0,
+						0,
+						1,
+						0,
+						0,
+						0,
+						1
+					]
+				},
+				"uv2Transform": {
+					"type": "m3",
+					"value": [
+						1,
+						0,
+						0,
+						0,
+						1,
+						0,
+						0,
+						0,
+						1
+					]
+				},
+				"alphaMap": {
+					"value": null
+				},
+				"alphaTest": {
+					"value": 0
+				},
+				"specularMap": {
+					"value": null
+				},
+				"envMap": {
+					"value": null
+				},
+				"flipEnvMap": {
+					"value": -1
+				},
+				"reflectivity": {
+					"value": 1
+				},
+				"ior": {
+					"value": 1.5
+				},
+				"refractionRatio": {
+					"value": 0.98
+				},
+				"maxMipLevel": {
+					"value": 0
+				},
+				"aoMap": {
+					"value": null
+				},
+				"aoMapIntensity": {
+					"value": 1
+				},
+				"lightMap": {
+					"value": null
+				},
+				"lightMapIntensity": {
+					"value": 1
+				},
+				"emissiveMap": {
+					"value": null
+				},
+				"fogDensity": {
+					"value": 0.00025
+				},
+				"fogNear": {
+					"value": 1
+				},
+				"fogFar": {
+					"value": 2000
+				},
+				"fogColor": {
+					"type": "c",
+					"value": 16777215
+				},
+				"ambientLightColor": {
+					"value": []
+				},
+				"lightProbe": {
+					"value": []
+				},
+				"directionalLights": {
+					"value": []
+				},
+				"directionalLightShadows": {
+					"value": []
+				},
+				"directionalShadowMap": {
+					"value": []
+				},
+				"directionalShadowMatrix": {
+					"value": []
+				},
+				"spotLights": {
+					"value": []
+				},
+				"spotLightShadows": {
+					"value": []
+				},
+				"spotShadowMap": {
+					"value": []
+				},
+				"spotShadowMatrix": {
+					"value": []
+				},
+				"pointLights": {
+					"value": []
+				},
+				"pointLightShadows": {
+					"value": []
+				},
+				"pointShadowMap": {
+					"value": []
+				},
+				"pointShadowMatrix": {
+					"value": []
+				},
+				"hemisphereLights": {
+					"value": []
+				},
+				"rectAreaLights": {
+					"value": []
+				},
+				"ltc_1": {
+					"value": null
+				},
+				"ltc_2": {
+					"value": null
+				},
+				"emissive": {
+					"type": "c",
+					"value": 0
+				},
+				"v_POLY_texture1_": {
+					"value": null
+				}
+			},
+			"vertexShader": "\n#define LAMBERT\n\nvarying vec3 vLightFront;\nvarying vec3 vIndirectFront;\n\n#ifdef DOUBLE_SIDED\n\tvarying vec3 vLightBack;\n\tvarying vec3 vIndirectBack;\n#endif\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n\n\n\n#include <uv_pars_vertex>\n#include <uv2_pars_vertex>\n#include <envmap_pars_vertex>\n#include <bsdfs>\n#include <lights_pars_begin>\n#include <color_pars_vertex>\n#include <fog_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <shadowmap_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\t#include <uv2_vertex>\n\t#include <color_vertex>\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\n\tv_POLY_globals1_uv = vec2(uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\n// removed:\n//\t#include <beginnormal_vertex>\n\t#include <morphnormal_vertex>\n\t#include <skinbase_vertex>\n\t#include <skinnormal_vertex>\n\t#include <defaultnormal_vertex>\n\n// removed:\n//\t#include <begin_vertex>\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\n\t#include <worldpos_vertex>\n\t#include <envmap_vertex>\n\t#include <lights_lambert_vertex>\n\t#include <shadowmap_vertex>\n\t#include <fog_vertex>\n}\n",
+			"fragmentShader": "\nuniform vec3 diffuse;\nuniform vec3 emissive;\nuniform float opacity;\n\nvarying vec3 vLightFront;\nvarying vec3 vIndirectFront;\n\n#ifdef DOUBLE_SIDED\n\tvarying vec3 vLightBack;\n\tvarying vec3 vIndirectBack;\n#endif\n\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/texture1\nuniform sampler2D v_POLY_texture1_;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n\n\n\n#include <packing>\n#include <dithering_pars_fragment>\n#include <color_pars_fragment>\n#include <uv_pars_fragment>\n#include <uv2_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <aomap_pars_fragment>\n#include <lightmap_pars_fragment>\n#include <emissivemap_pars_fragment>\n#include <envmap_common_pars_fragment>\n#include <envmap_pars_fragment>\n#include <cube_uv_reflection_fragment>\n#include <bsdfs>\n#include <lights_pars_begin>\n#include <fog_pars_fragment>\n#include <shadowmap_pars_fragment>\n#include <shadowmask_pars_fragment>\n#include <specularmap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( diffuse, opacity );\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/texture1\n\tvec4 v_POLY_texture1_rgba = texture2D(v_POLY_texture1_, v_POLY_globals1_uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/colorCorrect1\n\tvec4 v_POLY_colorCorrect1_out = sRGBToLinear(v_POLY_texture1_rgba);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/vec4ToVec3_1\n\tvec3 v_POLY_vec4ToVec3_1_vec3 = v_POLY_colorCorrect1_out.xyz;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/output1\n\tdiffuseColor.xyz = v_POLY_vec4ToVec3_1_vec3;\n\n\n\n\tReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );\n\tvec3 totalEmissiveRadiance = emissive;\n\n\t#include <logdepthbuf_fragment>\n\t#include <map_fragment>\n\t#include <color_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\t#include <specularmap_fragment>\n\t#include <emissivemap_fragment>\n\n\t// accumulation\n\n\t#ifdef DOUBLE_SIDED\n\n\t\treflectedLight.indirectDiffuse += ( gl_FrontFacing ) ? vIndirectFront : vIndirectBack;\n\n\t#else\n\n\t\treflectedLight.indirectDiffuse += vIndirectFront;\n\n\t#endif\n\n\t#include <lightmap_fragment>\n\n\treflectedLight.indirectDiffuse *= BRDF_Lambert( diffuseColor.rgb );\n\n\t#ifdef DOUBLE_SIDED\n\n\t\treflectedLight.directDiffuse = ( gl_FrontFacing ) ? vLightFront : vLightBack;\n\n\t#else\n\n\t\treflectedLight.directDiffuse = vLightFront;\n\n\t#endif\n\n\treflectedLight.directDiffuse *= BRDF_Lambert( diffuseColor.rgb ) * getShadowMask();\n\n\t// modulation\n\n\t#include <aomap_fragment>\n\n\tvec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + totalEmissiveRadiance;\n\n\t#include <envmap_fragment>\n\n\t#include <output_fragment>\n\t#include <tonemapping_fragment>\n\t#include <encodings_fragment>\n\t#include <fog_fragment>\n\t#include <premultiplied_alpha_fragment>\n\t#include <dithering_fragment>\n}\n",
+			"shadowSide": null,
+			"lights": true
+		},
+		"uniforms_time_dependent": false,
+		"uniforms_resolution_dependent": false,
+		"param_uniform_pairs": [
+			[
+				"",
+				"v_POLY_texture1_"
+			]
+		],
+		"customMaterials": {
+			"customDistanceMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "/geo1/MAT/meshLambertBuilder_dinosaur1-customDistanceMaterial",
+				"type": "ShaderMaterial",
+				"name": "customDistanceMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"colorWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"diffuse": {
+						"type": "c",
+						"value": 16777215
+					},
+					"opacity": {
+						"value": 1
+					},
+					"map": {
+						"value": null
+					},
+					"uvTransform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"uv2Transform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"alphaMap": {
+						"value": null
+					},
+					"alphaTest": {
+						"value": 0
+					},
+					"displacementMap": {
+						"value": null
+					},
+					"displacementScale": {
+						"value": 1
+					},
+					"displacementBias": {
+						"value": 0
+					},
+					"referencePosition": {
+						"type": "v3",
+						"value": [
+							0,
+							0,
+							0
+						]
+					},
+					"nearDistance": {
+						"value": 1
+					},
+					"farDistance": {
+						"value": 1000
+					},
+					"v_POLY_texture1_": {
+						"value": null
+					}
+				},
+				"defines": {
+					"DEPTH_PACKING": 3201
+				},
+				"vertexShader": "\n#define DISTANCE\n\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\n\tv_POLY_globals1_uv = vec2(uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <worldpos_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvWorldPosition = worldPosition.xyz;\n\n}\n",
+				"fragmentShader": "\n#define DISTANCE\n\nuniform vec3 referencePosition;\nuniform float nearDistance;\nuniform float farDistance;\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/texture1\nuniform sampler2D v_POLY_texture1_;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main () {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\tfloat dist = length( vWorldPosition - referencePosition );\n\tdist = ( dist - nearDistance ) / ( farDistance - nearDistance );\n\tdist = saturate( dist ); // clamp to [ 0, 1 ]\n\n\tgl_FragColor = packDepthToRGBA( dist );\n\n\t// INSERT BODY\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/texture1\n\tvec4 v_POLY_texture1_rgba = texture2D(v_POLY_texture1_, v_POLY_globals1_uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/colorCorrect1\n\tvec4 v_POLY_colorCorrect1_out = sRGBToLinear(v_POLY_texture1_rgba);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/vec4ToVec3_1\n\tvec3 v_POLY_vec4ToVec3_1_vec3 = v_POLY_colorCorrect1_out.xyz;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/output1\n\tdiffuseColor.xyz = v_POLY_vec4ToVec3_1_vec3;\n\n\n\n\n\t// all this shader above the INSERT BODY line\n\t// is copied from the threejs ShaderLib.depth template fragment shader.\n\t// The line below is necessary to tie the alpha to the one that is computed by the gl nodes.\n\t// I'm not entirely sure why I need to negate diffuseColor.a with '1.0 -'\n\t// but it seems to be what make the shader match the alpha of the main material.\n\tgl_FragColor.a = 1.0 - diffuseColor.a;\n\n}\n",
+				"shadowSide": null,
+				"lights": false
+			},
+			"customDepthMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "/geo1/MAT/meshLambertBuilder_dinosaur1-customDepthMaterial",
+				"type": "ShaderMaterial",
+				"name": "customDepthMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"colorWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"diffuse": {
+						"type": "c",
+						"value": 16777215
+					},
+					"opacity": {
+						"value": 1
+					},
+					"map": {
+						"value": null
+					},
+					"uvTransform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"uv2Transform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"alphaMap": {
+						"value": null
+					},
+					"alphaTest": {
+						"value": 0
+					},
+					"displacementMap": {
+						"value": null
+					},
+					"displacementScale": {
+						"value": 1
+					},
+					"displacementBias": {
+						"value": 0
+					},
+					"v_POLY_texture1_": {
+						"value": null
+					}
+				},
+				"defines": {
+					"DEPTH_PACKING": 3201
+				},
+				"vertexShader": "\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\n// This is used for computing an equivalent of gl_FragCoord.z that is as high precision as possible.\n// Some platforms compute gl_FragCoord at a lower precision which makes the manually computed value better for\n// depth-based postprocessing effects. Reproduced on iPad with A10 processor / iPadOS 13.3.1.\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\n\tv_POLY_globals1_uv = vec2(uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvHighPrecisionZW = gl_Position.zw;\n\n}\n",
+				"fragmentShader": "// INSERT DEFINES\n\n\n#if DEPTH_PACKING == 3200\n\n\tuniform float opacity;\n\n#endif\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/texture1\nuniform sampler2D v_POLY_texture1_;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tdiffuseColor.a = opacity;\n\n\t#endif\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\t#include <logdepthbuf_fragment>\n\n\t// Higher precision equivalent of gl_FragCoord.z. This assumes depthRange has been left to its default values.\n\tfloat fragCoordZ = 0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5;\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tgl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );\n\n\t#elif DEPTH_PACKING == 3201\n\n\t\tgl_FragColor = packDepthToRGBA( fragCoordZ );\n\n\t#endif\n\n\t// INSERT BODY\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/texture1\n\tvec4 v_POLY_texture1_rgba = texture2D(v_POLY_texture1_, v_POLY_globals1_uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/colorCorrect1\n\tvec4 v_POLY_colorCorrect1_out = sRGBToLinear(v_POLY_texture1_rgba);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/vec4ToVec3_1\n\tvec3 v_POLY_vec4ToVec3_1_vec3 = v_POLY_colorCorrect1_out.xyz;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/output1\n\tdiffuseColor.xyz = v_POLY_vec4ToVec3_1_vec3;\n\n\n\n\n\t// all this shader above the INSERT BODY line\n\t// is copied from the threejs ShaderLib.depth template fragment shader.\n\t// The line below is necessary to tie the alpha to the one that is computed by the gl nodes.\n\t// I'm not entirely sure why I need to negate diffuseColor.a with '1.0 -'\n\t// but it seems to be what make the shader match the alpha of the main material.\n\tgl_FragColor.a = 1.0 - diffuseColor.a;\n\n}\n",
+				"shadowSide": null,
+				"lights": false
+			},
+			"customDepthDOFMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "/geo1/MAT/meshLambertBuilder_dinosaur1-customDepthDOFMaterial",
+				"type": "ShaderMaterial",
+				"name": "customDepthDOFMaterial",
+				"transparent": true,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"colorWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"mNear": {
+						"value": 0
+					},
+					"mFar": {
+						"value": 10
+					},
+					"v_POLY_texture1_": {
+						"value": null
+					}
+				},
+				"vertexShader": "#include <common>\n\nvarying float vViewZDepth;\n\n// INSERT DEFINES\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n\n\n\n\n\n\nvoid main() {\n\n\t// INSERT BODY\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\n\tv_POLY_globals1_uv = vec2(uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/output1\n\tvec3 transformed = position;\n\tvec3 objectNormal = normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\n\n\t#include <project_vertex>\n\n\tvViewZDepth = - mvPosition.z;\n}",
+				"fragmentShader": "uniform float mNear;\nuniform float mFar;\n\nvarying float vViewZDepth;\n\n// INSERT DEFINES\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/texture1\nuniform sampler2D v_POLY_texture1_;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur1/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n\n\n\n\nvoid main() {\n\n\tfloat color = 1.0 - smoothstep( mNear, mFar, vViewZDepth );\n\tgl_FragColor = vec4( vec3( color ), 1.0 );\n\tvec4 diffuseColor = gl_FragColor;\n\n\t// INSERT BODY\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/texture1\n\tvec4 v_POLY_texture1_rgba = texture2D(v_POLY_texture1_, v_POLY_globals1_uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/colorCorrect1\n\tvec4 v_POLY_colorCorrect1_out = sRGBToLinear(v_POLY_texture1_rgba);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/vec4ToVec3_1\n\tvec3 v_POLY_vec4ToVec3_1_vec3 = v_POLY_colorCorrect1_out.xyz;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur1/output1\n\tdiffuseColor.xyz = v_POLY_vec4ToVec3_1_vec3;\n\n\n\n\n\tgl_FragColor.a = diffuseColor.a;\n}\n",
+				"shadowSide": null,
+				"lights": false
+			}
+		}
+	}
+}

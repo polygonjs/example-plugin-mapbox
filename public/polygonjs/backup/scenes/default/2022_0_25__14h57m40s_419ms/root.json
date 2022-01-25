@@ -1,0 +1,18 @@
+{
+	"type": "obj",
+	"nodes": {
+		"mapboxCamera1": {
+			"type": "mapboxCamera",
+			"params": {
+				"bearing": 309.6,
+				"tlayerBuildings": 1
+			}
+		},
+		"hemisphereLight1": {
+			"type": "hemisphereLight",
+			"flags": {
+				"display": true
+			}
+		}
+	}
+}

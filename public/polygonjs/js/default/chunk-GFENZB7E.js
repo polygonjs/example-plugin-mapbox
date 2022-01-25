@@ -1,0 +1,1 @@
+var r=(L=>(L.BasisTextureLoader="BasisTextureLoader",L.DRACOLoader="DRACOLoader",L.EXRLoader="EXRLoader",L.FBXLoader="FBXLoader",L.GLTFLoader="GLTFLoader",L.LDrawLoader="LDrawLoader",L.OBJLoader="OBJLoader",L.PDBLoader="PDBLoader",L.PLYLoader="PLYLoader",L.RGBELoader="RGBELoader",L.SVGLoader="SVGLoader",L.STLLoader="STLLoader",L.TTFLoader="TTFLoader",L))(r||{});export{r as a};

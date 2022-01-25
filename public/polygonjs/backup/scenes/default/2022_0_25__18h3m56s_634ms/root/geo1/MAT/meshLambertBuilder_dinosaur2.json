@@ -1,0 +1,1480 @@
+{
+	"type": "meshLambertBuilder",
+	"nodes": {
+		"colorCorrect1": {
+			"type": "colorCorrect",
+			"params": {
+				"from": 2,
+				"to": 0
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "texture1",
+					"output": "rgba"
+				}
+			]
+		},
+		"globals1": {
+			"type": "globals"
+		},
+		"output1": {
+			"type": "output",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "instanceTransform1",
+					"output": "position"
+				},
+				{
+					"index": 1,
+					"node": "instanceTransform1",
+					"output": "normal"
+				},
+				{
+					"index": 2,
+					"node": "vec4ToVec3_1",
+					"output": "vec3"
+				},
+				{
+					"index": 3,
+					"node": "twoWaySwitch1",
+					"output": "val"
+				}
+			]
+		},
+		"texture1": {
+			"type": "texture",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals1",
+					"output": "uv"
+				}
+			]
+		},
+		"vec4ToVec3_1": {
+			"type": "vec4ToVec3",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "colorCorrect1",
+					"output": "out"
+				}
+			]
+		},
+		"instanceTransform1": {
+			"type": "instanceTransform",
+			"inputs": [
+				null,
+				null,
+				null,
+				null,
+				{
+					"index": 4,
+					"node": "floatToVec3_1",
+					"output": "vec3"
+				}
+			]
+		},
+		"attribute1": {
+			"type": "attribute",
+			"params": {
+				"name": "id"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"floatToVec2_1": {
+			"type": "floatToVec2",
+			"params": {
+				"y": 56
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "round1",
+					"output": "val"
+				}
+			]
+		},
+		"round1": {
+			"type": "round",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"random1": {
+			"type": "random",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "floatToVec2_1",
+					"output": "vec2"
+				}
+			]
+		},
+		"fitFrom01ToVariance1": {
+			"type": "fitFrom01ToVariance",
+			"params": {
+				"val": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"center": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 1
+				},
+				"variance": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 0.34
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "random1",
+					"output": "rand"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "float"
+					},
+					{
+						"name": "center",
+						"type": "float"
+					},
+					{
+						"name": "variance",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"floatToVec3_1": {
+			"type": "floatToVec3",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "fitFrom01ToVariance1",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "fitFrom01ToVariance1",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"node": "fitFrom01ToVariance1",
+					"output": "val"
+				}
+			]
+		},
+		"vec3ToFloat1": {
+			"type": "vec3ToFloat",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute2",
+					"output": "val"
+				}
+			]
+		},
+		"attribute2": {
+			"type": "attribute",
+			"params": {
+				"name": "restP",
+				"type": 2
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		},
+		"twoWaySwitch1": {
+			"type": "twoWaySwitch",
+			"params": {
+				"condition": {
+					"type": "boolean",
+					"default_value": false,
+					"options": {
+						"spare": true
+					}
+				},
+				"ifTrue": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"ifFalse": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 1
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "compare2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "condition",
+						"type": "bool"
+					},
+					{
+						"name": "ifTrue",
+						"type": "float"
+					},
+					{
+						"name": "ifFalse",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"compare1": {
+			"type": "compare",
+			"params": {
+				"test": 1,
+				"value0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"value1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 1
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "vec3ToFloat1",
+					"output": "y"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "float"
+					},
+					{
+						"name": "value1",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "bool"
+					}
+				]
+			}
+		},
+		"attribute3": {
+			"type": "attribute",
+			"params": {
+				"name": "dist"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"globals2": {
+			"type": "globals"
+		},
+		"multAdd1": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "globals2",
+					"output": "time"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"compare2": {
+			"type": "compare",
+			"params": {
+				"test": 2,
+				"value0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"value1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "add1",
+					"output": "sum"
+				},
+				{
+					"index": 1,
+					"node": "multAdd1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value0",
+						"type": "float"
+					},
+					{
+						"name": "value1",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "bool"
+					}
+				]
+			}
+		},
+		"add1": {
+			"type": "add",
+			"params": {
+				"add0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add2": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "multAdd2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "multAdd5",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "add0",
+						"type": "float"
+					},
+					{
+						"name": "add1",
+						"type": "float"
+					},
+					{
+						"name": "add2",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "sum",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd2": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					},
+					"raw_input": -0.30000000000000004
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "vec3ToFloat1",
+					"output": "z"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd3": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 4.6
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute3",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"attribute4": {
+			"type": "attribute",
+			"params": {
+				"name": "id"
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"floatToVec2_2": {
+			"type": "floatToVec2",
+			"params": {
+				"y": 56
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "round2",
+					"output": "val"
+				}
+			]
+		},
+		"round2": {
+			"type": "round",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "attribute4",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"random2": {
+			"type": "random",
+			"inputs": [
+				{
+					"index": 0,
+					"node": "floatToVec2_2",
+					"output": "vec2"
+				}
+			]
+		},
+		"fitFrom01ToVariance2": {
+			"type": "fitFrom01ToVariance",
+			"params": {
+				"val": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"center": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 0
+				},
+				"variance": {
+					"type": "float",
+					"default_value": 0.5,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 1
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "random2",
+					"output": "rand"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "float"
+					},
+					{
+						"name": "center",
+						"type": "float"
+					},
+					{
+						"name": "variance",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"add2": {
+			"type": "add",
+			"params": {
+				"add0": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add1": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"add2": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"node": "multAdd3",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"node": "multAdd4",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "add0",
+						"type": "float"
+					},
+					{
+						"name": "add1",
+						"type": "float"
+					},
+					{
+						"name": "add2",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "sum",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd4": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "fitFrom01ToVariance2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd5": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true
+					},
+					"raw_input": 0.9
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"node": "add2",
+					"output": "sum"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		}
+	},
+	"params": {
+		"transparent": 1,
+		"textureMap": {
+			"type": "node_path",
+			"default_value": "/COP/imageUv",
+			"options": {
+				"nodeSelection": {
+					"context": "cop"
+				},
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false
+			},
+			"raw_input": "/COP/dinosaur2",
+			"overriden_options": {
+				"spare": "true",
+				"computeOnDirty": "true",
+				"cook": "false",
+				"callback": "{}"
+			}
+		},
+		"": {
+			"type": "node_path",
+			"default_value": "",
+			"options": {
+				"nodeSelection": {
+					"context": "cop"
+				},
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false,
+				"dependentOnFoundNode": true
+			}
+		}
+	},
+	"persisted_config": {
+		"material": {
+			"metadata": {
+				"version": 4.5,
+				"type": "Material",
+				"generator": "Material.toJSON"
+			},
+			"uuid": "/geo1/MAT/meshLambertBuilder_dinosaur2-main",
+			"type": "ShaderMaterial",
+			"name": "/geo1/MAT/meshLambertBuilder_dinosaur2",
+			"transparent": true,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"colorWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680,
+			"glslVersion": null,
+			"uniforms": {
+				"diffuse": {
+					"type": "c",
+					"value": 16777215
+				},
+				"opacity": {
+					"value": 1
+				},
+				"map": {
+					"value": null
+				},
+				"uvTransform": {
+					"type": "m3",
+					"value": [
+						1,
+						0,
+						0,
+						0,
+						1,
+						0,
+						0,
+						0,
+						1
+					]
+				},
+				"uv2Transform": {
+					"type": "m3",
+					"value": [
+						1,
+						0,
+						0,
+						0,
+						1,
+						0,
+						0,
+						0,
+						1
+					]
+				},
+				"alphaMap": {
+					"value": null
+				},
+				"alphaTest": {
+					"value": 0
+				},
+				"specularMap": {
+					"value": null
+				},
+				"envMap": {
+					"value": null
+				},
+				"flipEnvMap": {
+					"value": -1
+				},
+				"reflectivity": {
+					"value": 1
+				},
+				"ior": {
+					"value": 1.5
+				},
+				"refractionRatio": {
+					"value": 0.98
+				},
+				"maxMipLevel": {
+					"value": 0
+				},
+				"aoMap": {
+					"value": null
+				},
+				"aoMapIntensity": {
+					"value": 1
+				},
+				"lightMap": {
+					"value": null
+				},
+				"lightMapIntensity": {
+					"value": 1
+				},
+				"emissiveMap": {
+					"value": null
+				},
+				"fogDensity": {
+					"value": 0.00025
+				},
+				"fogNear": {
+					"value": 1
+				},
+				"fogFar": {
+					"value": 2000
+				},
+				"fogColor": {
+					"type": "c",
+					"value": 16777215
+				},
+				"ambientLightColor": {
+					"value": []
+				},
+				"lightProbe": {
+					"value": []
+				},
+				"directionalLights": {
+					"value": []
+				},
+				"directionalLightShadows": {
+					"value": []
+				},
+				"directionalShadowMap": {
+					"value": []
+				},
+				"directionalShadowMatrix": {
+					"value": []
+				},
+				"spotLights": {
+					"value": []
+				},
+				"spotLightShadows": {
+					"value": []
+				},
+				"spotShadowMap": {
+					"value": []
+				},
+				"spotShadowMatrix": {
+					"value": []
+				},
+				"pointLights": {
+					"value": []
+				},
+				"pointLightShadows": {
+					"value": []
+				},
+				"pointShadowMap": {
+					"value": []
+				},
+				"pointShadowMatrix": {
+					"value": []
+				},
+				"hemisphereLights": {
+					"value": []
+				},
+				"rectAreaLights": {
+					"value": []
+				},
+				"ltc_1": {
+					"value": null
+				},
+				"ltc_2": {
+					"value": null
+				},
+				"emissive": {
+					"type": "c",
+					"value": 0
+				},
+				"v_POLY_texture1_": {
+					"value": null
+				},
+				"time": {
+					"value": 1.1166666666666667
+				}
+			},
+			"vertexShader": "\n#define LAMBERT\n\nvarying vec3 vLightFront;\nvarying vec3 vIndirectFront;\n\n#ifdef DOUBLE_SIDED\n\tvarying vec3 vLightBack;\n\tvarying vec3 vIndirectBack;\n#endif\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance1\n//\n//\n// FIT\n//\n//\nfloat fit(float val, float srcMin, float srcMax, float destMin, float destMax){\n\tfloat src_range = srcMax - srcMin;\n\tfloat dest_range = destMax - destMin;\n\n\tfloat r = (val - srcMin) / src_range;\n\treturn (r * dest_range) + destMin;\n}\nvec2 fit(vec2 val, vec2 srcMin, vec2 srcMax, vec2 destMin, vec2 destMax){\n\treturn vec2(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y)\n\t);\n}\nvec3 fit(vec3 val, vec3 srcMin, vec3 srcMax, vec3 destMin, vec3 destMax){\n\treturn vec3(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z)\n\t);\n}\nvec4 fit(vec4 val, vec4 srcMin, vec4 srcMax, vec4 destMin, vec4 destMax){\n\treturn vec4(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z),\n\t\tfit(val.w, srcMin.w, srcMax.w, destMin.w, destMax.w)\n\t);\n}\n\n//\n//\n// FIT TO 01\n// fits the range [srcMin, srcMax] to [0, 1]\n//\nfloat fitTo01(float val, float srcMin, float srcMax){\n\tfloat size = srcMax - srcMin;\n\treturn (val - srcMin) / size;\n}\nvec2 fitTo01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitTo01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitTo01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z),\n\t\tfitTo01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01\n// fits the range [0, 1] to [destMin, destMax]\n//\nfloat fitFrom01(float val, float destMin, float destMax){\n\treturn fit(val, 0.0, 1.0, destMin, destMax);\n}\nvec2 fitFrom01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitFrom01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitFrom01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z),\n\t\tfitFrom01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01 TO VARIANCE\n// fits the range [0, 1] to [center - variance, center + variance]\n//\nfloat fitFrom01ToVariance(float val, float center, float variance){\n\treturn fitFrom01(val, center - variance, center + variance);\n}\nvec2 fitFrom01ToVariance(vec2 val, vec2 center, vec2 variance){\n\treturn vec2(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y)\n\t);\n}\nvec3 fitFrom01ToVariance(vec3 val, vec3 center, vec3 variance){\n\treturn vec3(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z)\n\t);\n}\nvec4 fitFrom01ToVariance(vec4 val, vec4 center, vec4 variance){\n\treturn vec4(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z),\n\t\tfitFrom01ToVariance(val.w, center.w, variance.w)\n\t);\n}\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\n\n\n// https://github.com/mattatz/ShibuyaCrowd/blob/master/source/shaders/common/quaternion.glsl\nvec4 quatMult(vec4 q1, vec4 q2)\n{\n\treturn vec4(\n\tq1.w * q2.x + q1.x * q2.w + q1.z * q2.y - q1.y * q2.z,\n\tq1.w * q2.y + q1.y * q2.w + q1.x * q2.z - q1.z * q2.x,\n\tq1.w * q2.z + q1.z * q2.w + q1.y * q2.x - q1.x * q2.y,\n\tq1.w * q2.w - q1.x * q2.x - q1.y * q2.y - q1.z * q2.z\n\t);\n}\n// http://glmatrix.net/docs/quat.js.html#line97\n//   let ax = a[0], ay = a[1], az = a[2], aw = a[3];\n\n//   let bx = b[0], by = b[1], bz = b[2], bw = b[3];\n\n//   out[0] = ax * bw + aw * bx + ay * bz - az * by;\n\n//   out[1] = ay * bw + aw * by + az * bx - ax * bz;\n\n//   out[2] = az * bw + aw * bz + ax * by - ay * bx;\n\n//   out[3] = aw * bw - ax * bx - ay * by - az * bz;\n\n//   return out\n\n\n\n// http://www.neilmendoza.com/glsl-rotation-about-an-arbitrary-axis/\nmat4 rotationMatrix(vec3 axis, float angle)\n{\n\taxis = normalize(axis);\n\tfloat s = sin(angle);\n\tfloat c = cos(angle);\n\tfloat oc = 1.0 - c;\n\n \treturn mat4(oc * axis.x * axis.x + c, oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s, 0.0, oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c, oc * axis.y * axis.z - axis.x * s,  0.0, oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c, 0.0, 0.0, 0.0, 0.0, 1.0);\n}\n\n// https://www.geeks3d.com/20141201/how-to-rotate-a-vertex-by-a-quaternion-in-glsl/\nvec4 quatFromAxisAngle(vec3 axis, float angle)\n{\n\tvec4 qr;\n\tfloat half_angle = (angle * 0.5); // * 3.14159 / 180.0;\n\tfloat sin_half_angle = sin(half_angle);\n\tqr.x = axis.x * sin_half_angle;\n\tqr.y = axis.y * sin_half_angle;\n\tqr.z = axis.z * sin_half_angle;\n\tqr.w = cos(half_angle);\n\treturn qr;\n}\nvec3 rotateWithAxisAngle(vec3 position, vec3 axis, float angle)\n{\n\tvec4 q = quatFromAxisAngle(axis, angle);\n\tvec3 v = position.xyz;\n\treturn v + 2.0 * cross(q.xyz, cross(q.xyz, v) + q.w * v);\n}\n// vec3 applyQuaternionToVector( vec4 q, vec3 v ){\n// \treturn v + 2.0 * cross( q.xyz, cross( q.xyz, v ) + q.w * v );\n// }\nvec3 rotateWithQuat( vec3 v, vec4 q )\n{\n\t// vec4 qv = multQuat( quat, vec4(vec, 0.0) );\n\t// return multQuat( qv, vec4(-quat.x, -quat.y, -quat.z, quat.w) ).xyz;\n\treturn v + 2.0 * cross( q.xyz, cross( q.xyz, v ) + q.w * v );\n}\n// https://github.com/glslify/glsl-look-at/blob/gh-pages/index.glsl\n// mat3 rotation_matrix(vec3 origin, vec3 target, float roll) {\n// \tvec3 rr = vec3(sin(roll), cos(roll), 0.0);\n// \tvec3 ww = normalize(target - origin);\n// \tvec3 uu = normalize(cross(ww, rr));\n// \tvec3 vv = normalize(cross(uu, ww));\n\n// \treturn mat3(uu, vv, ww);\n// }\n// mat3 rotation_matrix(vec3 target, float roll) {\n// \tvec3 rr = vec3(sin(roll), cos(roll), 0.0);\n// \tvec3 ww = normalize(target);\n// \tvec3 uu = normalize(cross(ww, rr));\n// \tvec3 vv = normalize(cross(uu, ww));\n\n// \treturn mat3(uu, vv, ww);\n// }\n\nfloat vectorAngle(vec3 start, vec3 dest){\n\tstart = normalize(start);\n\tdest = normalize(dest);\n\n\tfloat cosTheta = dot(start, dest);\n\tvec3 c1 = cross(start, dest);\n\t// We use the dot product of the cross with the Y axis.\n\t// This is a little arbitrary, but can still give a good sense of direction\n\tvec3 y_axis = vec3(0.0, 1.0, 0.0);\n\tfloat d1 = dot(c1, y_axis);\n\tfloat angle = acos(cosTheta) * sign(d1);\n\treturn angle;\n}\n\n// http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-17-quaternions/#i-need-an-equivalent-of-glulookat-how-do-i-orient-an-object-towards-a-point-\nvec4 vectorAlign(vec3 start, vec3 dest){\n\tstart = normalize(start);\n\tdest = normalize(dest);\n\n\tfloat cosTheta = dot(start, dest);\n\tvec3 axis;\n\n\t// if (cosTheta < -1 + 0.001f){\n\t// \t// special case when vectors in opposite directions:\n\t// \t// there is no ideal rotation axis\n\t// \t// So guess one; any will do as long as it's perpendicular to start\n\t// \taxis = cross(vec3(0.0f, 0.0f, 1.0f), start);\n\t// \tif (length2(axis) < 0.01 ) // bad luck, they were parallel, try again!\n\t// \t\taxis = cross(vec3(1.0f, 0.0f, 0.0f), start);\n\n\t// \taxis = normalize(axis);\n\t// \treturn gtx::quaternion::angleAxis(glm::radians(180.0f), axis);\n\t// }\n\tif(cosTheta > (1.0 - 0.0001) || cosTheta < (-1.0 + 0.0001) ){\n\t\taxis = normalize(cross(start, vec3(0.0, 1.0, 0.0)));\n\t\tif (length(axis) < 0.001 ){ // bad luck, they were parallel, try again!\n\t\t\taxis = normalize(cross(start, vec3(1.0, 0.0, 0.0)));\n\t\t}\n\t} else {\n\t\taxis = normalize(cross(start, dest));\n\t}\n\n\tfloat angle = acos(cosTheta);\n\n\treturn quatFromAxisAngle(axis, angle);\n}\nvec4 vectorAlignWithUp(vec3 start, vec3 dest, vec3 up){\n\tvec4 rot1 = vectorAlign(start, dest);\n\tup = normalize(up);\n\n\t// Recompute desiredUp so that it's perpendicular to the direction\n\t// You can skip that part if you really want to force desiredUp\n\t// vec3 right = normalize(cross(dest, up));\n\t// up = normalize(cross(right, dest));\n\n\t// Because of the 1rst rotation, the up is probably completely screwed up.\n\t// Find the rotation between the up of the rotated object, and the desired up\n\tvec3 newUp = rotateWithQuat(vec3(0.0, 1.0, 0.0), rot1);//rot1 * vec3(0.0, 1.0, 0.0);\n\tvec4 rot2 = vectorAlign(up, newUp);\n\n\t// return rot1;\n\treturn rot2;\n\t// return multQuat(rot1, rot2);\n\t// return rot2 * rot1;\n\n}\n\n// https://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToAngle/index.htm\nfloat quatToAngle(vec4 q){\n\treturn 2.0 * acos(q.w);\n}\nvec3 quatToAxis(vec4 q){\n\treturn vec3(\n\t\tq.x / sqrt(1.0-q.w*q.w),\n\t\tq.y / sqrt(1.0-q.w*q.w),\n\t\tq.z / sqrt(1.0-q.w*q.w)\n\t);\n}\n\nvec4 align(vec3 dir, vec3 up){\n\tvec3 start_dir = vec3(0.0, 0.0, 1.0);\n\tvec3 start_up = vec3(0.0, 1.0, 0.0);\n\tvec4 rot1 = vectorAlign(start_dir, dir);\n\tup = normalize(up);\n\n\t// Recompute desiredUp so that it's perpendicular to the direction\n\t// You can skip that part if you really want to force desiredUp\n\tvec3 right = normalize(cross(dir, up));\n\tif(length(right)<0.001){\n\t\tright = vec3(1.0, 0.0, 0.0);\n\t}\n\tup = normalize(cross(right, dir));\n\n\t// Because of the 1rst rotation, the up is probably completely screwed up.\n\t// Find the rotation between the up of the rotated object, and the desired up\n\tvec3 newUp = rotateWithQuat(start_up, rot1);//rot1 * vec3(0.0, 1.0, 0.0);\n\tvec4 rot2 = vectorAlign(normalize(newUp), up);\n\n\t// return rot1;\n\treturn quatMult(rot1, rot2);\n\t// return rot2 * rot1;\n\n}\n\n\n\n\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\nuniform float time;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nvarying vec3 varying_v_POLY_attribute2_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\nvarying float varying_v_POLY_attribute4_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute1\nattribute float id;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nattribute vec3 restP;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nattribute float dist;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\nattribute vec3 instancePosition;\nattribute vec4 instanceOrientation;\n\n\n\n\n#include <uv_pars_vertex>\n#include <uv2_pars_vertex>\n#include <envmap_pars_vertex>\n#include <bsdfs>\n#include <lights_pars_begin>\n#include <color_pars_vertex>\n#include <fog_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <shadowmap_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\t#include <uv2_vertex>\n\t#include <color_vertex>\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute1\n\tfloat v_POLY_attribute1_val = id;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\n\tv_POLY_globals1_uv = vec2(uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\n\tvarying_v_POLY_attribute2_val = vec3(restP);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\n\tvarying_v_POLY_attribute3_val = float(dist);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\n\tvarying_v_POLY_attribute4_val = float(id);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\n\tfloat v_POLY_globals2_time = time;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 56.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance1\n\tfloat v_POLY_fitFrom01ToVariance1_val = fitFrom01ToVariance(v_POLY_random1_rand, 1.0, 0.34);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_fitFrom01ToVariance1_val, v_POLY_fitFrom01ToVariance1_val, v_POLY_fitFrom01ToVariance1_val);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\n\tvec3 v_POLY_instanceTransform1_position = vec3(position);\n\tv_POLY_instanceTransform1_position *= v_POLY_floatToVec3_1_vec3;\n\tv_POLY_instanceTransform1_position = rotateWithQuat( v_POLY_instanceTransform1_position, instanceOrientation );\n\tv_POLY_instanceTransform1_position += instancePosition;\n\tvec3 v_POLY_instanceTransform1_normal = vec3(normal);\n\tv_POLY_instanceTransform1_normal = rotateWithQuat( v_POLY_instanceTransform1_normal, instanceOrientation );\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/output1\n\tvec3 transformed = v_POLY_instanceTransform1_position;\n\tvec3 objectNormal = v_POLY_instanceTransform1_normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\n// removed:\n//\t#include <beginnormal_vertex>\n\t#include <morphnormal_vertex>\n\t#include <skinbase_vertex>\n\t#include <skinnormal_vertex>\n\t#include <defaultnormal_vertex>\n\n// removed:\n//\t#include <begin_vertex>\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\n\t#include <worldpos_vertex>\n\t#include <envmap_vertex>\n\t#include <lights_lambert_vertex>\n\t#include <shadowmap_vertex>\n\t#include <fog_vertex>\n}\n",
+			"fragmentShader": "\nuniform vec3 diffuse;\nuniform vec3 emissive;\nuniform float opacity;\n\nvarying vec3 vLightFront;\nvarying vec3 vIndirectFront;\n\n#ifdef DOUBLE_SIDED\n\tvarying vec3 vLightBack;\n\tvarying vec3 vIndirectBack;\n#endif\n\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance2\n//\n//\n// FIT\n//\n//\nfloat fit(float val, float srcMin, float srcMax, float destMin, float destMax){\n\tfloat src_range = srcMax - srcMin;\n\tfloat dest_range = destMax - destMin;\n\n\tfloat r = (val - srcMin) / src_range;\n\treturn (r * dest_range) + destMin;\n}\nvec2 fit(vec2 val, vec2 srcMin, vec2 srcMax, vec2 destMin, vec2 destMax){\n\treturn vec2(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y)\n\t);\n}\nvec3 fit(vec3 val, vec3 srcMin, vec3 srcMax, vec3 destMin, vec3 destMax){\n\treturn vec3(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z)\n\t);\n}\nvec4 fit(vec4 val, vec4 srcMin, vec4 srcMax, vec4 destMin, vec4 destMax){\n\treturn vec4(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z),\n\t\tfit(val.w, srcMin.w, srcMax.w, destMin.w, destMax.w)\n\t);\n}\n\n//\n//\n// FIT TO 01\n// fits the range [srcMin, srcMax] to [0, 1]\n//\nfloat fitTo01(float val, float srcMin, float srcMax){\n\tfloat size = srcMax - srcMin;\n\treturn (val - srcMin) / size;\n}\nvec2 fitTo01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitTo01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitTo01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z),\n\t\tfitTo01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01\n// fits the range [0, 1] to [destMin, destMax]\n//\nfloat fitFrom01(float val, float destMin, float destMax){\n\treturn fit(val, 0.0, 1.0, destMin, destMax);\n}\nvec2 fitFrom01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitFrom01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitFrom01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z),\n\t\tfitFrom01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01 TO VARIANCE\n// fits the range [0, 1] to [center - variance, center + variance]\n//\nfloat fitFrom01ToVariance(float val, float center, float variance){\n\treturn fitFrom01(val, center - variance, center + variance);\n}\nvec2 fitFrom01ToVariance(vec2 val, vec2 center, vec2 variance){\n\treturn vec2(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y)\n\t);\n}\nvec3 fitFrom01ToVariance(vec3 val, vec3 center, vec3 variance){\n\treturn vec3(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z)\n\t);\n}\nvec4 fitFrom01ToVariance(vec4 val, vec4 center, vec4 variance){\n\treturn vec4(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z),\n\t\tfitFrom01ToVariance(val.w, center.w, variance.w)\n\t);\n}\n\n\n\n\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\nuniform float time;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/texture1\nuniform sampler2D v_POLY_texture1_;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nvarying vec3 varying_v_POLY_attribute2_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\nvarying float varying_v_POLY_attribute4_val;\n\n\n\n\n#include <packing>\n#include <dithering_pars_fragment>\n#include <color_pars_fragment>\n#include <uv_pars_fragment>\n#include <uv2_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <aomap_pars_fragment>\n#include <lightmap_pars_fragment>\n#include <emissivemap_pars_fragment>\n#include <envmap_common_pars_fragment>\n#include <envmap_pars_fragment>\n#include <cube_uv_reflection_fragment>\n#include <bsdfs>\n#include <lights_pars_begin>\n#include <fog_pars_fragment>\n#include <shadowmap_pars_fragment>\n#include <shadowmask_pars_fragment>\n#include <specularmap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( diffuse, opacity );\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\n\tvec3 v_POLY_attribute2_val = varying_v_POLY_attribute2_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\n\tfloat v_POLY_attribute3_val = varying_v_POLY_attribute3_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\n\tfloat v_POLY_attribute4_val = varying_v_POLY_attribute4_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\n\tfloat v_POLY_globals2_time = time;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/texture1\n\tvec4 v_POLY_texture1_rgba = texture2D(v_POLY_texture1_, v_POLY_globals1_uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/vec3ToFloat1\n\tfloat v_POLY_vec3ToFloat1_y = v_POLY_attribute2_val.y;\n\tfloat v_POLY_vec3ToFloat1_z = v_POLY_attribute2_val.z;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd3\n\tfloat v_POLY_multAdd3_val = (4.6*(v_POLY_attribute3_val + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/round2\n\tfloat v_POLY_round2_val = sign(v_POLY_attribute4_val)*floor(abs(v_POLY_attribute4_val)+0.5);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd1\n\tfloat v_POLY_multAdd1_val = (1.0*(v_POLY_globals2_time + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/colorCorrect1\n\tvec4 v_POLY_colorCorrect1_out = sRGBToLinear(v_POLY_texture1_rgba);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd2\n\tfloat v_POLY_multAdd2_val = (-0.30000000000000004*(v_POLY_vec3ToFloat1_z + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec2_2\n\tvec2 v_POLY_floatToVec2_2_vec2 = vec2(v_POLY_round2_val, 56.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/vec4ToVec3_1\n\tvec3 v_POLY_vec4ToVec3_1_vec3 = v_POLY_colorCorrect1_out.xyz;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/random2\n\tfloat v_POLY_random2_rand = rand(v_POLY_floatToVec2_2_vec2);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance2\n\tfloat v_POLY_fitFrom01ToVariance2_val = fitFrom01ToVariance(v_POLY_random2_rand, 0.0, 1.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd4\n\tfloat v_POLY_multAdd4_val = (1.0*(v_POLY_fitFrom01ToVariance2_val + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/add2\n\tfloat v_POLY_add2_sum = (v_POLY_multAdd3_val + v_POLY_multAdd4_val + 0.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd5\n\tfloat v_POLY_multAdd5_val = (1.0*(v_POLY_add2_sum + 0.0)) + 0.9;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/add1\n\tfloat v_POLY_add1_sum = (v_POLY_multAdd2_val + v_POLY_multAdd5_val + 0.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/compare2\n\tbool v_POLY_compare2_val = (v_POLY_add1_sum > v_POLY_multAdd1_val);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/twoWaySwitch1\n\tfloat v_POLY_twoWaySwitch1_val;\n\tif(v_POLY_compare2_val){\n\tv_POLY_twoWaySwitch1_val = 0.0;\n\t} else {\n\tv_POLY_twoWaySwitch1_val = 1.0;\n\t}\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/output1\n\tdiffuseColor.xyz = v_POLY_vec4ToVec3_1_vec3;\n\tdiffuseColor.a = v_POLY_twoWaySwitch1_val;\n\n\n\n\tReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );\n\tvec3 totalEmissiveRadiance = emissive;\n\n\t#include <logdepthbuf_fragment>\n\t#include <map_fragment>\n\t#include <color_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\t#include <specularmap_fragment>\n\t#include <emissivemap_fragment>\n\n\t// accumulation\n\n\t#ifdef DOUBLE_SIDED\n\n\t\treflectedLight.indirectDiffuse += ( gl_FrontFacing ) ? vIndirectFront : vIndirectBack;\n\n\t#else\n\n\t\treflectedLight.indirectDiffuse += vIndirectFront;\n\n\t#endif\n\n\t#include <lightmap_fragment>\n\n\treflectedLight.indirectDiffuse *= BRDF_Lambert( diffuseColor.rgb );\n\n\t#ifdef DOUBLE_SIDED\n\n\t\treflectedLight.directDiffuse = ( gl_FrontFacing ) ? vLightFront : vLightBack;\n\n\t#else\n\n\t\treflectedLight.directDiffuse = vLightFront;\n\n\t#endif\n\n\treflectedLight.directDiffuse *= BRDF_Lambert( diffuseColor.rgb ) * getShadowMask();\n\n\t// modulation\n\n\t#include <aomap_fragment>\n\n\tvec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + totalEmissiveRadiance;\n\n\t#include <envmap_fragment>\n\n\t#include <output_fragment>\n\t#include <tonemapping_fragment>\n\t#include <encodings_fragment>\n\t#include <fog_fragment>\n\t#include <premultiplied_alpha_fragment>\n\t#include <dithering_fragment>\n}\n",
+			"shadowSide": null,
+			"lights": true
+		},
+		"uniforms_time_dependent": true,
+		"uniforms_resolution_dependent": false,
+		"param_uniform_pairs": [
+			[
+				"",
+				"v_POLY_texture1_"
+			]
+		],
+		"customMaterials": {
+			"customDistanceMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "/geo1/MAT/meshLambertBuilder_dinosaur2-customDistanceMaterial",
+				"type": "ShaderMaterial",
+				"name": "customDistanceMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"colorWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"diffuse": {
+						"type": "c",
+						"value": 16777215
+					},
+					"opacity": {
+						"value": 1
+					},
+					"map": {
+						"value": null
+					},
+					"uvTransform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"uv2Transform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"alphaMap": {
+						"value": null
+					},
+					"alphaTest": {
+						"value": 0
+					},
+					"displacementMap": {
+						"value": null
+					},
+					"displacementScale": {
+						"value": 1
+					},
+					"displacementBias": {
+						"value": 0
+					},
+					"referencePosition": {
+						"type": "v3",
+						"value": [
+							0,
+							0,
+							0
+						]
+					},
+					"nearDistance": {
+						"value": 1
+					},
+					"farDistance": {
+						"value": 1000
+					},
+					"v_POLY_texture1_": {
+						"value": null
+					},
+					"time": {
+						"value": 1.1166666666666667
+					}
+				},
+				"defines": {
+					"DEPTH_PACKING": 3201
+				},
+				"vertexShader": "\n#define DISTANCE\n\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance1\n//\n//\n// FIT\n//\n//\nfloat fit(float val, float srcMin, float srcMax, float destMin, float destMax){\n\tfloat src_range = srcMax - srcMin;\n\tfloat dest_range = destMax - destMin;\n\n\tfloat r = (val - srcMin) / src_range;\n\treturn (r * dest_range) + destMin;\n}\nvec2 fit(vec2 val, vec2 srcMin, vec2 srcMax, vec2 destMin, vec2 destMax){\n\treturn vec2(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y)\n\t);\n}\nvec3 fit(vec3 val, vec3 srcMin, vec3 srcMax, vec3 destMin, vec3 destMax){\n\treturn vec3(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z)\n\t);\n}\nvec4 fit(vec4 val, vec4 srcMin, vec4 srcMax, vec4 destMin, vec4 destMax){\n\treturn vec4(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z),\n\t\tfit(val.w, srcMin.w, srcMax.w, destMin.w, destMax.w)\n\t);\n}\n\n//\n//\n// FIT TO 01\n// fits the range [srcMin, srcMax] to [0, 1]\n//\nfloat fitTo01(float val, float srcMin, float srcMax){\n\tfloat size = srcMax - srcMin;\n\treturn (val - srcMin) / size;\n}\nvec2 fitTo01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitTo01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitTo01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z),\n\t\tfitTo01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01\n// fits the range [0, 1] to [destMin, destMax]\n//\nfloat fitFrom01(float val, float destMin, float destMax){\n\treturn fit(val, 0.0, 1.0, destMin, destMax);\n}\nvec2 fitFrom01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitFrom01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitFrom01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z),\n\t\tfitFrom01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01 TO VARIANCE\n// fits the range [0, 1] to [center - variance, center + variance]\n//\nfloat fitFrom01ToVariance(float val, float center, float variance){\n\treturn fitFrom01(val, center - variance, center + variance);\n}\nvec2 fitFrom01ToVariance(vec2 val, vec2 center, vec2 variance){\n\treturn vec2(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y)\n\t);\n}\nvec3 fitFrom01ToVariance(vec3 val, vec3 center, vec3 variance){\n\treturn vec3(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z)\n\t);\n}\nvec4 fitFrom01ToVariance(vec4 val, vec4 center, vec4 variance){\n\treturn vec4(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z),\n\t\tfitFrom01ToVariance(val.w, center.w, variance.w)\n\t);\n}\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\n\n\n// https://github.com/mattatz/ShibuyaCrowd/blob/master/source/shaders/common/quaternion.glsl\nvec4 quatMult(vec4 q1, vec4 q2)\n{\n\treturn vec4(\n\tq1.w * q2.x + q1.x * q2.w + q1.z * q2.y - q1.y * q2.z,\n\tq1.w * q2.y + q1.y * q2.w + q1.x * q2.z - q1.z * q2.x,\n\tq1.w * q2.z + q1.z * q2.w + q1.y * q2.x - q1.x * q2.y,\n\tq1.w * q2.w - q1.x * q2.x - q1.y * q2.y - q1.z * q2.z\n\t);\n}\n// http://glmatrix.net/docs/quat.js.html#line97\n//   let ax = a[0], ay = a[1], az = a[2], aw = a[3];\n\n//   let bx = b[0], by = b[1], bz = b[2], bw = b[3];\n\n//   out[0] = ax * bw + aw * bx + ay * bz - az * by;\n\n//   out[1] = ay * bw + aw * by + az * bx - ax * bz;\n\n//   out[2] = az * bw + aw * bz + ax * by - ay * bx;\n\n//   out[3] = aw * bw - ax * bx - ay * by - az * bz;\n\n//   return out\n\n\n\n// http://www.neilmendoza.com/glsl-rotation-about-an-arbitrary-axis/\nmat4 rotationMatrix(vec3 axis, float angle)\n{\n\taxis = normalize(axis);\n\tfloat s = sin(angle);\n\tfloat c = cos(angle);\n\tfloat oc = 1.0 - c;\n\n \treturn mat4(oc * axis.x * axis.x + c, oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s, 0.0, oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c, oc * axis.y * axis.z - axis.x * s,  0.0, oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c, 0.0, 0.0, 0.0, 0.0, 1.0);\n}\n\n// https://www.geeks3d.com/20141201/how-to-rotate-a-vertex-by-a-quaternion-in-glsl/\nvec4 quatFromAxisAngle(vec3 axis, float angle)\n{\n\tvec4 qr;\n\tfloat half_angle = (angle * 0.5); // * 3.14159 / 180.0;\n\tfloat sin_half_angle = sin(half_angle);\n\tqr.x = axis.x * sin_half_angle;\n\tqr.y = axis.y * sin_half_angle;\n\tqr.z = axis.z * sin_half_angle;\n\tqr.w = cos(half_angle);\n\treturn qr;\n}\nvec3 rotateWithAxisAngle(vec3 position, vec3 axis, float angle)\n{\n\tvec4 q = quatFromAxisAngle(axis, angle);\n\tvec3 v = position.xyz;\n\treturn v + 2.0 * cross(q.xyz, cross(q.xyz, v) + q.w * v);\n}\n// vec3 applyQuaternionToVector( vec4 q, vec3 v ){\n// \treturn v + 2.0 * cross( q.xyz, cross( q.xyz, v ) + q.w * v );\n// }\nvec3 rotateWithQuat( vec3 v, vec4 q )\n{\n\t// vec4 qv = multQuat( quat, vec4(vec, 0.0) );\n\t// return multQuat( qv, vec4(-quat.x, -quat.y, -quat.z, quat.w) ).xyz;\n\treturn v + 2.0 * cross( q.xyz, cross( q.xyz, v ) + q.w * v );\n}\n// https://github.com/glslify/glsl-look-at/blob/gh-pages/index.glsl\n// mat3 rotation_matrix(vec3 origin, vec3 target, float roll) {\n// \tvec3 rr = vec3(sin(roll), cos(roll), 0.0);\n// \tvec3 ww = normalize(target - origin);\n// \tvec3 uu = normalize(cross(ww, rr));\n// \tvec3 vv = normalize(cross(uu, ww));\n\n// \treturn mat3(uu, vv, ww);\n// }\n// mat3 rotation_matrix(vec3 target, float roll) {\n// \tvec3 rr = vec3(sin(roll), cos(roll), 0.0);\n// \tvec3 ww = normalize(target);\n// \tvec3 uu = normalize(cross(ww, rr));\n// \tvec3 vv = normalize(cross(uu, ww));\n\n// \treturn mat3(uu, vv, ww);\n// }\n\nfloat vectorAngle(vec3 start, vec3 dest){\n\tstart = normalize(start);\n\tdest = normalize(dest);\n\n\tfloat cosTheta = dot(start, dest);\n\tvec3 c1 = cross(start, dest);\n\t// We use the dot product of the cross with the Y axis.\n\t// This is a little arbitrary, but can still give a good sense of direction\n\tvec3 y_axis = vec3(0.0, 1.0, 0.0);\n\tfloat d1 = dot(c1, y_axis);\n\tfloat angle = acos(cosTheta) * sign(d1);\n\treturn angle;\n}\n\n// http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-17-quaternions/#i-need-an-equivalent-of-glulookat-how-do-i-orient-an-object-towards-a-point-\nvec4 vectorAlign(vec3 start, vec3 dest){\n\tstart = normalize(start);\n\tdest = normalize(dest);\n\n\tfloat cosTheta = dot(start, dest);\n\tvec3 axis;\n\n\t// if (cosTheta < -1 + 0.001f){\n\t// \t// special case when vectors in opposite directions:\n\t// \t// there is no ideal rotation axis\n\t// \t// So guess one; any will do as long as it's perpendicular to start\n\t// \taxis = cross(vec3(0.0f, 0.0f, 1.0f), start);\n\t// \tif (length2(axis) < 0.01 ) // bad luck, they were parallel, try again!\n\t// \t\taxis = cross(vec3(1.0f, 0.0f, 0.0f), start);\n\n\t// \taxis = normalize(axis);\n\t// \treturn gtx::quaternion::angleAxis(glm::radians(180.0f), axis);\n\t// }\n\tif(cosTheta > (1.0 - 0.0001) || cosTheta < (-1.0 + 0.0001) ){\n\t\taxis = normalize(cross(start, vec3(0.0, 1.0, 0.0)));\n\t\tif (length(axis) < 0.001 ){ // bad luck, they were parallel, try again!\n\t\t\taxis = normalize(cross(start, vec3(1.0, 0.0, 0.0)));\n\t\t}\n\t} else {\n\t\taxis = normalize(cross(start, dest));\n\t}\n\n\tfloat angle = acos(cosTheta);\n\n\treturn quatFromAxisAngle(axis, angle);\n}\nvec4 vectorAlignWithUp(vec3 start, vec3 dest, vec3 up){\n\tvec4 rot1 = vectorAlign(start, dest);\n\tup = normalize(up);\n\n\t// Recompute desiredUp so that it's perpendicular to the direction\n\t// You can skip that part if you really want to force desiredUp\n\t// vec3 right = normalize(cross(dest, up));\n\t// up = normalize(cross(right, dest));\n\n\t// Because of the 1rst rotation, the up is probably completely screwed up.\n\t// Find the rotation between the up of the rotated object, and the desired up\n\tvec3 newUp = rotateWithQuat(vec3(0.0, 1.0, 0.0), rot1);//rot1 * vec3(0.0, 1.0, 0.0);\n\tvec4 rot2 = vectorAlign(up, newUp);\n\n\t// return rot1;\n\treturn rot2;\n\t// return multQuat(rot1, rot2);\n\t// return rot2 * rot1;\n\n}\n\n// https://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToAngle/index.htm\nfloat quatToAngle(vec4 q){\n\treturn 2.0 * acos(q.w);\n}\nvec3 quatToAxis(vec4 q){\n\treturn vec3(\n\t\tq.x / sqrt(1.0-q.w*q.w),\n\t\tq.y / sqrt(1.0-q.w*q.w),\n\t\tq.z / sqrt(1.0-q.w*q.w)\n\t);\n}\n\nvec4 align(vec3 dir, vec3 up){\n\tvec3 start_dir = vec3(0.0, 0.0, 1.0);\n\tvec3 start_up = vec3(0.0, 1.0, 0.0);\n\tvec4 rot1 = vectorAlign(start_dir, dir);\n\tup = normalize(up);\n\n\t// Recompute desiredUp so that it's perpendicular to the direction\n\t// You can skip that part if you really want to force desiredUp\n\tvec3 right = normalize(cross(dir, up));\n\tif(length(right)<0.001){\n\t\tright = vec3(1.0, 0.0, 0.0);\n\t}\n\tup = normalize(cross(right, dir));\n\n\t// Because of the 1rst rotation, the up is probably completely screwed up.\n\t// Find the rotation between the up of the rotated object, and the desired up\n\tvec3 newUp = rotateWithQuat(start_up, rot1);//rot1 * vec3(0.0, 1.0, 0.0);\n\tvec4 rot2 = vectorAlign(normalize(newUp), up);\n\n\t// return rot1;\n\treturn quatMult(rot1, rot2);\n\t// return rot2 * rot1;\n\n}\n\n\n\n\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\nuniform float time;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nvarying vec3 varying_v_POLY_attribute2_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\nvarying float varying_v_POLY_attribute4_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute1\nattribute float id;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nattribute vec3 restP;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nattribute float dist;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\nattribute vec3 instancePosition;\nattribute vec4 instanceOrientation;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute1\n\tfloat v_POLY_attribute1_val = id;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\n\tv_POLY_globals1_uv = vec2(uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\n\tvarying_v_POLY_attribute2_val = vec3(restP);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\n\tvarying_v_POLY_attribute3_val = float(dist);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\n\tvarying_v_POLY_attribute4_val = float(id);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\n\tfloat v_POLY_globals2_time = time;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 56.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance1\n\tfloat v_POLY_fitFrom01ToVariance1_val = fitFrom01ToVariance(v_POLY_random1_rand, 1.0, 0.34);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_fitFrom01ToVariance1_val, v_POLY_fitFrom01ToVariance1_val, v_POLY_fitFrom01ToVariance1_val);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\n\tvec3 v_POLY_instanceTransform1_position = vec3(position);\n\tv_POLY_instanceTransform1_position *= v_POLY_floatToVec3_1_vec3;\n\tv_POLY_instanceTransform1_position = rotateWithQuat( v_POLY_instanceTransform1_position, instanceOrientation );\n\tv_POLY_instanceTransform1_position += instancePosition;\n\tvec3 v_POLY_instanceTransform1_normal = vec3(normal);\n\tv_POLY_instanceTransform1_normal = rotateWithQuat( v_POLY_instanceTransform1_normal, instanceOrientation );\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/output1\n\tvec3 transformed = v_POLY_instanceTransform1_position;\n\tvec3 objectNormal = v_POLY_instanceTransform1_normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <worldpos_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvWorldPosition = worldPosition.xyz;\n\n}\n",
+				"fragmentShader": "\n#define DISTANCE\n\nuniform vec3 referencePosition;\nuniform float nearDistance;\nuniform float farDistance;\nvarying vec3 vWorldPosition;\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance2\n//\n//\n// FIT\n//\n//\nfloat fit(float val, float srcMin, float srcMax, float destMin, float destMax){\n\tfloat src_range = srcMax - srcMin;\n\tfloat dest_range = destMax - destMin;\n\n\tfloat r = (val - srcMin) / src_range;\n\treturn (r * dest_range) + destMin;\n}\nvec2 fit(vec2 val, vec2 srcMin, vec2 srcMax, vec2 destMin, vec2 destMax){\n\treturn vec2(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y)\n\t);\n}\nvec3 fit(vec3 val, vec3 srcMin, vec3 srcMax, vec3 destMin, vec3 destMax){\n\treturn vec3(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z)\n\t);\n}\nvec4 fit(vec4 val, vec4 srcMin, vec4 srcMax, vec4 destMin, vec4 destMax){\n\treturn vec4(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z),\n\t\tfit(val.w, srcMin.w, srcMax.w, destMin.w, destMax.w)\n\t);\n}\n\n//\n//\n// FIT TO 01\n// fits the range [srcMin, srcMax] to [0, 1]\n//\nfloat fitTo01(float val, float srcMin, float srcMax){\n\tfloat size = srcMax - srcMin;\n\treturn (val - srcMin) / size;\n}\nvec2 fitTo01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitTo01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitTo01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z),\n\t\tfitTo01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01\n// fits the range [0, 1] to [destMin, destMax]\n//\nfloat fitFrom01(float val, float destMin, float destMax){\n\treturn fit(val, 0.0, 1.0, destMin, destMax);\n}\nvec2 fitFrom01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitFrom01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitFrom01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z),\n\t\tfitFrom01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01 TO VARIANCE\n// fits the range [0, 1] to [center - variance, center + variance]\n//\nfloat fitFrom01ToVariance(float val, float center, float variance){\n\treturn fitFrom01(val, center - variance, center + variance);\n}\nvec2 fitFrom01ToVariance(vec2 val, vec2 center, vec2 variance){\n\treturn vec2(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y)\n\t);\n}\nvec3 fitFrom01ToVariance(vec3 val, vec3 center, vec3 variance){\n\treturn vec3(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z)\n\t);\n}\nvec4 fitFrom01ToVariance(vec4 val, vec4 center, vec4 variance){\n\treturn vec4(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z),\n\t\tfitFrom01ToVariance(val.w, center.w, variance.w)\n\t);\n}\n\n\n\n\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\nuniform float time;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/texture1\nuniform sampler2D v_POLY_texture1_;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nvarying vec3 varying_v_POLY_attribute2_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\nvarying float varying_v_POLY_attribute4_val;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvoid main () {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\tfloat dist = length( vWorldPosition - referencePosition );\n\tdist = ( dist - nearDistance ) / ( farDistance - nearDistance );\n\tdist = saturate( dist ); // clamp to [ 0, 1 ]\n\n\tgl_FragColor = packDepthToRGBA( dist );\n\n\t// INSERT BODY\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\n\tvec3 v_POLY_attribute2_val = varying_v_POLY_attribute2_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\n\tfloat v_POLY_attribute3_val = varying_v_POLY_attribute3_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\n\tfloat v_POLY_attribute4_val = varying_v_POLY_attribute4_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\n\tfloat v_POLY_globals2_time = time;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/texture1\n\tvec4 v_POLY_texture1_rgba = texture2D(v_POLY_texture1_, v_POLY_globals1_uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/vec3ToFloat1\n\tfloat v_POLY_vec3ToFloat1_y = v_POLY_attribute2_val.y;\n\tfloat v_POLY_vec3ToFloat1_z = v_POLY_attribute2_val.z;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd3\n\tfloat v_POLY_multAdd3_val = (4.6*(v_POLY_attribute3_val + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/round2\n\tfloat v_POLY_round2_val = sign(v_POLY_attribute4_val)*floor(abs(v_POLY_attribute4_val)+0.5);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd1\n\tfloat v_POLY_multAdd1_val = (1.0*(v_POLY_globals2_time + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/colorCorrect1\n\tvec4 v_POLY_colorCorrect1_out = sRGBToLinear(v_POLY_texture1_rgba);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd2\n\tfloat v_POLY_multAdd2_val = (-0.30000000000000004*(v_POLY_vec3ToFloat1_z + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec2_2\n\tvec2 v_POLY_floatToVec2_2_vec2 = vec2(v_POLY_round2_val, 56.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/vec4ToVec3_1\n\tvec3 v_POLY_vec4ToVec3_1_vec3 = v_POLY_colorCorrect1_out.xyz;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/random2\n\tfloat v_POLY_random2_rand = rand(v_POLY_floatToVec2_2_vec2);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance2\n\tfloat v_POLY_fitFrom01ToVariance2_val = fitFrom01ToVariance(v_POLY_random2_rand, 0.0, 1.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd4\n\tfloat v_POLY_multAdd4_val = (1.0*(v_POLY_fitFrom01ToVariance2_val + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/add2\n\tfloat v_POLY_add2_sum = (v_POLY_multAdd3_val + v_POLY_multAdd4_val + 0.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd5\n\tfloat v_POLY_multAdd5_val = (1.0*(v_POLY_add2_sum + 0.0)) + 0.9;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/add1\n\tfloat v_POLY_add1_sum = (v_POLY_multAdd2_val + v_POLY_multAdd5_val + 0.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/compare2\n\tbool v_POLY_compare2_val = (v_POLY_add1_sum > v_POLY_multAdd1_val);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/twoWaySwitch1\n\tfloat v_POLY_twoWaySwitch1_val;\n\tif(v_POLY_compare2_val){\n\tv_POLY_twoWaySwitch1_val = 0.0;\n\t} else {\n\tv_POLY_twoWaySwitch1_val = 1.0;\n\t}\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/output1\n\tdiffuseColor.xyz = v_POLY_vec4ToVec3_1_vec3;\n\tdiffuseColor.a = v_POLY_twoWaySwitch1_val;\n\n\n\n\n\t// all this shader above the INSERT BODY line\n\t// is copied from the threejs ShaderLib.depth template fragment shader.\n\t// The line below is necessary to tie the alpha to the one that is computed by the gl nodes.\n\t// I'm not entirely sure why I need to negate diffuseColor.a with '1.0 -'\n\t// but it seems to be what make the shader match the alpha of the main material.\n\tgl_FragColor.a = 1.0 - diffuseColor.a;\n\n}\n",
+				"shadowSide": null,
+				"lights": false
+			},
+			"customDepthMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "/geo1/MAT/meshLambertBuilder_dinosaur2-customDepthMaterial",
+				"type": "ShaderMaterial",
+				"name": "customDepthMaterial",
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"colorWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"diffuse": {
+						"type": "c",
+						"value": 16777215
+					},
+					"opacity": {
+						"value": 1
+					},
+					"map": {
+						"value": null
+					},
+					"uvTransform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"uv2Transform": {
+						"type": "m3",
+						"value": [
+							1,
+							0,
+							0,
+							0,
+							1,
+							0,
+							0,
+							0,
+							1
+						]
+					},
+					"alphaMap": {
+						"value": null
+					},
+					"alphaTest": {
+						"value": 0
+					},
+					"displacementMap": {
+						"value": null
+					},
+					"displacementScale": {
+						"value": 1
+					},
+					"displacementBias": {
+						"value": 0
+					},
+					"v_POLY_texture1_": {
+						"value": null
+					},
+					"time": {
+						"value": 1.1166666666666667
+					}
+				},
+				"defines": {
+					"DEPTH_PACKING": 3201
+				},
+				"vertexShader": "\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance1\n//\n//\n// FIT\n//\n//\nfloat fit(float val, float srcMin, float srcMax, float destMin, float destMax){\n\tfloat src_range = srcMax - srcMin;\n\tfloat dest_range = destMax - destMin;\n\n\tfloat r = (val - srcMin) / src_range;\n\treturn (r * dest_range) + destMin;\n}\nvec2 fit(vec2 val, vec2 srcMin, vec2 srcMax, vec2 destMin, vec2 destMax){\n\treturn vec2(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y)\n\t);\n}\nvec3 fit(vec3 val, vec3 srcMin, vec3 srcMax, vec3 destMin, vec3 destMax){\n\treturn vec3(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z)\n\t);\n}\nvec4 fit(vec4 val, vec4 srcMin, vec4 srcMax, vec4 destMin, vec4 destMax){\n\treturn vec4(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z),\n\t\tfit(val.w, srcMin.w, srcMax.w, destMin.w, destMax.w)\n\t);\n}\n\n//\n//\n// FIT TO 01\n// fits the range [srcMin, srcMax] to [0, 1]\n//\nfloat fitTo01(float val, float srcMin, float srcMax){\n\tfloat size = srcMax - srcMin;\n\treturn (val - srcMin) / size;\n}\nvec2 fitTo01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitTo01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitTo01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z),\n\t\tfitTo01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01\n// fits the range [0, 1] to [destMin, destMax]\n//\nfloat fitFrom01(float val, float destMin, float destMax){\n\treturn fit(val, 0.0, 1.0, destMin, destMax);\n}\nvec2 fitFrom01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitFrom01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitFrom01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z),\n\t\tfitFrom01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01 TO VARIANCE\n// fits the range [0, 1] to [center - variance, center + variance]\n//\nfloat fitFrom01ToVariance(float val, float center, float variance){\n\treturn fitFrom01(val, center - variance, center + variance);\n}\nvec2 fitFrom01ToVariance(vec2 val, vec2 center, vec2 variance){\n\treturn vec2(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y)\n\t);\n}\nvec3 fitFrom01ToVariance(vec3 val, vec3 center, vec3 variance){\n\treturn vec3(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z)\n\t);\n}\nvec4 fitFrom01ToVariance(vec4 val, vec4 center, vec4 variance){\n\treturn vec4(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z),\n\t\tfitFrom01ToVariance(val.w, center.w, variance.w)\n\t);\n}\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\n\n\n// https://github.com/mattatz/ShibuyaCrowd/blob/master/source/shaders/common/quaternion.glsl\nvec4 quatMult(vec4 q1, vec4 q2)\n{\n\treturn vec4(\n\tq1.w * q2.x + q1.x * q2.w + q1.z * q2.y - q1.y * q2.z,\n\tq1.w * q2.y + q1.y * q2.w + q1.x * q2.z - q1.z * q2.x,\n\tq1.w * q2.z + q1.z * q2.w + q1.y * q2.x - q1.x * q2.y,\n\tq1.w * q2.w - q1.x * q2.x - q1.y * q2.y - q1.z * q2.z\n\t);\n}\n// http://glmatrix.net/docs/quat.js.html#line97\n//   let ax = a[0], ay = a[1], az = a[2], aw = a[3];\n\n//   let bx = b[0], by = b[1], bz = b[2], bw = b[3];\n\n//   out[0] = ax * bw + aw * bx + ay * bz - az * by;\n\n//   out[1] = ay * bw + aw * by + az * bx - ax * bz;\n\n//   out[2] = az * bw + aw * bz + ax * by - ay * bx;\n\n//   out[3] = aw * bw - ax * bx - ay * by - az * bz;\n\n//   return out\n\n\n\n// http://www.neilmendoza.com/glsl-rotation-about-an-arbitrary-axis/\nmat4 rotationMatrix(vec3 axis, float angle)\n{\n\taxis = normalize(axis);\n\tfloat s = sin(angle);\n\tfloat c = cos(angle);\n\tfloat oc = 1.0 - c;\n\n \treturn mat4(oc * axis.x * axis.x + c, oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s, 0.0, oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c, oc * axis.y * axis.z - axis.x * s,  0.0, oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c, 0.0, 0.0, 0.0, 0.0, 1.0);\n}\n\n// https://www.geeks3d.com/20141201/how-to-rotate-a-vertex-by-a-quaternion-in-glsl/\nvec4 quatFromAxisAngle(vec3 axis, float angle)\n{\n\tvec4 qr;\n\tfloat half_angle = (angle * 0.5); // * 3.14159 / 180.0;\n\tfloat sin_half_angle = sin(half_angle);\n\tqr.x = axis.x * sin_half_angle;\n\tqr.y = axis.y * sin_half_angle;\n\tqr.z = axis.z * sin_half_angle;\n\tqr.w = cos(half_angle);\n\treturn qr;\n}\nvec3 rotateWithAxisAngle(vec3 position, vec3 axis, float angle)\n{\n\tvec4 q = quatFromAxisAngle(axis, angle);\n\tvec3 v = position.xyz;\n\treturn v + 2.0 * cross(q.xyz, cross(q.xyz, v) + q.w * v);\n}\n// vec3 applyQuaternionToVector( vec4 q, vec3 v ){\n// \treturn v + 2.0 * cross( q.xyz, cross( q.xyz, v ) + q.w * v );\n// }\nvec3 rotateWithQuat( vec3 v, vec4 q )\n{\n\t// vec4 qv = multQuat( quat, vec4(vec, 0.0) );\n\t// return multQuat( qv, vec4(-quat.x, -quat.y, -quat.z, quat.w) ).xyz;\n\treturn v + 2.0 * cross( q.xyz, cross( q.xyz, v ) + q.w * v );\n}\n// https://github.com/glslify/glsl-look-at/blob/gh-pages/index.glsl\n// mat3 rotation_matrix(vec3 origin, vec3 target, float roll) {\n// \tvec3 rr = vec3(sin(roll), cos(roll), 0.0);\n// \tvec3 ww = normalize(target - origin);\n// \tvec3 uu = normalize(cross(ww, rr));\n// \tvec3 vv = normalize(cross(uu, ww));\n\n// \treturn mat3(uu, vv, ww);\n// }\n// mat3 rotation_matrix(vec3 target, float roll) {\n// \tvec3 rr = vec3(sin(roll), cos(roll), 0.0);\n// \tvec3 ww = normalize(target);\n// \tvec3 uu = normalize(cross(ww, rr));\n// \tvec3 vv = normalize(cross(uu, ww));\n\n// \treturn mat3(uu, vv, ww);\n// }\n\nfloat vectorAngle(vec3 start, vec3 dest){\n\tstart = normalize(start);\n\tdest = normalize(dest);\n\n\tfloat cosTheta = dot(start, dest);\n\tvec3 c1 = cross(start, dest);\n\t// We use the dot product of the cross with the Y axis.\n\t// This is a little arbitrary, but can still give a good sense of direction\n\tvec3 y_axis = vec3(0.0, 1.0, 0.0);\n\tfloat d1 = dot(c1, y_axis);\n\tfloat angle = acos(cosTheta) * sign(d1);\n\treturn angle;\n}\n\n// http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-17-quaternions/#i-need-an-equivalent-of-glulookat-how-do-i-orient-an-object-towards-a-point-\nvec4 vectorAlign(vec3 start, vec3 dest){\n\tstart = normalize(start);\n\tdest = normalize(dest);\n\n\tfloat cosTheta = dot(start, dest);\n\tvec3 axis;\n\n\t// if (cosTheta < -1 + 0.001f){\n\t// \t// special case when vectors in opposite directions:\n\t// \t// there is no ideal rotation axis\n\t// \t// So guess one; any will do as long as it's perpendicular to start\n\t// \taxis = cross(vec3(0.0f, 0.0f, 1.0f), start);\n\t// \tif (length2(axis) < 0.01 ) // bad luck, they were parallel, try again!\n\t// \t\taxis = cross(vec3(1.0f, 0.0f, 0.0f), start);\n\n\t// \taxis = normalize(axis);\n\t// \treturn gtx::quaternion::angleAxis(glm::radians(180.0f), axis);\n\t// }\n\tif(cosTheta > (1.0 - 0.0001) || cosTheta < (-1.0 + 0.0001) ){\n\t\taxis = normalize(cross(start, vec3(0.0, 1.0, 0.0)));\n\t\tif (length(axis) < 0.001 ){ // bad luck, they were parallel, try again!\n\t\t\taxis = normalize(cross(start, vec3(1.0, 0.0, 0.0)));\n\t\t}\n\t} else {\n\t\taxis = normalize(cross(start, dest));\n\t}\n\n\tfloat angle = acos(cosTheta);\n\n\treturn quatFromAxisAngle(axis, angle);\n}\nvec4 vectorAlignWithUp(vec3 start, vec3 dest, vec3 up){\n\tvec4 rot1 = vectorAlign(start, dest);\n\tup = normalize(up);\n\n\t// Recompute desiredUp so that it's perpendicular to the direction\n\t// You can skip that part if you really want to force desiredUp\n\t// vec3 right = normalize(cross(dest, up));\n\t// up = normalize(cross(right, dest));\n\n\t// Because of the 1rst rotation, the up is probably completely screwed up.\n\t// Find the rotation between the up of the rotated object, and the desired up\n\tvec3 newUp = rotateWithQuat(vec3(0.0, 1.0, 0.0), rot1);//rot1 * vec3(0.0, 1.0, 0.0);\n\tvec4 rot2 = vectorAlign(up, newUp);\n\n\t// return rot1;\n\treturn rot2;\n\t// return multQuat(rot1, rot2);\n\t// return rot2 * rot1;\n\n}\n\n// https://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToAngle/index.htm\nfloat quatToAngle(vec4 q){\n\treturn 2.0 * acos(q.w);\n}\nvec3 quatToAxis(vec4 q){\n\treturn vec3(\n\t\tq.x / sqrt(1.0-q.w*q.w),\n\t\tq.y / sqrt(1.0-q.w*q.w),\n\t\tq.z / sqrt(1.0-q.w*q.w)\n\t);\n}\n\nvec4 align(vec3 dir, vec3 up){\n\tvec3 start_dir = vec3(0.0, 0.0, 1.0);\n\tvec3 start_up = vec3(0.0, 1.0, 0.0);\n\tvec4 rot1 = vectorAlign(start_dir, dir);\n\tup = normalize(up);\n\n\t// Recompute desiredUp so that it's perpendicular to the direction\n\t// You can skip that part if you really want to force desiredUp\n\tvec3 right = normalize(cross(dir, up));\n\tif(length(right)<0.001){\n\t\tright = vec3(1.0, 0.0, 0.0);\n\t}\n\tup = normalize(cross(right, dir));\n\n\t// Because of the 1rst rotation, the up is probably completely screwed up.\n\t// Find the rotation between the up of the rotated object, and the desired up\n\tvec3 newUp = rotateWithQuat(start_up, rot1);//rot1 * vec3(0.0, 1.0, 0.0);\n\tvec4 rot2 = vectorAlign(normalize(newUp), up);\n\n\t// return rot1;\n\treturn quatMult(rot1, rot2);\n\t// return rot2 * rot1;\n\n}\n\n\n\n\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\nuniform float time;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nvarying vec3 varying_v_POLY_attribute2_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\nvarying float varying_v_POLY_attribute4_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute1\nattribute float id;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nattribute vec3 restP;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nattribute float dist;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\nattribute vec3 instancePosition;\nattribute vec4 instanceOrientation;\n\n\n\n\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\n// This is used for computing an equivalent of gl_FragCoord.z that is as high precision as possible.\n// Some platforms compute gl_FragCoord at a lower precision which makes the manually computed value better for\n// depth-based postprocessing effects. Reproduced on iPad with A10 processor / iPadOS 13.3.1.\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <uv_vertex>\n\n\t#include <skinbase_vertex>\n\n\t#ifdef USE_DISPLACEMENTMAP\n\n// removed:\n//\t\t#include <beginnormal_vertex>\n\t\t#include <morphnormal_vertex>\n\t\t#include <skinnormal_vertex>\n\n\t#endif\n\n// removed:\n//\t#include <begin_vertex>\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute1\n\tfloat v_POLY_attribute1_val = id;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\n\tv_POLY_globals1_uv = vec2(uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\n\tvarying_v_POLY_attribute2_val = vec3(restP);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\n\tvarying_v_POLY_attribute3_val = float(dist);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\n\tvarying_v_POLY_attribute4_val = float(id);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\n\tfloat v_POLY_globals2_time = time;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 56.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance1\n\tfloat v_POLY_fitFrom01ToVariance1_val = fitFrom01ToVariance(v_POLY_random1_rand, 1.0, 0.34);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_fitFrom01ToVariance1_val, v_POLY_fitFrom01ToVariance1_val, v_POLY_fitFrom01ToVariance1_val);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\n\tvec3 v_POLY_instanceTransform1_position = vec3(position);\n\tv_POLY_instanceTransform1_position *= v_POLY_floatToVec3_1_vec3;\n\tv_POLY_instanceTransform1_position = rotateWithQuat( v_POLY_instanceTransform1_position, instanceOrientation );\n\tv_POLY_instanceTransform1_position += instancePosition;\n\tvec3 v_POLY_instanceTransform1_normal = vec3(normal);\n\tv_POLY_instanceTransform1_normal = rotateWithQuat( v_POLY_instanceTransform1_normal, instanceOrientation );\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/output1\n\tvec3 transformed = v_POLY_instanceTransform1_position;\n\tvec3 objectNormal = v_POLY_instanceTransform1_normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\n\tvHighPrecisionZW = gl_Position.zw;\n\n}\n",
+				"fragmentShader": "// INSERT DEFINES\n\n\n#if DEPTH_PACKING == 3200\n\n\tuniform float opacity;\n\n#endif\n\n#include <common>\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance2\n//\n//\n// FIT\n//\n//\nfloat fit(float val, float srcMin, float srcMax, float destMin, float destMax){\n\tfloat src_range = srcMax - srcMin;\n\tfloat dest_range = destMax - destMin;\n\n\tfloat r = (val - srcMin) / src_range;\n\treturn (r * dest_range) + destMin;\n}\nvec2 fit(vec2 val, vec2 srcMin, vec2 srcMax, vec2 destMin, vec2 destMax){\n\treturn vec2(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y)\n\t);\n}\nvec3 fit(vec3 val, vec3 srcMin, vec3 srcMax, vec3 destMin, vec3 destMax){\n\treturn vec3(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z)\n\t);\n}\nvec4 fit(vec4 val, vec4 srcMin, vec4 srcMax, vec4 destMin, vec4 destMax){\n\treturn vec4(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z),\n\t\tfit(val.w, srcMin.w, srcMax.w, destMin.w, destMax.w)\n\t);\n}\n\n//\n//\n// FIT TO 01\n// fits the range [srcMin, srcMax] to [0, 1]\n//\nfloat fitTo01(float val, float srcMin, float srcMax){\n\tfloat size = srcMax - srcMin;\n\treturn (val - srcMin) / size;\n}\nvec2 fitTo01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitTo01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitTo01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z),\n\t\tfitTo01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01\n// fits the range [0, 1] to [destMin, destMax]\n//\nfloat fitFrom01(float val, float destMin, float destMax){\n\treturn fit(val, 0.0, 1.0, destMin, destMax);\n}\nvec2 fitFrom01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitFrom01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitFrom01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z),\n\t\tfitFrom01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01 TO VARIANCE\n// fits the range [0, 1] to [center - variance, center + variance]\n//\nfloat fitFrom01ToVariance(float val, float center, float variance){\n\treturn fitFrom01(val, center - variance, center + variance);\n}\nvec2 fitFrom01ToVariance(vec2 val, vec2 center, vec2 variance){\n\treturn vec2(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y)\n\t);\n}\nvec3 fitFrom01ToVariance(vec3 val, vec3 center, vec3 variance){\n\treturn vec3(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z)\n\t);\n}\nvec4 fitFrom01ToVariance(vec4 val, vec4 center, vec4 variance){\n\treturn vec4(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z),\n\t\tfitFrom01ToVariance(val.w, center.w, variance.w)\n\t);\n}\n\n\n\n\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\nuniform float time;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/texture1\nuniform sampler2D v_POLY_texture1_;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nvarying vec3 varying_v_POLY_attribute2_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\nvarying float varying_v_POLY_attribute4_val;\n\n\n\n\n#include <packing>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nvarying vec2 vHighPrecisionZW;\n\nvoid main() {\n\n\t#include <clipping_planes_fragment>\n\n\tvec4 diffuseColor = vec4( 1.0 );\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tdiffuseColor.a = opacity;\n\n\t#endif\n\n\t#include <map_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\n\t#include <logdepthbuf_fragment>\n\n\t// Higher precision equivalent of gl_FragCoord.z. This assumes depthRange has been left to its default values.\n\tfloat fragCoordZ = 0.5 * vHighPrecisionZW[0] / vHighPrecisionZW[1] + 0.5;\n\n\t#if DEPTH_PACKING == 3200\n\n\t\tgl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );\n\n\t#elif DEPTH_PACKING == 3201\n\n\t\tgl_FragColor = packDepthToRGBA( fragCoordZ );\n\n\t#endif\n\n\t// INSERT BODY\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\n\tvec3 v_POLY_attribute2_val = varying_v_POLY_attribute2_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\n\tfloat v_POLY_attribute3_val = varying_v_POLY_attribute3_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\n\tfloat v_POLY_attribute4_val = varying_v_POLY_attribute4_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\n\tfloat v_POLY_globals2_time = time;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/texture1\n\tvec4 v_POLY_texture1_rgba = texture2D(v_POLY_texture1_, v_POLY_globals1_uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/vec3ToFloat1\n\tfloat v_POLY_vec3ToFloat1_y = v_POLY_attribute2_val.y;\n\tfloat v_POLY_vec3ToFloat1_z = v_POLY_attribute2_val.z;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd3\n\tfloat v_POLY_multAdd3_val = (4.6*(v_POLY_attribute3_val + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/round2\n\tfloat v_POLY_round2_val = sign(v_POLY_attribute4_val)*floor(abs(v_POLY_attribute4_val)+0.5);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd1\n\tfloat v_POLY_multAdd1_val = (1.0*(v_POLY_globals2_time + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/colorCorrect1\n\tvec4 v_POLY_colorCorrect1_out = sRGBToLinear(v_POLY_texture1_rgba);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd2\n\tfloat v_POLY_multAdd2_val = (-0.30000000000000004*(v_POLY_vec3ToFloat1_z + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec2_2\n\tvec2 v_POLY_floatToVec2_2_vec2 = vec2(v_POLY_round2_val, 56.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/vec4ToVec3_1\n\tvec3 v_POLY_vec4ToVec3_1_vec3 = v_POLY_colorCorrect1_out.xyz;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/random2\n\tfloat v_POLY_random2_rand = rand(v_POLY_floatToVec2_2_vec2);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance2\n\tfloat v_POLY_fitFrom01ToVariance2_val = fitFrom01ToVariance(v_POLY_random2_rand, 0.0, 1.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd4\n\tfloat v_POLY_multAdd4_val = (1.0*(v_POLY_fitFrom01ToVariance2_val + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/add2\n\tfloat v_POLY_add2_sum = (v_POLY_multAdd3_val + v_POLY_multAdd4_val + 0.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd5\n\tfloat v_POLY_multAdd5_val = (1.0*(v_POLY_add2_sum + 0.0)) + 0.9;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/add1\n\tfloat v_POLY_add1_sum = (v_POLY_multAdd2_val + v_POLY_multAdd5_val + 0.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/compare2\n\tbool v_POLY_compare2_val = (v_POLY_add1_sum > v_POLY_multAdd1_val);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/twoWaySwitch1\n\tfloat v_POLY_twoWaySwitch1_val;\n\tif(v_POLY_compare2_val){\n\tv_POLY_twoWaySwitch1_val = 0.0;\n\t} else {\n\tv_POLY_twoWaySwitch1_val = 1.0;\n\t}\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/output1\n\tdiffuseColor.xyz = v_POLY_vec4ToVec3_1_vec3;\n\tdiffuseColor.a = v_POLY_twoWaySwitch1_val;\n\n\n\n\n\t// all this shader above the INSERT BODY line\n\t// is copied from the threejs ShaderLib.depth template fragment shader.\n\t// The line below is necessary to tie the alpha to the one that is computed by the gl nodes.\n\t// I'm not entirely sure why I need to negate diffuseColor.a with '1.0 -'\n\t// but it seems to be what make the shader match the alpha of the main material.\n\tgl_FragColor.a = 1.0 - diffuseColor.a;\n\n}\n",
+				"shadowSide": null,
+				"lights": false
+			},
+			"customDepthDOFMaterial": {
+				"metadata": {
+					"version": 4.5,
+					"type": "Material",
+					"generator": "Material.toJSON"
+				},
+				"uuid": "/geo1/MAT/meshLambertBuilder_dinosaur2-customDepthDOFMaterial",
+				"type": "ShaderMaterial",
+				"name": "customDepthDOFMaterial",
+				"transparent": true,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"colorWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680,
+				"glslVersion": null,
+				"uniforms": {
+					"mNear": {
+						"value": 0
+					},
+					"mFar": {
+						"value": 10
+					},
+					"v_POLY_texture1_": {
+						"value": null
+					},
+					"time": {
+						"value": 1.1166666666666667
+					}
+				},
+				"vertexShader": "#include <common>\n\nvarying float vViewZDepth;\n\n// INSERT DEFINES\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance1\n//\n//\n// FIT\n//\n//\nfloat fit(float val, float srcMin, float srcMax, float destMin, float destMax){\n\tfloat src_range = srcMax - srcMin;\n\tfloat dest_range = destMax - destMin;\n\n\tfloat r = (val - srcMin) / src_range;\n\treturn (r * dest_range) + destMin;\n}\nvec2 fit(vec2 val, vec2 srcMin, vec2 srcMax, vec2 destMin, vec2 destMax){\n\treturn vec2(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y)\n\t);\n}\nvec3 fit(vec3 val, vec3 srcMin, vec3 srcMax, vec3 destMin, vec3 destMax){\n\treturn vec3(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z)\n\t);\n}\nvec4 fit(vec4 val, vec4 srcMin, vec4 srcMax, vec4 destMin, vec4 destMax){\n\treturn vec4(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z),\n\t\tfit(val.w, srcMin.w, srcMax.w, destMin.w, destMax.w)\n\t);\n}\n\n//\n//\n// FIT TO 01\n// fits the range [srcMin, srcMax] to [0, 1]\n//\nfloat fitTo01(float val, float srcMin, float srcMax){\n\tfloat size = srcMax - srcMin;\n\treturn (val - srcMin) / size;\n}\nvec2 fitTo01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitTo01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitTo01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z),\n\t\tfitTo01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01\n// fits the range [0, 1] to [destMin, destMax]\n//\nfloat fitFrom01(float val, float destMin, float destMax){\n\treturn fit(val, 0.0, 1.0, destMin, destMax);\n}\nvec2 fitFrom01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitFrom01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitFrom01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z),\n\t\tfitFrom01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01 TO VARIANCE\n// fits the range [0, 1] to [center - variance, center + variance]\n//\nfloat fitFrom01ToVariance(float val, float center, float variance){\n\treturn fitFrom01(val, center - variance, center + variance);\n}\nvec2 fitFrom01ToVariance(vec2 val, vec2 center, vec2 variance){\n\treturn vec2(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y)\n\t);\n}\nvec3 fitFrom01ToVariance(vec3 val, vec3 center, vec3 variance){\n\treturn vec3(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z)\n\t);\n}\nvec4 fitFrom01ToVariance(vec4 val, vec4 center, vec4 variance){\n\treturn vec4(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z),\n\t\tfitFrom01ToVariance(val.w, center.w, variance.w)\n\t);\n}\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\n\n\n// https://github.com/mattatz/ShibuyaCrowd/blob/master/source/shaders/common/quaternion.glsl\nvec4 quatMult(vec4 q1, vec4 q2)\n{\n\treturn vec4(\n\tq1.w * q2.x + q1.x * q2.w + q1.z * q2.y - q1.y * q2.z,\n\tq1.w * q2.y + q1.y * q2.w + q1.x * q2.z - q1.z * q2.x,\n\tq1.w * q2.z + q1.z * q2.w + q1.y * q2.x - q1.x * q2.y,\n\tq1.w * q2.w - q1.x * q2.x - q1.y * q2.y - q1.z * q2.z\n\t);\n}\n// http://glmatrix.net/docs/quat.js.html#line97\n//   let ax = a[0], ay = a[1], az = a[2], aw = a[3];\n\n//   let bx = b[0], by = b[1], bz = b[2], bw = b[3];\n\n//   out[0] = ax * bw + aw * bx + ay * bz - az * by;\n\n//   out[1] = ay * bw + aw * by + az * bx - ax * bz;\n\n//   out[2] = az * bw + aw * bz + ax * by - ay * bx;\n\n//   out[3] = aw * bw - ax * bx - ay * by - az * bz;\n\n//   return out\n\n\n\n// http://www.neilmendoza.com/glsl-rotation-about-an-arbitrary-axis/\nmat4 rotationMatrix(vec3 axis, float angle)\n{\n\taxis = normalize(axis);\n\tfloat s = sin(angle);\n\tfloat c = cos(angle);\n\tfloat oc = 1.0 - c;\n\n \treturn mat4(oc * axis.x * axis.x + c, oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s, 0.0, oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c, oc * axis.y * axis.z - axis.x * s,  0.0, oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c, 0.0, 0.0, 0.0, 0.0, 1.0);\n}\n\n// https://www.geeks3d.com/20141201/how-to-rotate-a-vertex-by-a-quaternion-in-glsl/\nvec4 quatFromAxisAngle(vec3 axis, float angle)\n{\n\tvec4 qr;\n\tfloat half_angle = (angle * 0.5); // * 3.14159 / 180.0;\n\tfloat sin_half_angle = sin(half_angle);\n\tqr.x = axis.x * sin_half_angle;\n\tqr.y = axis.y * sin_half_angle;\n\tqr.z = axis.z * sin_half_angle;\n\tqr.w = cos(half_angle);\n\treturn qr;\n}\nvec3 rotateWithAxisAngle(vec3 position, vec3 axis, float angle)\n{\n\tvec4 q = quatFromAxisAngle(axis, angle);\n\tvec3 v = position.xyz;\n\treturn v + 2.0 * cross(q.xyz, cross(q.xyz, v) + q.w * v);\n}\n// vec3 applyQuaternionToVector( vec4 q, vec3 v ){\n// \treturn v + 2.0 * cross( q.xyz, cross( q.xyz, v ) + q.w * v );\n// }\nvec3 rotateWithQuat( vec3 v, vec4 q )\n{\n\t// vec4 qv = multQuat( quat, vec4(vec, 0.0) );\n\t// return multQuat( qv, vec4(-quat.x, -quat.y, -quat.z, quat.w) ).xyz;\n\treturn v + 2.0 * cross( q.xyz, cross( q.xyz, v ) + q.w * v );\n}\n// https://github.com/glslify/glsl-look-at/blob/gh-pages/index.glsl\n// mat3 rotation_matrix(vec3 origin, vec3 target, float roll) {\n// \tvec3 rr = vec3(sin(roll), cos(roll), 0.0);\n// \tvec3 ww = normalize(target - origin);\n// \tvec3 uu = normalize(cross(ww, rr));\n// \tvec3 vv = normalize(cross(uu, ww));\n\n// \treturn mat3(uu, vv, ww);\n// }\n// mat3 rotation_matrix(vec3 target, float roll) {\n// \tvec3 rr = vec3(sin(roll), cos(roll), 0.0);\n// \tvec3 ww = normalize(target);\n// \tvec3 uu = normalize(cross(ww, rr));\n// \tvec3 vv = normalize(cross(uu, ww));\n\n// \treturn mat3(uu, vv, ww);\n// }\n\nfloat vectorAngle(vec3 start, vec3 dest){\n\tstart = normalize(start);\n\tdest = normalize(dest);\n\n\tfloat cosTheta = dot(start, dest);\n\tvec3 c1 = cross(start, dest);\n\t// We use the dot product of the cross with the Y axis.\n\t// This is a little arbitrary, but can still give a good sense of direction\n\tvec3 y_axis = vec3(0.0, 1.0, 0.0);\n\tfloat d1 = dot(c1, y_axis);\n\tfloat angle = acos(cosTheta) * sign(d1);\n\treturn angle;\n}\n\n// http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-17-quaternions/#i-need-an-equivalent-of-glulookat-how-do-i-orient-an-object-towards-a-point-\nvec4 vectorAlign(vec3 start, vec3 dest){\n\tstart = normalize(start);\n\tdest = normalize(dest);\n\n\tfloat cosTheta = dot(start, dest);\n\tvec3 axis;\n\n\t// if (cosTheta < -1 + 0.001f){\n\t// \t// special case when vectors in opposite directions:\n\t// \t// there is no ideal rotation axis\n\t// \t// So guess one; any will do as long as it's perpendicular to start\n\t// \taxis = cross(vec3(0.0f, 0.0f, 1.0f), start);\n\t// \tif (length2(axis) < 0.01 ) // bad luck, they were parallel, try again!\n\t// \t\taxis = cross(vec3(1.0f, 0.0f, 0.0f), start);\n\n\t// \taxis = normalize(axis);\n\t// \treturn gtx::quaternion::angleAxis(glm::radians(180.0f), axis);\n\t// }\n\tif(cosTheta > (1.0 - 0.0001) || cosTheta < (-1.0 + 0.0001) ){\n\t\taxis = normalize(cross(start, vec3(0.0, 1.0, 0.0)));\n\t\tif (length(axis) < 0.001 ){ // bad luck, they were parallel, try again!\n\t\t\taxis = normalize(cross(start, vec3(1.0, 0.0, 0.0)));\n\t\t}\n\t} else {\n\t\taxis = normalize(cross(start, dest));\n\t}\n\n\tfloat angle = acos(cosTheta);\n\n\treturn quatFromAxisAngle(axis, angle);\n}\nvec4 vectorAlignWithUp(vec3 start, vec3 dest, vec3 up){\n\tvec4 rot1 = vectorAlign(start, dest);\n\tup = normalize(up);\n\n\t// Recompute desiredUp so that it's perpendicular to the direction\n\t// You can skip that part if you really want to force desiredUp\n\t// vec3 right = normalize(cross(dest, up));\n\t// up = normalize(cross(right, dest));\n\n\t// Because of the 1rst rotation, the up is probably completely screwed up.\n\t// Find the rotation between the up of the rotated object, and the desired up\n\tvec3 newUp = rotateWithQuat(vec3(0.0, 1.0, 0.0), rot1);//rot1 * vec3(0.0, 1.0, 0.0);\n\tvec4 rot2 = vectorAlign(up, newUp);\n\n\t// return rot1;\n\treturn rot2;\n\t// return multQuat(rot1, rot2);\n\t// return rot2 * rot1;\n\n}\n\n// https://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToAngle/index.htm\nfloat quatToAngle(vec4 q){\n\treturn 2.0 * acos(q.w);\n}\nvec3 quatToAxis(vec4 q){\n\treturn vec3(\n\t\tq.x / sqrt(1.0-q.w*q.w),\n\t\tq.y / sqrt(1.0-q.w*q.w),\n\t\tq.z / sqrt(1.0-q.w*q.w)\n\t);\n}\n\nvec4 align(vec3 dir, vec3 up){\n\tvec3 start_dir = vec3(0.0, 0.0, 1.0);\n\tvec3 start_up = vec3(0.0, 1.0, 0.0);\n\tvec4 rot1 = vectorAlign(start_dir, dir);\n\tup = normalize(up);\n\n\t// Recompute desiredUp so that it's perpendicular to the direction\n\t// You can skip that part if you really want to force desiredUp\n\tvec3 right = normalize(cross(dir, up));\n\tif(length(right)<0.001){\n\t\tright = vec3(1.0, 0.0, 0.0);\n\t}\n\tup = normalize(cross(right, dir));\n\n\t// Because of the 1rst rotation, the up is probably completely screwed up.\n\t// Find the rotation between the up of the rotated object, and the desired up\n\tvec3 newUp = rotateWithQuat(start_up, rot1);//rot1 * vec3(0.0, 1.0, 0.0);\n\tvec4 rot2 = vectorAlign(normalize(newUp), up);\n\n\t// return rot1;\n\treturn quatMult(rot1, rot2);\n\t// return rot2 * rot1;\n\n}\n\n\n\n\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\nuniform float time;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nvarying vec3 varying_v_POLY_attribute2_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\nvarying float varying_v_POLY_attribute4_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute1\nattribute float id;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nattribute vec3 restP;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nattribute float dist;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\nattribute vec3 instancePosition;\nattribute vec4 instanceOrientation;\n\n\n\n\n\n\n\nvoid main() {\n\n\t// INSERT BODY\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute1\n\tfloat v_POLY_attribute1_val = id;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\n\tv_POLY_globals1_uv = vec2(uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\n\tvarying_v_POLY_attribute2_val = vec3(restP);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\n\tvarying_v_POLY_attribute3_val = float(dist);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\n\tvarying_v_POLY_attribute4_val = float(id);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\n\tfloat v_POLY_globals2_time = time;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/round1\n\tfloat v_POLY_round1_val = sign(v_POLY_attribute1_val)*floor(abs(v_POLY_attribute1_val)+0.5);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec2_1\n\tvec2 v_POLY_floatToVec2_1_vec2 = vec2(v_POLY_round1_val, 56.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/random1\n\tfloat v_POLY_random1_rand = rand(v_POLY_floatToVec2_1_vec2);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance1\n\tfloat v_POLY_fitFrom01ToVariance1_val = fitFrom01ToVariance(v_POLY_random1_rand, 1.0, 0.34);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec3_1\n\tvec3 v_POLY_floatToVec3_1_vec3 = vec3(v_POLY_fitFrom01ToVariance1_val, v_POLY_fitFrom01ToVariance1_val, v_POLY_fitFrom01ToVariance1_val);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/instanceTransform1\n\tvec3 v_POLY_instanceTransform1_position = vec3(position);\n\tv_POLY_instanceTransform1_position *= v_POLY_floatToVec3_1_vec3;\n\tv_POLY_instanceTransform1_position = rotateWithQuat( v_POLY_instanceTransform1_position, instanceOrientation );\n\tv_POLY_instanceTransform1_position += instancePosition;\n\tvec3 v_POLY_instanceTransform1_normal = vec3(normal);\n\tv_POLY_instanceTransform1_normal = rotateWithQuat( v_POLY_instanceTransform1_normal, instanceOrientation );\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/output1\n\tvec3 transformed = v_POLY_instanceTransform1_position;\n\tvec3 objectNormal = v_POLY_instanceTransform1_normal;\n\t#ifdef USE_TANGENT\n\t\tvec3 objectTangent = vec3( tangent.xyz );\n\t#endif\n\n\n\n\n\n\t#include <project_vertex>\n\n\tvViewZDepth = - mvPosition.z;\n}",
+				"fragmentShader": "uniform float mNear;\nuniform float mFar;\n\nvarying float vViewZDepth;\n\n// INSERT DEFINES\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance2\n//\n//\n// FIT\n//\n//\nfloat fit(float val, float srcMin, float srcMax, float destMin, float destMax){\n\tfloat src_range = srcMax - srcMin;\n\tfloat dest_range = destMax - destMin;\n\n\tfloat r = (val - srcMin) / src_range;\n\treturn (r * dest_range) + destMin;\n}\nvec2 fit(vec2 val, vec2 srcMin, vec2 srcMax, vec2 destMin, vec2 destMax){\n\treturn vec2(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y)\n\t);\n}\nvec3 fit(vec3 val, vec3 srcMin, vec3 srcMax, vec3 destMin, vec3 destMax){\n\treturn vec3(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z)\n\t);\n}\nvec4 fit(vec4 val, vec4 srcMin, vec4 srcMax, vec4 destMin, vec4 destMax){\n\treturn vec4(\n\t\tfit(val.x, srcMin.x, srcMax.x, destMin.x, destMax.x),\n\t\tfit(val.y, srcMin.y, srcMax.y, destMin.y, destMax.y),\n\t\tfit(val.z, srcMin.z, srcMax.z, destMin.z, destMax.z),\n\t\tfit(val.w, srcMin.w, srcMax.w, destMin.w, destMax.w)\n\t);\n}\n\n//\n//\n// FIT TO 01\n// fits the range [srcMin, srcMax] to [0, 1]\n//\nfloat fitTo01(float val, float srcMin, float srcMax){\n\tfloat size = srcMax - srcMin;\n\treturn (val - srcMin) / size;\n}\nvec2 fitTo01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitTo01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitTo01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitTo01(val.x, srcMin.x, srcMax.x),\n\t\tfitTo01(val.y, srcMin.y, srcMax.y),\n\t\tfitTo01(val.z, srcMin.z, srcMax.z),\n\t\tfitTo01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01\n// fits the range [0, 1] to [destMin, destMax]\n//\nfloat fitFrom01(float val, float destMin, float destMax){\n\treturn fit(val, 0.0, 1.0, destMin, destMax);\n}\nvec2 fitFrom01(vec2 val, vec2 srcMin, vec2 srcMax){\n\treturn vec2(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y)\n\t);\n}\nvec3 fitFrom01(vec3 val, vec3 srcMin, vec3 srcMax){\n\treturn vec3(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z)\n\t);\n}\nvec4 fitFrom01(vec4 val, vec4 srcMin, vec4 srcMax){\n\treturn vec4(\n\t\tfitFrom01(val.x, srcMin.x, srcMax.x),\n\t\tfitFrom01(val.y, srcMin.y, srcMax.y),\n\t\tfitFrom01(val.z, srcMin.z, srcMax.z),\n\t\tfitFrom01(val.w, srcMin.w, srcMax.w)\n\t);\n}\n\n//\n//\n// FIT FROM 01 TO VARIANCE\n// fits the range [0, 1] to [center - variance, center + variance]\n//\nfloat fitFrom01ToVariance(float val, float center, float variance){\n\treturn fitFrom01(val, center - variance, center + variance);\n}\nvec2 fitFrom01ToVariance(vec2 val, vec2 center, vec2 variance){\n\treturn vec2(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y)\n\t);\n}\nvec3 fitFrom01ToVariance(vec3 val, vec3 center, vec3 variance){\n\treturn vec3(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z)\n\t);\n}\nvec4 fitFrom01ToVariance(vec4 val, vec4 center, vec4 variance){\n\treturn vec4(\n\t\tfitFrom01ToVariance(val.x, center.x, variance.x),\n\t\tfitFrom01ToVariance(val.y, center.y, variance.y),\n\t\tfitFrom01ToVariance(val.z, center.z, variance.z),\n\t\tfitFrom01ToVariance(val.w, center.w, variance.w)\n\t);\n}\n\n\n\n\n\n\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\nuniform float time;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/texture1\nuniform sampler2D v_POLY_texture1_;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/globals1\nvarying vec2 v_POLY_globals1_uv;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\nvarying vec3 varying_v_POLY_attribute2_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\nvarying float varying_v_POLY_attribute3_val;\n\n// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\nvarying float varying_v_POLY_attribute4_val;\n\n\n\n\n\nvoid main() {\n\n\tfloat color = 1.0 - smoothstep( mNear, mFar, vViewZDepth );\n\tgl_FragColor = vec4( vec3( color ), 1.0 );\n\tvec4 diffuseColor = gl_FragColor;\n\n\t// INSERT BODY\n\n\n\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute2\n\tvec3 v_POLY_attribute2_val = varying_v_POLY_attribute2_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute3\n\tfloat v_POLY_attribute3_val = varying_v_POLY_attribute3_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/attribute4\n\tfloat v_POLY_attribute4_val = varying_v_POLY_attribute4_val;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/globals2\n\tfloat v_POLY_globals2_time = time;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/texture1\n\tvec4 v_POLY_texture1_rgba = texture2D(v_POLY_texture1_, v_POLY_globals1_uv);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/vec3ToFloat1\n\tfloat v_POLY_vec3ToFloat1_y = v_POLY_attribute2_val.y;\n\tfloat v_POLY_vec3ToFloat1_z = v_POLY_attribute2_val.z;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd3\n\tfloat v_POLY_multAdd3_val = (4.6*(v_POLY_attribute3_val + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/round2\n\tfloat v_POLY_round2_val = sign(v_POLY_attribute4_val)*floor(abs(v_POLY_attribute4_val)+0.5);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd1\n\tfloat v_POLY_multAdd1_val = (1.0*(v_POLY_globals2_time + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/colorCorrect1\n\tvec4 v_POLY_colorCorrect1_out = sRGBToLinear(v_POLY_texture1_rgba);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd2\n\tfloat v_POLY_multAdd2_val = (-0.30000000000000004*(v_POLY_vec3ToFloat1_z + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/floatToVec2_2\n\tvec2 v_POLY_floatToVec2_2_vec2 = vec2(v_POLY_round2_val, 56.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/vec4ToVec3_1\n\tvec3 v_POLY_vec4ToVec3_1_vec3 = v_POLY_colorCorrect1_out.xyz;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/random2\n\tfloat v_POLY_random2_rand = rand(v_POLY_floatToVec2_2_vec2);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/fitFrom01ToVariance2\n\tfloat v_POLY_fitFrom01ToVariance2_val = fitFrom01ToVariance(v_POLY_random2_rand, 0.0, 1.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd4\n\tfloat v_POLY_multAdd4_val = (1.0*(v_POLY_fitFrom01ToVariance2_val + 0.0)) + 0.0;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/add2\n\tfloat v_POLY_add2_sum = (v_POLY_multAdd3_val + v_POLY_multAdd4_val + 0.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/multAdd5\n\tfloat v_POLY_multAdd5_val = (1.0*(v_POLY_add2_sum + 0.0)) + 0.9;\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/add1\n\tfloat v_POLY_add1_sum = (v_POLY_multAdd2_val + v_POLY_multAdd5_val + 0.0);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/compare2\n\tbool v_POLY_compare2_val = (v_POLY_add1_sum > v_POLY_multAdd1_val);\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/twoWaySwitch1\n\tfloat v_POLY_twoWaySwitch1_val;\n\tif(v_POLY_compare2_val){\n\tv_POLY_twoWaySwitch1_val = 0.0;\n\t} else {\n\tv_POLY_twoWaySwitch1_val = 1.0;\n\t}\n\t\n\t// /geo1/MAT/meshLambertBuilder_dinosaur2/output1\n\tdiffuseColor.xyz = v_POLY_vec4ToVec3_1_vec3;\n\tdiffuseColor.a = v_POLY_twoWaySwitch1_val;\n\n\n\n\n\tgl_FragColor.a = diffuseColor.a;\n}\n",
+				"shadowSide": null,
+				"lights": false
+			}
+		}
+	}
+}

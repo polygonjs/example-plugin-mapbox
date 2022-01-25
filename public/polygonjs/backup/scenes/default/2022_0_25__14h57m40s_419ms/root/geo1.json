@@ -1,0 +1,282 @@
+{
+	"type": "geo",
+	"nodes": {
+		"add1": {
+			"type": "add"
+		},
+		"transform1": {
+			"type": "transform",
+			"params": {
+				"t": [
+					-0.07956,
+					0,
+					51.5146
+				]
+			},
+			"inputs": [
+				"add1"
+			]
+		},
+		"copy1": {
+			"type": "copy",
+			"inputs": [
+				"material1",
+				"mapboxTransform1"
+			]
+		},
+		"mapboxTransform1": {
+			"type": "mapboxTransform",
+			"inputs": [
+				"transform1"
+			]
+		},
+		"transform2": {
+			"type": "transform",
+			"params": {
+				"scale": 10
+			},
+			"inputs": [
+				"restAttributes1"
+			]
+		},
+		"file1": {
+			"type": "file",
+			"params": {
+				"url": "/models/dinosaur1.glb"
+			}
+		},
+		"hierarchy1": {
+			"type": "hierarchy",
+			"params": {
+				"mode": 1
+			},
+			"inputs": [
+				"file1"
+			]
+		},
+		"objectProperties1": {
+			"type": "objectProperties",
+			"params": {
+				"tcastShadow": 1,
+				"castShadow": 0,
+				"treceiveShadow": 1,
+				"receiveShadow": 0
+			},
+			"inputs": [
+				"transform2"
+			]
+		},
+		"material1": {
+			"type": "material",
+			"params": {
+				"material": "/geo1/MAT/meshLambertBuilder_dinosaur1"
+			},
+			"inputs": [
+				"objectProperties1"
+			]
+		},
+		"restAttributes1": {
+			"type": "restAttributes",
+			"params": {
+				"tnormal": 0
+			},
+			"inputs": [
+				"hierarchy1"
+			]
+		},
+		"file2": {
+			"type": "file",
+			"params": {
+				"url": "/models/dinosaur2.glb"
+			}
+		},
+		"hierarchy2": {
+			"type": "hierarchy",
+			"params": {
+				"mode": 1
+			},
+			"inputs": [
+				"file2"
+			]
+		},
+		"transform3": {
+			"type": "transform",
+			"params": {
+				"scale": 10
+			},
+			"inputs": [
+				"restAttributes2"
+			]
+		},
+		"objectProperties2": {
+			"type": "objectProperties",
+			"params": {
+				"tcastShadow": true,
+				"castShadow": false,
+				"treceiveShadow": true,
+				"receiveShadow": false
+			},
+			"inputs": [
+				"transform3"
+			]
+		},
+		"restAttributes2": {
+			"type": "restAttributes",
+			"params": {
+				"tnormal": false
+			},
+			"inputs": [
+				"transform6"
+			]
+		},
+		"transform4": {
+			"type": "transform",
+			"params": {
+				"t": [
+					-0.07956,
+					0,
+					51.514500000000005
+				]
+			},
+			"inputs": [
+				"transform5"
+			]
+		},
+		"mapboxTransform2": {
+			"type": "mapboxTransform",
+			"inputs": [
+				"transform4"
+			]
+		},
+		"merge1": {
+			"type": "merge",
+			"inputs": [
+				"copy1",
+				"instance1"
+			],
+			"flags": {
+				"display": true
+			}
+		},
+		"hexagons1": {
+			"type": "hexagons",
+			"params": {
+				"size": [
+					8,
+					8
+				],
+				"pointsOnly": 1
+			}
+		},
+		"transform5": {
+			"type": "transform",
+			"params": {
+				"scale": 0.007
+			},
+			"inputs": [
+				"transform8"
+			]
+		},
+		"normals1": {
+			"type": "normals",
+			"params": {
+				"edit": 1,
+				"updateX": 1,
+				"x": "@P.x",
+				"updateY": 1,
+				"y": 0,
+				"updateZ": 1,
+				"z": "-@P.z",
+				"invert": 1
+			},
+			"inputs": [
+				"point_set_Py_to_0"
+			]
+		},
+		"transform6": {
+			"type": "transform",
+			"params": {
+				"r": [
+					0,
+					170,
+					0
+				]
+			},
+			"inputs": [
+				"hierarchy2"
+			]
+		},
+		"transform8": {
+			"type": "transform",
+			"params": {
+				"scale": 1.9
+			},
+			"inputs": [
+				"attribCreate2"
+			]
+		},
+		"delete_points_close_to_center": {
+			"type": "delete",
+			"params": {
+				"byExpression": 1,
+				"expression": "abs(@P.x) < 0.1 && abs(@P.z) < 0.1"
+			},
+			"inputs": [
+				"normals1"
+			]
+		},
+		"jitter1": {
+			"type": "jitter",
+			"params": {
+				"amount": 0.05
+			},
+			"inputs": [
+				"hexagons1"
+			]
+		},
+		"point_set_Py_to_0": {
+			"type": "point",
+			"params": {
+				"updateY": 1,
+				"y": 0
+			},
+			"inputs": [
+				"jitter1"
+			]
+		},
+		"instance1": {
+			"type": "instance",
+			"params": {
+				"attributesToCopy": "instance* id dist",
+				"material": "/geo1/MAT/meshLambertBuilder_dinosaur2"
+			},
+			"inputs": [
+				"objectProperties2",
+				"mapboxTransform2"
+			]
+		},
+		"attribCreate1": {
+			"type": "attribCreate",
+			"params": {
+				"name": "id",
+				"value1": "@ptnum"
+			},
+			"inputs": [
+				"delete_points_close_to_center"
+			]
+		},
+		"attribCreate2": {
+			"type": "attribCreate",
+			"params": {
+				"name": "dist",
+				"value1": "sqrt(@P.x*@P.x + @P.z*@P.z)"
+			},
+			"inputs": [
+				"attribCreate1"
+			]
+		}
+	},
+	"flags": {
+		"display": true
+	}
+}

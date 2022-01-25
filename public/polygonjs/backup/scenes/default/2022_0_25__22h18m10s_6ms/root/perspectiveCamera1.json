@@ -1,0 +1,20 @@
+{
+	"type": "perspectiveCamera",
+	"nodes": {},
+	"params": {
+		"t": [
+			1.1138879980300065,
+			1.5669728061052821,
+			0.7131541475759242
+		],
+		"r": [
+			-65.52896628672457,
+			32.902788078561464,
+			50.04310153151484
+		],
+		"controls": "/perspectiveCamera1/events1/cameraOrbitControls1"
+	},
+	"flags": {
+		"display": true
+	}
+}
