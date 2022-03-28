@@ -1,4 +1,4 @@
-import {loadSceneData_default} from './loadSceneData.js?t=1648489976615';
+import {loadSceneData_default} from './loadSceneData.js?t=1648490932546';
 
 export const loadSceneAndMountAsync_default = async function (options) {
 	const {
@@ -15,7 +15,7 @@ export const loadSceneAndMountAsync_default = async function (options) {
 
 	const moduleNames = loadModules ? ["DRACOLoader", "GLTFLoader"] : [];
 	const modulePromises = moduleNames.map((moduleName) => import('./modules/' + moduleName + (options.moduleImportSuffix || '')));
-	const promises = [import('./loadSceneFromSceneData.js?t=1648489976615'), loadSceneData_default({onProgress, sceneDataRoot}), ...modulePromises];
+	const promises = [import('./loadSceneFromSceneData.js?t=1648490932546'), loadSceneData_default({onProgress, sceneDataRoot}), ...modulePromises];
 	const results = await Promise.all(promises);
 	const {Poly, loadSceneFromSceneData_default} = results[0];
 	const sceneData = results[1];
