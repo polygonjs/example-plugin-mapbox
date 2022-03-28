@@ -14,5 +14,8 @@
 				"display": true
 			}
 		}
+	},
+	"params": {
+		"backgroundMode": 0
 	}
 }

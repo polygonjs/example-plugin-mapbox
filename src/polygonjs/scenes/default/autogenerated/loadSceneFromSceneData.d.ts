@@ -7,15 +7,18 @@ import {BaseViewerType} from '@polygonjs/polygonjs/dist/src/engine/viewers/_Base
 export interface loadSceneOptions {
 	sceneData: SceneJsonExporterData;
 	onProgress: OnProgressCallback;
+	autoPlay?: boolean;
 	domElement?: HTMLElement;
 	runRegister?: boolean;
+	assetsRoot?: string;
+	libsRootPrefix?: string;
 }
 interface LoadedData {
-	scene: PolySceneWithNodeMap_default,
-	viewer: BaseViewerType|undefined
+	scene: PolySceneWithNodeMap_default;
+	viewer: BaseViewerType | undefined;
 }
-export type LoadSceneMethod = (options: loadSceneOptions) => Promise<LoadedData|undefined>;
+export type LoadSceneMethod = (options: loadSceneOptions) => Promise<LoadedData | undefined>;
 
-const loadSceneFromSceneData_default: LoadSceneMethod;
+declare const loadSceneFromSceneData_default: LoadSceneMethod;
 
 export {Poly, loadSceneFromSceneData_default};

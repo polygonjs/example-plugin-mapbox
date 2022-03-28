@@ -1,3 +1,5 @@
 node_modules/
 houdini/backup/
 build
+public/polygonjs/backup
+public/polygonjs/build

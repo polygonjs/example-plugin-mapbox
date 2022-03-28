@@ -20,11 +20,13 @@ This will open the scene saved in this repo.
 
 ![mapbox plugin from Polygonjs node-based Editor](https://github.com/polygonjs/example-plugin-mapbox/blob/main/doc/mapbox_example_in_editor.jpg?raw=true)
 
-## Open the export scene without the editor
+## Open the exported scene without the editor
 
-`yarn && yarn run snowpack dev`
+1. Go to the export folder: `cd public/polygonjs/build/default`. If the folder does not exist, make sure to open the editor as described above and save the scene. This will create the exported files.
 
-and open your browser at
+2. Open a local server. You can do this in multiple ways. Either `python3 -m http.server` or `npx http-server -p 8000 -c-1 .`
 
-`http://localhost:8080`
+3. Open your browser at `http://localhost:8000`
+
+
 

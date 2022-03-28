@@ -2,8 +2,9 @@ import {SceneDataManifestImporter} from '@polygonjs/polygonjs/dist/src/engine/io
 import manifest from './manifest.json';
 
 export const loadSceneData_default = async (options) => {
+	const sceneDataRoot = options.sceneDataRoot || './polygonjs/scenes'
 	return await SceneDataManifestImporter.importSceneData({
-		urlPrefix: `./polygonjs/scenes/default`,
+		urlPrefix: sceneDataRoot + '/' + 'default',
 		manifest: manifest,
 		onProgress: options.onProgress,
 	});
