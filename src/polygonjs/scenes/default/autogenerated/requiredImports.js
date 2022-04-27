@@ -16,7 +16,7 @@ import {AttribCreateSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/so
 import {CopySopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Copy';
 import {DeleteSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Delete';
 import {EventsNetworkSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/EventsNetwork';
-import {FileSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/File';
+import {FileGLTFSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/FileGLTF';
 import {HexagonsSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Hexagons';
 import {HierarchySopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Hierarchy';
 import {InstanceSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Instance';
@@ -25,6 +25,7 @@ import {MaterialSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Ma
 import {MaterialsNetworkSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/MaterialsNetwork';
 import {MergeSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge';
 import {NormalsSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Normals';
+import {NullSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Null';
 import {ObjectPropertiesSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/ObjectProperties';
 import {PointSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/Point';
 import {RestAttributesSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/RestAttributes';
@@ -45,7 +46,7 @@ export const requiredImports_default = {
 		CopySopNode,
 		DeleteSopNode,
 		EventsNetworkSopNode,
-		FileSopNode,
+		FileGLTFSopNode,
 		HexagonsSopNode,
 		HierarchySopNode,
 		InstanceSopNode,
@@ -54,6 +55,7 @@ export const requiredImports_default = {
 		MaterialsNetworkSopNode,
 		MergeSopNode,
 		NormalsSopNode,
+		NullSopNode,
 		ObjectPropertiesSopNode,
 		PointSopNode,
 		RestAttributesSopNode,

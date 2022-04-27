@@ -24,18 +24,25 @@
 				"panel_data": {
 					"camera": {
 						"position": {
-							"x": -124.29213483146069,
-							"y": -218.8314606741573
+							"x": -401.2679489621025,
+							"y": -746.6057621677503
 						},
-						"zoom": 0.44499999999999995
+						"zoom": 0.4129999999999999
 					},
 					"history": {
+						"2": {
+							"position": {
+								"x": 75,
+								"y": -100
+							},
+							"zoom": 0.4129999999999999
+						},
 						"68": {
 							"position": {
-								"x": -124.29213483146069,
-								"y": -218.8314606741573
+								"x": -401.2679489621025,
+								"y": -746.6057621677503
 							},
-							"zoom": 0.44499999999999995
+							"zoom": 0.4129999999999999
 						}
 					},
 					"linkIndex": 1
@@ -89,6 +96,8 @@
 				"/geo1/MAT",
 				"/geo1/MAT/meshLambertBuilder_dinosaur2",
 				"/geo1/MAT",
+				"/geo1",
+				"/",
 				"/geo1"
 			],
 			"2": [
@@ -114,7 +123,7 @@
 			]
 		},
 		"index": {
-			"1": 20,
+			"1": 22,
 			"2": 0,
 			"3": 0,
 			"4": 0,
@@ -126,8 +135,9 @@
 	},
 	"fullscreenPanelId": null,
 	"saveOptions": {
+		"createExport": true,
 		"compressJs": true,
-		"createZip": true
+		"publishToIntegrations": false
 	},
 	"paramsModal": []
 }

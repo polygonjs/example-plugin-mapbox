@@ -9,4 +9,10 @@
 		<div id="<%= EditorApi.html.body.polygonjsId('default') %>" class='polygonjs-app'></div>
 		<%= EditorApi.html.body.tags('loader') %>
 	</body>
+	<script>
+		document.addEventListener('POLYSceneReady', (event)=>{
+			console.log(event)
+			window.scene = event.detail.scene;
+		})
+	</script>
 </html>

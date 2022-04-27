@@ -43,7 +43,7 @@
 			]
 		},
 		"file1": {
-			"type": "file",
+			"type": "fileGLTF",
 			"params": {
 				"url": "/models/dinosaur1.glb"
 			}
@@ -88,7 +88,7 @@
 			]
 		},
 		"file2": {
-			"type": "file",
+			"type": "fileGLTF",
 			"params": {
 				"url": "/models/dinosaur2.glb"
 			}
@@ -159,10 +159,7 @@
 			"inputs": [
 				"copy1",
 				"instance1"
-			],
-			"flags": {
-				"display": true
-			}
+			]
 		},
 		"hexagons1": {
 			"type": "hexagons",
@@ -280,6 +277,15 @@
 			"inputs": [
 				"attribCreate1"
 			]
+		},
+		"OUT": {
+			"type": "null",
+			"inputs": [
+				"merge1"
+			],
+			"flags": {
+				"display": true
+			}
 		}
 	},
 	"flags": {
