@@ -1,25 +1,22 @@
 {
 	"type": "root",
 	"nodes": {
-		"mapboxCamera1": {
-			"type": "mapboxCamera",
-			"params": {
-				"bearing": 309.6,
-				"tlayerBuildings": 1
-			}
-		},
 		"hemisphereLight1": {
 			"type": "hemisphereLight",
 			"flags": {
 				"display": true
+			}
+		},
+		"mapboxCamera1": {
+			"type": "mapboxCamera",
+			"params": {
+				"setCSSRenderer": 1,
+				"CSSRenderer": "../renderersNetwork1/CSS2DRenderer1"
 			}
 		}
 	},
 	"params": {
 		"backgroundMode": 0,
 		"mainCameraPath": "/mapboxCamera1"
-	},
-	"selection": [
-		"geo1"
-	]
+	}
 }

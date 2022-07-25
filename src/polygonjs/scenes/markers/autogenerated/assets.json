@@ -1,0 +1,5 @@
+[
+	"models/dinosaur1.glb?timestamp=1658662860754",
+	"./three/js/libs/draco/gltf/draco_decoder.wasm",
+	"./three/js/libs/draco/gltf/draco_wasm_wrapper.js"
+]

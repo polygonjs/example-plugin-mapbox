@@ -1,4 +1,4 @@
-import { polyPluginMapbox } from "@polygonjs/plugin-mapbox/dist/src/index";
+import { polyPluginMapbox } from "@polygonjs/plugin-mapbox";
 import {token} from '../ExampleData'
 
 export function configurePolygonjs(poly) {

@@ -1,0 +1,132 @@
+{
+	"multiple_panel": {
+		"split_ratio": 0.5,
+		"split_panel0": {
+			"split_ratio": 0.5,
+			"split_panel0": {
+				"panelTypes": [
+					"viewer"
+				],
+				"currentPanelIndex": 0,
+				"panel_data": {
+					"camera": "/mapboxCamera1",
+					"linkIndex": 1
+				}
+			},
+			"split_panel1": {
+				"panelTypes": [
+					"params"
+				],
+				"currentPanelIndex": 0,
+				"panel_data": {
+					"active_folder": null,
+					"linkIndex": 1
+				}
+			},
+			"split_mode": "vertical"
+		},
+		"split_panel1": {
+			"panelTypes": [
+				"network",
+				"params",
+				"viewer"
+			],
+			"currentPanelIndex": 0,
+			"panel_data": {
+				"camera": {
+					"position": {
+						"x": 224.7739474683604,
+						"y": 62.402971253930325
+					},
+					"zoom": 0.6381817321777346
+				},
+				"history": {
+					"2": {
+						"position": {
+							"x": 224.7739474683604,
+							"y": 62.402971253930325
+						},
+						"zoom": 0.6381817321777346
+					},
+					"96": {
+						"position": {
+							"x": 7.692246998233941,
+							"y": -78.2051367881285
+						},
+						"zoom": 0.6381817321777346
+					},
+					"189": {
+						"position": {
+							"x": 9.971528704248799,
+							"y": 49.857547882097386
+						},
+						"zoom": 0.6381817321777346
+					},
+					"200": {
+						"position": {
+							"x": -48.13040160071545,
+							"y": -382.9712955469634
+						},
+						"zoom": 0.7190908203125002
+					}
+				},
+				"linkIndex": 1
+			}
+		},
+		"split_mode": "horizontal"
+	},
+	"currentNodes": [
+		"/",
+		"/",
+		"/",
+		"/",
+		"/",
+		"/",
+		"/",
+		"/"
+	],
+	"navigationHistory": {
+		"nodePaths": {
+			"1": [
+				"/renderersNetwork1",
+				"/",
+				"/grid",
+				"/",
+				"/geo1",
+				"/",
+				"/geo1",
+				"/",
+				"/renderersNetwork1",
+				"/",
+				"/geo1",
+				"/"
+			],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": []
+		},
+		"index": {
+			"1": 11,
+			"2": -1,
+			"3": -1,
+			"4": -1,
+			"5": -1,
+			"6": -1,
+			"7": -1,
+			"8": -1
+		}
+	},
+	"fullscreenPanelId": null,
+	"saveOptions": {
+		"createExport": true,
+		"skipExportSinceRemoteAssetsPresents": false,
+		"compressJs": true,
+		"createZip": false,
+		"publishToIntegrations": false
+	},
+	"paramsModal": []
+}

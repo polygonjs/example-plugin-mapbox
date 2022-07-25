@@ -3,9 +3,9 @@ import { PolyNodeController } from "@polygonjs/polygonjs/dist/src/engine/nodes/u
 import { configureScene, configurePolygonjs } from "../PolyConfig";
 import { Poly } from "@polygonjs/polygonjs/dist/src/engine/Poly";
 import { AllExpressionsRegister } from "@polygonjs/polygonjs/dist/src/engine/poly/registers/expressions/All";
-import { requiredImports_default } from "./requiredImports";
+import { requiredImports_markers } from "./requiredImports";
 
-const loadSceneFromSceneData_default = async function (options) {
+const loadSceneFromSceneData_markers = async function (options) {
   const {
     domElement,
     sceneData,
@@ -22,10 +22,10 @@ const loadSceneFromSceneData_default = async function (options) {
 
   if (runRegister) {
     // registers nodes required for this scene
-    for (const node of requiredImports_default.nodes) {
+    for (const node of requiredImports_markers.nodes) {
       Poly.registerNode(node, undefined, { printWarnings });
     }
-    for (const operation of requiredImports_default.operations) {
+    for (const operation of requiredImports_markers.operations) {
       Poly.registerOperation(operation, { printWarnings });
     }
     const polyNodesData = [];
@@ -49,7 +49,7 @@ const loadSceneFromSceneData_default = async function (options) {
   }
 
   // load the scene and create a viewer
-  const sceneName = "default";
+  const sceneName = "markers";
   const { scene, viewer } = await ScenePlayerImporter.loadSceneData({
     domElement,
     sceneName,
@@ -67,4 +67,4 @@ const loadSceneFromSceneData_default = async function (options) {
   };
 };
 
-export { Poly, loadSceneFromSceneData_default };
+export { Poly, loadSceneFromSceneData_markers };

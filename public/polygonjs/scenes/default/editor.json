@@ -24,8 +24,8 @@
 				"panel_data": {
 					"camera": {
 						"position": {
-							"x": -401.2679489621025,
-							"y": -746.6057621677503
+							"x": -432.0843481184281,
+							"y": -706.9844136366138
 						},
 						"zoom": 0.4129999999999999
 					},
@@ -41,6 +41,13 @@
 							"position": {
 								"x": -401.2679489621025,
 								"y": -746.6057621677503
+							},
+							"zoom": 0.4129999999999999
+						},
+						"73": {
+							"position": {
+								"x": -432.0843481184281,
+								"y": -706.9844136366138
 							},
 							"zoom": 0.4129999999999999
 						}
@@ -136,7 +143,9 @@
 	"fullscreenPanelId": null,
 	"saveOptions": {
 		"createExport": true,
+		"skipExportSinceRemoteAssetsPresents": false,
 		"compressJs": true,
+		"createZip": false,
 		"publishToIntegrations": false
 	},
 	"paramsModal": []

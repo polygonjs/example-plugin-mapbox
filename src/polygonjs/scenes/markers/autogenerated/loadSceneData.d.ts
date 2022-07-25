@@ -7,8 +7,8 @@ interface LoadManifestOptions {
   sceneDataRoot?: string;
 }
 
-type LoadSceneData_default = (
+type LoadSceneData_markers = (
   options?: LoadManifestOptions
 ) => Promise<SceneJsonExporterData>;
 
-export const loadSceneData_default: LoadSceneData_default;
+export const loadSceneData_markers: LoadSceneData_markers;

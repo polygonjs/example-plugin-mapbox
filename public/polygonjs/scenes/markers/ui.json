@@ -1,0 +1,122 @@
+{
+	"nodes": {
+		"hemisphereLight1": {
+			"pos": [
+				150,
+				100
+			]
+		},
+		"mapboxCamera1": {
+			"pos": [
+				-400,
+				-150
+			]
+		},
+		"perspectiveCamera1": {
+			"pos": [
+				-200,
+				100
+			],
+			"nodes": {
+				"events1": {
+					"pos": [
+						-200,
+						50
+					],
+					"nodes": {
+						"cameraOrbitControls1": {
+							"pos": [
+								150,
+								50
+							]
+						}
+					}
+				}
+			}
+		},
+		"grid": {
+			"pos": [
+				-50,
+				-150
+			],
+			"nodes": {
+				"planeHelper1": {
+					"pos": [
+						-200,
+						-50
+					]
+				}
+			}
+		},
+		"renderersNetwork1": {
+			"pos": [
+				-400,
+				-50
+			],
+			"nodes": {
+				"CSS2DRenderer1": {
+					"pos": [
+						-300,
+						-50
+					]
+				}
+			}
+		},
+		"geo1": {
+			"pos": [
+				-50,
+				-50
+			],
+			"nodes": {
+				"add1": {
+					"pos": [
+						0,
+						-200
+					]
+				},
+				"fileGLTF1": {
+					"pos": [
+						-350,
+						-200
+					]
+				},
+				"transform1": {
+					"pos": [
+						0,
+						0
+					]
+				},
+				"mapboxTransform1": {
+					"pos": [
+						0,
+						150
+					]
+				},
+				"copy1": {
+					"pos": [
+						-200,
+						350
+					]
+				},
+				"hierarchy1": {
+					"pos": [
+						-350,
+						-100
+					]
+				},
+				"CSS2DObject1": {
+					"pos": [
+						150,
+						400
+					]
+				},
+				"merge1": {
+					"pos": [
+						0,
+						600
+					]
+				}
+			}
+		}
+	}
+}

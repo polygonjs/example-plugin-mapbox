@@ -1,6 +1,6 @@
-import { loadSceneData_default } from "./loadSceneData.js";
+import { loadSceneData_markers } from "./loadSceneData.js";
 
-export const loadSceneAsync_default = async function (options = {}) {
+export const loadSceneAsync_markers = async function (options = {}) {
   const {
     onProgress,
     domElement,
@@ -21,10 +21,10 @@ export const loadSceneAsync_default = async function (options = {}) {
   const moduleNames = loadModules ? [] : [];
   const promises = [
     import("./loadSceneFromSceneData.js"),
-    loadSceneData_default({ onProgress, sceneDataRoot }),
+    loadSceneData_markers({ onProgress, sceneDataRoot }),
   ];
   const results = await Promise.all(promises);
-  const { Poly, loadSceneFromSceneData_default } = results[0];
+  const { Poly, loadSceneFromSceneData_markers } = results[0];
   const sceneData = results[1];
   if (configureSceneData) {
     configureSceneData(sceneData);
@@ -42,7 +42,7 @@ export const loadSceneAsync_default = async function (options = {}) {
     i++;
   }
 
-  const loadedData = await loadSceneFromSceneData_default({
+  const loadedData = await loadSceneFromSceneData_markers({
     onProgress,
     sceneData,
     domElement,

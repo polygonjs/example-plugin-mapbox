@@ -1,0 +1,74 @@
+{
+	"type": "geo",
+	"nodes": {
+		"add1": {
+			"type": "add"
+		},
+		"fileGLTF1": {
+			"type": "fileGLTF",
+			"params": {
+				"url": "models/dinosaur1.glb?timestamp=1658662860754"
+			}
+		},
+		"transform1": {
+			"type": "transform",
+			"params": {
+				"t": [
+					-0.07956,
+					0,
+					51.5146
+				]
+			},
+			"inputs": [
+				"add1"
+			]
+		},
+		"mapboxTransform1": {
+			"type": "mapboxTransform",
+			"params": {
+				"mapboxCamera": "../../mapboxCamera1"
+			},
+			"inputs": [
+				"transform1"
+			]
+		},
+		"copy1": {
+			"type": "copy",
+			"inputs": [
+				"hierarchy1",
+				"mapboxTransform1"
+			]
+		},
+		"hierarchy1": {
+			"type": "hierarchy",
+			"params": {
+				"mode": 1
+			},
+			"inputs": [
+				"fileGLTF1"
+			]
+		},
+		"CSS2DObject1": {
+			"type": "CSS2DObject",
+			"params": {
+				"html": "<div class='my-marker'>default html</div>"
+			},
+			"inputs": [
+				"mapboxTransform1"
+			]
+		},
+		"merge1": {
+			"type": "merge",
+			"inputs": [
+				"copy1",
+				"CSS2DObject1"
+			],
+			"flags": {
+				"display": true
+			}
+		}
+	},
+	"flags": {
+		"display": true
+	}
+}

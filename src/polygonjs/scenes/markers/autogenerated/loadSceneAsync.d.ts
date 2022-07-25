@@ -1,6 +1,6 @@
 import { SceneJsonExporterData } from "@polygonjs/polygonjs/dist/src/engine/io/json/export/Scene";
 import { BaseViewerType } from "@polygonjs/polygonjs/dist/src/engine/viewers/_Base";
-import { PolySceneWithNodeMap_default } from "./PolySceneWithNodeMap";
+import { PolySceneWithNodeMap_markers } from "./PolySceneWithNodeMap";
 import { WebGLRenderer } from "three";
 
 type OnProgressCallback = (ratio: number, args: any) => void;
@@ -23,11 +23,11 @@ export interface LoadSceneAsyncOptions {
   cameraMaskOverride?: string;
 }
 export interface LoadedData {
-  scene: PolySceneWithNodeMap_default;
+  scene: PolySceneWithNodeMap_markers;
   viewer: BaseViewerType | undefined;
 }
-export type LoadSceneAsync_default = (
+export type LoadSceneAsync_markers = (
   options?: LoadSceneAsyncOptions
 ) => Promise<LoadedData>;
 
-export const loadSceneAsync_default: LoadSceneAsync_default;
+export const loadSceneAsync_markers: LoadSceneAsync_markers;
