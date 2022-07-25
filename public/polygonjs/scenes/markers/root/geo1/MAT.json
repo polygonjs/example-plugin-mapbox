@@ -1,0 +1,8 @@
+{
+	"type": "materialsNetwork",
+	"nodes": {
+		"meshStandard1": {
+			"type": "meshStandard"
+		}
+	}
+}

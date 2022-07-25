@@ -1,5 +1,7 @@
 // event
 import { CameraOrbitControlsEventNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/event/CameraOrbitControls";
+// mat
+import { MeshStandardMatNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/mat/MeshStandard";
 // obj
 import { GeoObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo";
 import { HemisphereLightObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/HemisphereLight";
@@ -14,6 +16,8 @@ import { CopySopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Copy
 import { EventsNetworkSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/EventsNetwork";
 import { FileGLTFSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/FileGLTF";
 import { HierarchySopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Hierarchy";
+import { MaterialSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Material";
+import { MaterialsNetworkSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/MaterialsNetwork";
 import { MergeSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge";
 import { PlaneHelperSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/PlaneHelper";
 import { TransformSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Transform";
@@ -21,6 +25,7 @@ import { TransformSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop
 export const requiredImports_markers = {
   nodes: [
     CameraOrbitControlsEventNode,
+    MeshStandardMatNode,
     GeoObjNode,
     HemisphereLightObjNode,
     PerspectiveCameraObjNode,
@@ -32,6 +37,8 @@ export const requiredImports_markers = {
     EventsNetworkSopNode,
     FileGLTFSopNode,
     HierarchySopNode,
+    MaterialSopNode,
+    MaterialsNetworkSopNode,
     MergeSopNode,
     PlaneHelperSopNode,
     TransformSopNode,
