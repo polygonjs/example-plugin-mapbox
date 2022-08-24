@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<%= EditorApi.html.head.tags() %>
+	</head>
+	<body>
+		<div id="<%= EditorApi.html.body.polygonjsId('marker_demo') %>" class='polygonjs-app'></div>
+		<%= EditorApi.html.body.tags('loader') %>
+	</body>
+	<script>
+		document.addEventListener('POLYSceneReady', (event)=>{
+			window.scene = event.detail.scene;
+		})
+		// you can uncomment the following to have access to the viewer globally
+		// document.addEventListener('POLYViewerMounted', (event)=>{
+		// 	window.viewer = event.detail.viewer;
+		// })
+	</script>
+</html>

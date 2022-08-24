@@ -1,0 +1,22 @@
+{
+	"type": "root",
+	"nodes": {
+		"hemisphereLight1": {
+			"type": "hemisphereLight",
+			"flags": {
+				"display": true
+			}
+		},
+		"mapboxCamera1": {
+			"type": "mapboxCamera",
+			"params": {
+				"setCSSRenderer": true,
+				"CSSRenderer": "../renderersNetwork1/CSS2DRenderer1"
+			}
+		}
+	},
+	"params": {
+		"backgroundMode": 0,
+		"mainCameraPath": "/perspectiveCamera1"
+	}
+}

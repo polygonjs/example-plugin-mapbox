@@ -1,0 +1,14 @@
+{
+	"type": "geo",
+	"nodes": {
+		"planeHelper1": {
+			"type": "planeHelper",
+			"flags": {
+				"display": true
+			}
+		}
+	},
+	"flags": {
+		"display": true
+	}
+}

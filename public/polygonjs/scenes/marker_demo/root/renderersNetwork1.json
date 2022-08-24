@@ -1,0 +1,11 @@
+{
+	"type": "renderersNetwork",
+	"nodes": {
+		"CSS2DRenderer1": {
+			"type": "CSS2DRenderer",
+			"params": {
+				"css": ".my-marker {\n\tbackground-color:black;\n\tcolor:white;\n\tpadding:5px 10px;\n\tborder-radius:3px;\n}"
+			}
+		}
+	}
+}

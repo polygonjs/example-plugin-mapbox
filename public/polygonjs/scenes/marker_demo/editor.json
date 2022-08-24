@@ -1,0 +1,137 @@
+{
+	"multiple_panel": {
+		"split_ratio": 0.5,
+		"split_panel0": {
+			"split_ratio": 0.5,
+			"split_panel0": {
+				"panelTypes": [
+					"viewer"
+				],
+				"currentPanelIndex": 0,
+				"panel_data": {
+					"camera": "/mapboxCamera1",
+					"linkIndex": 1
+				}
+			},
+			"split_panel1": {
+				"panelTypes": [
+					"params"
+				],
+				"currentPanelIndex": 0,
+				"panel_data": {
+					"active_folder": null,
+					"linkIndex": 1
+				}
+			},
+			"split_mode": "vertical"
+		},
+		"split_panel1": {
+			"panelTypes": [
+				"network",
+				"params",
+				"viewer"
+			],
+			"currentPanelIndex": 0,
+			"panel_data": {
+				"camera": {
+					"position": {
+						"x": -13.997067062707998,
+						"y": -2.1010575635659308
+					},
+					"zoom": 0.6010000000000001
+				},
+				"history": {
+					"2": {
+						"position": {
+							"x": -13.997067062707998,
+							"y": -2.1010575635659308
+						},
+						"zoom": 0.6010000000000001
+					},
+					"144": {
+						"position": {
+							"x": 193.94949660721713,
+							"y": -213.69687808730242
+						},
+						"zoom": 0.6010000000000001
+					},
+					"170": {
+						"position": {
+							"x": 400,
+							"y": -50
+						},
+						"zoom": 0.6010000000000001
+					},
+					"189": {
+						"position": {
+							"x": 0,
+							"y": 0
+						},
+						"zoom": 0.6430000000000001
+					},
+					"316": {
+						"position": {
+							"x": 0,
+							"y": 0
+						},
+						"zoom": 0.508
+					}
+				},
+				"linkIndex": 1
+			}
+		},
+		"split_mode": "horizontal"
+	},
+	"currentNodes": [
+		"/",
+		"/",
+		"/",
+		"/",
+		"/",
+		"/",
+		"/",
+		"/"
+	],
+	"navigationHistory": {
+		"nodePaths": {
+			"1": [
+				"/geo1",
+				"/",
+				"/geo1",
+				"/",
+				"/renderersNetwork1",
+				"/",
+				"/geo1",
+				"/",
+				"/renderersNetwork1",
+				"/"
+			],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": []
+		},
+		"index": {
+			"1": 9,
+			"2": -1,
+			"3": -1,
+			"4": -1,
+			"5": -1,
+			"6": -1,
+			"7": -1,
+			"8": -1
+		}
+	},
+	"fullscreenPanelId": null,
+	"saveOptions": {
+		"createExport": false,
+		"skipExportSinceRemoteAssetsPresents": false,
+		"compressJs": false,
+		"createZip": false,
+		"publishToIntegrations": false
+	},
+	"paramsModal": []
+}
