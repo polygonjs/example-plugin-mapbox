@@ -1,14 +1,14 @@
 import { SceneDataManifestImporter } from "@polygonjs/polygonjs/dist/src/engine/io/manifest/import/SceneData";
 const manifest = {
-  properties: "1658752885901",
-  root: "1658752885901",
+  properties: "1661812732695",
+  root: "1661812732695",
   nodes: {
-    perspectiveCamera1: "1658752885901",
-    "perspectiveCamera1/events1": "1658752885901",
-    grid: "1658752885901",
-    renderersNetwork1: "1658752885901",
-    geo1: "1658752885901",
-    "geo1/MAT": "1658752885901",
+    perspectiveCamera1: "1661812732695",
+    "perspectiveCamera1/events1": "1661812732695",
+    grid: "1661812732695",
+    renderersNetwork1: "1661812732695",
+    geo1: "1661812732695",
+    "geo1/MAT": "1661812732695",
   },
 };
 

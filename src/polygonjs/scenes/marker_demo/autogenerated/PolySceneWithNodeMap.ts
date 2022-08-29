@@ -335,9 +335,5 @@ export interface PolySceneProps_marker_demo {
   "geo1-CSS2DObject1--html"?: ParamValueSerializedTypeMap["string"];
   "geo1-CSS2DObject1--copyAttributes"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-CSS2DObject1--attributesToCopy"?: ParamValueSerializedTypeMap["string"];
-  "renderersNetwork1-CSS2DRenderer1--sortObjects"?: ParamValueSerializedTypeMap["boolean"];
-  "renderersNetwork1-CSS2DRenderer1--useFog"?: ParamValueSerializedTypeMap["boolean"];
-  "renderersNetwork1-CSS2DRenderer1--fogNear"?: ParamValueSerializedTypeMap["float"];
-  "renderersNetwork1-CSS2DRenderer1--fogFar"?: ParamValueSerializedTypeMap["float"];
   "renderersNetwork1-CSS2DRenderer1--css"?: ParamValueSerializedTypeMap["string"];
 }
