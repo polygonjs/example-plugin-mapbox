@@ -1,11 +1,11 @@
 {
   "name": "plugin-mapbox-example",
-  "version": "1.2.13",
+  "version": "1.2.16",
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@polygonjs/plugin-mapbox": "1.2.13",
-    "polygonjs-editor": "1.2.13-1"
+    "@polygonjs/plugin-mapbox": "1.2.16",
+    "polygonjs-editor": "1.2.16-1"
   },
   "scripts": {
     "polygon": "node_modules/polygonjs-editor/build/index.js"

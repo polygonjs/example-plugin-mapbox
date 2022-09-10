@@ -275,6 +275,7 @@ export interface PolySceneProps_marker_demo {
   "geo1-add1--connectToLastPoint"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-transform1--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform1--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform1--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--t"?: ParamValueSerializedTypeMap["vector3"];

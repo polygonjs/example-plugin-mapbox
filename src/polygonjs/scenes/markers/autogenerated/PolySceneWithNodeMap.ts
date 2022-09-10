@@ -290,6 +290,7 @@ export interface PolySceneProps_markers {
   "geo1-fileGLTF1--reload"?: ParamValueSerializedTypeMap["button"];
   "geo1-transform1--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform1--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform1--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -367,6 +368,7 @@ export interface PolySceneProps_markers {
   "geo1-copy1--scale"?: ParamValueSerializedTypeMap["float"];
   "geo1-copy1--transformOnly"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-copy1--transformMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-copy1--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-copy1--copyAttributes"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-copy1--attributesToCopy"?: ParamValueSerializedTypeMap["string"];
   "geo1-copy1--useCopyExpr"?: ParamValueSerializedTypeMap["boolean"];
@@ -386,6 +388,7 @@ export interface PolySceneProps_markers {
   "geo1-merge1--inputsCount"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform2--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform2--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform2--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform2--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform2--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform2--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -444,6 +447,7 @@ export interface PolySceneProps_markers {
   "geo1-fileGLTF2--reload"?: ParamValueSerializedTypeMap["button"];
   "geo1-transform3--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform3--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform3--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform3--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform3--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform3--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -521,6 +525,7 @@ export interface PolySceneProps_markers {
   "geo1-copy2--scale"?: ParamValueSerializedTypeMap["float"];
   "geo1-copy2--transformOnly"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-copy2--transformMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-copy2--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-copy2--copyAttributes"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-copy2--attributesToCopy"?: ParamValueSerializedTypeMap["string"];
   "geo1-copy2--useCopyExpr"?: ParamValueSerializedTypeMap["boolean"];
@@ -540,6 +545,7 @@ export interface PolySceneProps_markers {
   "geo1-merge2--inputsCount"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform4--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform4--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform4--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform4--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform4--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform4--t"?: ParamValueSerializedTypeMap["vector3"];

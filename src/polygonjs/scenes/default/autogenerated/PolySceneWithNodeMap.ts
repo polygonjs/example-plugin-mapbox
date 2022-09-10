@@ -180,6 +180,7 @@ export interface PolySceneProps_default {
   "geo1-add1--connectToLastPoint"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-transform1--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform1--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform1--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform1--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -236,6 +237,7 @@ export interface PolySceneProps_default {
   "geo1-copy1--scale"?: ParamValueSerializedTypeMap["float"];
   "geo1-copy1--transformOnly"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-copy1--transformMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-copy1--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-copy1--copyAttributes"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-copy1--attributesToCopy"?: ParamValueSerializedTypeMap["string"];
   "geo1-copy1--useCopyExpr"?: ParamValueSerializedTypeMap["boolean"];
@@ -262,6 +264,7 @@ export interface PolySceneProps_default {
   "geo1-mapboxTransform1--updateAlways"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-transform2--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform2--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform2--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform2--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform2--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform2--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -343,6 +346,7 @@ export interface PolySceneProps_default {
   "geo1-hierarchy2--addChildMode"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform3--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform3--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform3--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform3--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform3--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform3--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -397,6 +401,7 @@ export interface PolySceneProps_default {
   "geo1-restAttributes2--restN"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform4--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform4--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform4--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform4--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform4--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform4--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -467,6 +472,7 @@ export interface PolySceneProps_default {
   "geo1-hexagons1--pointsOnly"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-transform5--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform5--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform5--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform5--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform5--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform5--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -509,6 +515,7 @@ export interface PolySceneProps_default {
   "geo1-normals1--invert"?: ParamValueSerializedTypeMap["boolean"];
   "geo1-transform6--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform6--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform6--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform6--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform6--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform6--t"?: ParamValueSerializedTypeMap["vector3"];
@@ -542,6 +549,7 @@ export interface PolySceneProps_default {
   "geo1-transform6--pivotz"?: ParamValueSerializedTypeMap["float"];
   "geo1-transform8--applyOn"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform8--objectMode"?: ParamValueSerializedTypeMap["integer"];
+  "geo1-transform8--objectTransformSpace"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform8--group"?: ParamValueSerializedTypeMap["string"];
   "geo1-transform8--rotationOrder"?: ParamValueSerializedTypeMap["integer"];
   "geo1-transform8--t"?: ParamValueSerializedTypeMap["vector3"];

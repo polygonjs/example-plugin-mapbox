@@ -64,39 +64,47 @@
   resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.1.0.tgz#497c67a1cef50d1a2459ba60f315e448d2ad87fe"
   integrity sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==
 
-"@polygonjs/plugin-mapbox@1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@polygonjs/plugin-mapbox/-/plugin-mapbox-1.2.13.tgz#11fed0431773bc69d788fb1a0023af816977f170"
-  integrity sha512-cNmftXnHbyAW24Zx3TlomU00yNaMu2tBtBbFvcSDPOKCmeC/km2I+csbMSMmghAbH7qX73nSCAP/na8nF63wUw==
+"@polygonjs/plugin-mapbox@1.2.16":
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/@polygonjs/plugin-mapbox/-/plugin-mapbox-1.2.16.tgz#5372cb03fcc67c16a66a733a25207bed057eaf03"
+  integrity sha512-2xR1qN4lv3JwT3T1UJEP8uJ6u443bYs8IbDtRUY/6EY+UJvdEV8fkTtcT6pCjOtRyVjrKc87C6iTmkbniPtIRw==
   dependencies:
-    "@polygonjs/polygonjs" "^1.2.13"
+    "@polygonjs/polygonjs" "^1.2.16"
     mapbox-gl "2.7.1"
 
-"@polygonjs/polygonjs@1.2.13", "@polygonjs/polygonjs@^1.2.13":
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.2.13.tgz#ba0c10cfcafe81bd83de9700b291f99d8f221dbc"
-  integrity sha512-Hy1DVaOGf6pFHj4y4rEPzPMGf+3eivHcry86TvW5cT47Gu9Qd6UscqwguMQJPt2C9ND2X5SisHIPKIoUobbpqA==
+"@polygonjs/polygonjs@1.2.16", "@polygonjs/polygonjs@^1.2.16":
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.2.16.tgz#f24c1f1cefcbff0dee861e41f2965501514311a7"
+  integrity sha512-/KOkRuV6sIFHCnzk0uOEF6hnqag+afwb1BII9zL3RUwlqoAJlNaIYHFF7LrrSDP6+7slr+WW+7if6Rcs9K2Y6g==
   dependencies:
     "@jscad/modeling" "2.9.3"
-    "@types/three" "0.139.0"
+    "@types/three" "0.144.0"
     chromotome "1.20.0"
     fflate "0.7.3"
     gifuct-js "2.1.2"
-    gsap "3.8.0"
+    gsap "3.11.1"
     jsep "1.0.3"
     lodash-es "4.17.21"
     opentype.js "1.3.4"
     postprocessing "6.28.5"
     potpack "1.0.2"
-    three "0.139.2"
-    three-mesh-bvh "0.5.8"
+    three "0.144.0"
+    three-mesh-bvh "0.5.15"
+    three-subdivide "^1.1.0"
     tone "14.7.77"
     xatlas-web "0.1.0"
 
-"@types/three@0.139.0":
-  version "0.139.0"
-  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.139.0.tgz#69af1f0c52f8eea390f513e05478af1dd7f49e6f"
-  integrity sha512-4V/jZhyq7Mv05coUzxL3bz8AuBOSi/1F0RY7ujisHTV0Amy/fnYJ+s7TSJ1/hXjZukSkpuFRgV+wvWUEMbsMbQ==
+"@types/three@0.144.0":
+  version "0.144.0"
+  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.144.0.tgz#a154f40122dbc3668c5424a5373f3965c6564557"
+  integrity sha512-psvEs6q5rLN50jUYZ3D4pZMfxTbdt3A243blt0my7/NcL6chaCZpHe2csbCtx0SOD9fI/XnF3wnVUAYZGqCSYg==
+  dependencies:
+    "@types/webxr" "*"
+
+"@types/webxr@*":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@types/webxr/-/webxr-0.5.0.tgz#aae1cef3210d88fd4204f8c33385a0bbc4da07c9"
+  integrity sha512-IUMDPSXnYIbEO2IereEFcgcqfDREOgmbGqtrMpVPpACTU6pltYLwHgVkrnYv0XhWEcjio9sYEfIEzgn3c7nDqA==
 
 accepts@~1.3.8:
   version "1.3.8"
@@ -615,10 +623,10 @@ grid-index@^1.1.0:
   resolved "https://registry.yarnpkg.com/grid-index/-/grid-index-1.1.0.tgz#97f8221edec1026c8377b86446a7c71e79522ea7"
   integrity sha512-HZRwumpOGUrHyxO5bqKZL0B0GlUpwtCAzZ42sgxUPniu33R1LSFH5yrIcBCHjkctCAh3mtWKcKd9J4vDDdeVHA==
 
-gsap@3.8.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.8.0.tgz#a404dd6ebbaabc92605539aea9d98e3098688064"
-  integrity sha512-cvpzKkWFePDZCycwXwJnDSpTR3j+a4QLQF/t0c+pXqzRESgAYx5hieaoshzZFjbwsARqr0+5c3GKE7wI273w/g==
+gsap@3.11.1:
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.1.tgz#2d99acf9c9ad02f3b6668bfab7567d31f217a91e"
+  integrity sha512-UKuJ0UPhntFHMwT6URFQ4cTQv88xc7Kd9Dhxt7qX9IPhC+d+/a5wKW5E5Vn33hZ53nBI1JfApcEbzKgXkcuPZw==
 
 has-flag@^4.0.0:
   version "4.0.0"
@@ -892,12 +900,12 @@ pbf@^3.2.1:
     ieee754 "^1.1.12"
     resolve-protobuf-schema "^2.1.0"
 
-polygonjs-editor@1.2.13-1:
-  version "1.2.13-1"
-  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.2.13-1.tgz#99284ca5c1c3034b038ff54c475b82b3dffd17df"
-  integrity sha512-8IsZjy0t3/H3CxM04akDkVN4GAZrXb/NO9kocREy+0n2hI98fC2kmQFN90hTc/yq5GFNvGBdY/ij6Nu6sw3D/w==
+polygonjs-editor@1.2.16-1:
+  version "1.2.16-1"
+  resolved "https://registry.yarnpkg.com/polygonjs-editor/-/polygonjs-editor-1.2.16-1.tgz#0fb818a5a5e0497359590103fa793be45577be6e"
+  integrity sha512-CpmUawBe4HyotQ/GaL/9ziWoTPz84UnlhS/4aAcna89qP3qdTBQqMAEjPWaDykPTBe+G9mbsAO6GR+RexkX3rQ==
   dependencies:
-    "@polygonjs/polygonjs" "1.2.13"
+    "@polygonjs/polygonjs" "1.2.16"
     btoa "1.2.1"
     chalk "4.1.0"
     cors "2.8.5"
@@ -1101,15 +1109,20 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-three-mesh-bvh@0.5.8:
-  version "0.5.8"
-  resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.5.8.tgz#d8882625c0d5b07e86e0c2ad3cff2091e3650af8"
-  integrity sha512-aw1hGGKP91WC98vDh+M7yGczwnmmtbcCwDjsh7hls076S91GuSfWbCoym3GK64uR0BhySlV5mEitCKQu3o7srg==
+three-mesh-bvh@0.5.15:
+  version "0.5.15"
+  resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.5.15.tgz#bcf681d784d8988618344a5e11e7ded7e76ee86a"
+  integrity sha512-jxE5iGjcoEMiyxUs7hMeZL6jBXBz9973ilqhXPhKlA1f7eitjIxRTtu7UWVQy+PhxXTsknmPzWmN5c+uAa/anA==
 
-three@0.139.2:
-  version "0.139.2"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.139.2.tgz#b110799a15736df673b9293e31653a4ac73648dd"
-  integrity sha512-gV7q7QY8rogu7HLFZR9cWnOQAUedUhu2WXAnpr2kdXZP9YDKsG/0ychwQvWkZN5PlNw9mv5MoCTin6zNTXoONg==
+three-subdivide@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/three-subdivide/-/three-subdivide-1.1.0.tgz#8a5ebdde825a1cb2d8ef0f3cd8be1686a9d2d6c6"
+  integrity sha512-0BqTWLzqRHnM4ctKgscxo8oPB4R10mjH1Uycy+/8FIbizhpjEfku3I2wCq/Itt3Qv2IglHUzjc1qHioKAlYeoA==
+
+three@0.144.0:
+  version "0.144.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.144.0.tgz#2818517169f8ff94eea5f664f6ff1fcdcd436cc8"
+  integrity sha512-R8AXPuqfjfRJKkYoTQcTK7A6i3AdO9++2n8ubya/GTU+fEHhYKu1ZooRSCPkx69jbnzT7dD/xEo6eROQTt2lJw==
 
 tiny-inflate@^1.0.3:
   version "1.0.3"
