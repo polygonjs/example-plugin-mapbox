@@ -17,6 +17,6 @@
 	},
 	"params": {
 		"backgroundMode": 0,
-		"mainCameraPath": "/perspectiveCamera1"
+		"mainCameraPath": "/mapboxCamera1"
 	}
 }

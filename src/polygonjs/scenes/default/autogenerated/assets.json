@@ -1,8 +1,8 @@
 [
 	"/models/dinosaur1.glb",
 	"/models/dinosaur2.glb",
-	"/tex/dinosaur1.png?1662852566233",
-	"/tex/dinosaur2.jpeg?1662852566240",
+	"/tex/dinosaur1.png?1663015758603",
+	"/tex/dinosaur2.jpeg?1663015758609",
 	"./three/js/libs/draco/gltf/draco_decoder.wasm",
 	"./three/js/libs/draco/gltf/draco_wasm_wrapper.js"
 ]

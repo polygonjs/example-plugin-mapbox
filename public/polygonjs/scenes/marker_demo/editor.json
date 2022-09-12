@@ -38,7 +38,7 @@
 						"x": -13.997067062707998,
 						"y": -2.1010575635659308
 					},
-					"zoom": 0.6010000000000001
+					"zoom": 0.7555454406738282
 				},
 				"history": {
 					"2": {
@@ -46,7 +46,7 @@
 							"x": -13.997067062707998,
 							"y": -2.1010575635659308
 						},
-						"zoom": 0.6010000000000001
+						"zoom": 0.7555454406738282
 					},
 					"144": {
 						"position": {
@@ -127,9 +127,9 @@
 	},
 	"fullscreenPanelId": null,
 	"saveOptions": {
-		"createExport": false,
+		"createExport": true,
 		"skipExportSinceRemoteAssetsPresents": false,
-		"compressJs": false,
+		"compressJs": true,
 		"createZip": false,
 		"publishToIntegrations": false
 	},

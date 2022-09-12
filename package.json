@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@polygonjs/plugin-mapbox": "1.2.16",
-    "polygonjs-editor": "1.2.16-1"
+    "@polygonjs/plugin-mapbox": "1.2.19",
+    "polygonjs-editor": "1.2.19-1"
   },
   "scripts": {
     "polygon": "node_modules/polygonjs-editor/build/index.js"

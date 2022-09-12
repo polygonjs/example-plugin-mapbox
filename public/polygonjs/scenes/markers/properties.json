@@ -5,6 +5,6 @@
 	"realtimeState": true,
 	"mainCameraPath": "/mapboxCamera1",
 	"versions": {
-		"polygonjs": "1.2.16"
+		"polygonjs": "1.2.19"
 	}
 }
