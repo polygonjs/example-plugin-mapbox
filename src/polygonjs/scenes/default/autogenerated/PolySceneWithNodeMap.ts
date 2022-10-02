@@ -1,11 +1,13 @@
 import { ParamValueSerializedTypeMap } from "@polygonjs/polygonjs/dist/src/engine/params/types/ParamValueSerializedTypeMap";
 
 import { PolyScene } from "@polygonjs/polygonjs/dist/src/engine/scene/PolyScene";
+// plugin-mapbox
+import { MapboxCameraObjNode } from "@polygonjs/plugin-mapbox/dist";
+import { MapboxTransformSopNode } from "@polygonjs/plugin-mapbox/dist";
 // obj
 import { CopNetworkObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/CopNetwork";
 import { GeoObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo";
 import { HemisphereLightObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/HemisphereLight";
-import { MapboxCameraObjNode } from "@polygonjs/plugin-mapbox/dist/src/engine/nodes/obj/MapboxCamera";
 import { PerspectiveCameraObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/PerspectiveCamera";
 // sop
 import { AddSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Add";
@@ -18,7 +20,6 @@ import { HexagonsSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/
 import { HierarchySopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Hierarchy";
 import { InstanceSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Instance";
 import { JitterSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Jitter";
-import { MapboxTransformSopNode } from "@polygonjs/plugin-mapbox/dist/src/engine/nodes/sop/MapboxTransform";
 import { MaterialSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Material";
 import { MaterialsNetworkSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/MaterialsNetwork";
 import { MergeSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge";

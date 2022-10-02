@@ -7,40 +7,27 @@
 		"transform1": {
 			"type": "transform",
 			"params": {
-				"t": [
-					-0.07956,
-					0,
-					51.5146
-				]
+				"t": [-0.07956, 0, 51.5146]
 			},
-			"inputs": [
-				"add1"
-			]
+			"inputs": ["add1"]
 		},
 		"copy1": {
 			"type": "copy",
-			"inputs": [
-				"material1",
-				"mapboxTransform1"
-			]
+			"inputs": ["material1", "mapboxTransform1"]
 		},
 		"mapboxTransform1": {
 			"type": "mapboxTransform",
 			"params": {
 				"mapboxCamera": "../../mapboxCamera1"
 			},
-			"inputs": [
-				"transform1"
-			]
+			"inputs": ["transform1"]
 		},
 		"transform2": {
 			"type": "transform",
 			"params": {
 				"scale": 10
 			},
-			"inputs": [
-				"restAttributes1"
-			]
+			"inputs": ["restAttributes1"]
 		},
 		"file1": {
 			"type": "fileGLTF",
@@ -53,9 +40,7 @@
 			"params": {
 				"mode": 1
 			},
-			"inputs": [
-				"file1"
-			]
+			"inputs": ["file1"]
 		},
 		"objectProperties1": {
 			"type": "objectProperties",
@@ -65,27 +50,21 @@
 				"treceiveShadow": 1,
 				"receiveShadow": 0
 			},
-			"inputs": [
-				"transform2"
-			]
+			"inputs": ["transform2"]
 		},
 		"material1": {
 			"type": "material",
 			"params": {
 				"material": "/geo1/MAT/meshLambertBuilder_dinosaur1"
 			},
-			"inputs": [
-				"objectProperties1"
-			]
+			"inputs": ["objectProperties1"]
 		},
 		"restAttributes1": {
 			"type": "restAttributes",
 			"params": {
 				"tnormal": 0
 			},
-			"inputs": [
-				"hierarchy1"
-			]
+			"inputs": ["hierarchy1"]
 		},
 		"file2": {
 			"type": "fileGLTF",
@@ -98,18 +77,14 @@
 			"params": {
 				"mode": 1
 			},
-			"inputs": [
-				"file2"
-			]
+			"inputs": ["file2"]
 		},
 		"transform3": {
 			"type": "transform",
 			"params": {
 				"scale": 10
 			},
-			"inputs": [
-				"restAttributes2"
-			]
+			"inputs": ["restAttributes2"]
 		},
 		"objectProperties2": {
 			"type": "objectProperties",
@@ -119,55 +94,37 @@
 				"treceiveShadow": true,
 				"receiveShadow": false
 			},
-			"inputs": [
-				"transform3"
-			]
+			"inputs": ["transform3"]
 		},
 		"restAttributes2": {
 			"type": "restAttributes",
 			"params": {
 				"tnormal": false
 			},
-			"inputs": [
-				"transform6"
-			]
+			"inputs": ["transform6"]
 		},
 		"transform4": {
 			"type": "transform",
 			"params": {
-				"t": [
-					-0.07956,
-					0,
-					51.514500000000005
-				]
+				"t": [-0.07956, 0, 51.514500000000005]
 			},
-			"inputs": [
-				"transform5"
-			]
+			"inputs": ["transform5"]
 		},
 		"mapboxTransform2": {
 			"type": "mapboxTransform",
 			"params": {
 				"mapboxCamera": "../../mapboxCamera1"
 			},
-			"inputs": [
-				"transform4"
-			]
+			"inputs": ["transform4"]
 		},
 		"merge1": {
 			"type": "merge",
-			"inputs": [
-				"copy1",
-				"instance1"
-			]
+			"inputs": ["copy1", "instance1"]
 		},
 		"hexagons1": {
 			"type": "hexagons",
 			"params": {
-				"size": [
-					8,
-					8
-				],
+				"size": [8, 8],
 				"pointsOnly": 1
 			}
 		},
@@ -176,9 +133,7 @@
 			"params": {
 				"scale": 0.007
 			},
-			"inputs": [
-				"transform8"
-			]
+			"inputs": ["transform8"]
 		},
 		"normals1": {
 			"type": "normals",
@@ -192,31 +147,21 @@
 				"z": "-@P.z",
 				"invert": 1
 			},
-			"inputs": [
-				"point_set_Py_to_0"
-			]
+			"inputs": ["point_set_Py_to_0"]
 		},
 		"transform6": {
 			"type": "transform",
 			"params": {
-				"r": [
-					0,
-					170,
-					0
-				]
+				"r": [0, 170, 0]
 			},
-			"inputs": [
-				"hierarchy2"
-			]
+			"inputs": ["hierarchy2"]
 		},
 		"transform8": {
 			"type": "transform",
 			"params": {
 				"scale": 1.9
 			},
-			"inputs": [
-				"attribCreate2"
-			]
+			"inputs": ["attribCreate2"]
 		},
 		"delete_points_close_to_center": {
 			"type": "delete",
@@ -224,18 +169,14 @@
 				"byExpression": 1,
 				"expression": "abs(@P.x) < 0.1 && abs(@P.z) < 0.1"
 			},
-			"inputs": [
-				"normals1"
-			]
+			"inputs": ["normals1"]
 		},
 		"jitter1": {
 			"type": "jitter",
 			"params": {
 				"amount": 0.05
 			},
-			"inputs": [
-				"hexagons1"
-			]
+			"inputs": ["hexagons1"]
 		},
 		"point_set_Py_to_0": {
 			"type": "point",
@@ -243,9 +184,7 @@
 				"updateY": 1,
 				"y": 0
 			},
-			"inputs": [
-				"jitter1"
-			]
+			"inputs": ["jitter1"]
 		},
 		"instance1": {
 			"type": "instance",
@@ -253,10 +192,7 @@
 				"attributesToCopy": "instance* id dist",
 				"material": "/geo1/MAT/meshLambertBuilder_dinosaur2"
 			},
-			"inputs": [
-				"objectProperties2",
-				"mapboxTransform2"
-			]
+			"inputs": ["objectProperties2", "mapboxTransform2"]
 		},
 		"attribCreate1": {
 			"type": "attribCreate",
@@ -264,9 +200,7 @@
 				"name": "id",
 				"value1": "@ptnum"
 			},
-			"inputs": [
-				"delete_points_close_to_center"
-			]
+			"inputs": ["delete_points_close_to_center"]
 		},
 		"attribCreate2": {
 			"type": "attribCreate",
@@ -274,15 +208,11 @@
 				"name": "dist",
 				"value1": "sqrt(@P.x*@P.x + @P.z*@P.z)"
 			},
-			"inputs": [
-				"attribCreate1"
-			]
+			"inputs": ["attribCreate1"]
 		},
 		"OUT": {
 			"type": "null",
-			"inputs": [
-				"merge1"
-			],
+			"inputs": ["merge1"],
 			"flags": {
 				"display": true
 			}

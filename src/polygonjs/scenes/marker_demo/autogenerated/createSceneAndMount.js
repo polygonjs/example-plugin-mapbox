@@ -1,0 +1,9 @@
+import {loadScene_marker_demo} from './loadScene.js';
+
+export const createSceneAndMount_marker_demo = async function (options={}) {
+	if(options && options.createViewer == null){
+		options.createViewer = true;
+	}
+	options.sceneData = {"properties":{"frame":0,"maxFrame":600,"maxFrameLocked":false,"realtimeState":true,"mainCameraPath":"/mapboxCamera1","versions":{"polygonjs":"1.2.30"}},"root":{"type":"root","nodes":{"hemisphereLight1":{"type":"hemisphereLight","flags":{"display":true}},"mapboxCamera1":{"type":"mapboxCamera","params":{"setCSSRenderer":true,"CSSRenderer":"../renderersNetwork1/CSS2DRenderer1"}},"perspectiveCamera1":{"type":"perspectiveCamera","nodes":{"events1":{"type":"eventsNetwork","nodes":{"cameraOrbitControls1":{"type":"cameraOrbitControls"}}}},"params":{"t":[5,5,5],"controls":"./events1/cameraOrbitControls1"},"flags":{"display":true}},"grid":{"type":"geo","nodes":{"planeHelper1":{"type":"planeHelper","flags":{"display":true}}},"flags":{"display":true}},"geo1":{"type":"geo","nodes":{"box1":{"type":"box"},"add1":{"type":"add"},"transform1":{"type":"transform","params":{"t":[-0.07956,0,51.5146]},"inputs":["add1"]},"mapboxTransform1":{"type":"mapboxTransform","params":{"mapboxCamera":"../../mapboxCamera1"},"inputs":["transform1"]},"CSS2DObject1":{"type":"CSS2DObject","params":{"html":"<div class=\"my-marker\">This is the marker content</div>"},"inputs":["mapboxTransform1"],"flags":{"display":true}}},"flags":{"display":true}},"renderersNetwork1":{"type":"renderersNetwork","nodes":{"CSS2DRenderer1":{"type":"CSS2DRenderer","params":{"css":".my-marker {\n\tbackground-color:black;\n\tcolor:white;\n\tpadding:5px 10px;\n\tborder-radius:3px;\n}"}}}}},"params":{"backgroundMode":0,"mainCameraPath":"/mapboxCamera1"}},"shaders":{}};
+	return loadScene_marker_demo(options);
+};

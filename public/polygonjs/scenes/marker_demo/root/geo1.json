@@ -10,33 +10,23 @@
 		"transform1": {
 			"type": "transform",
 			"params": {
-				"t": [
-					-0.07956,
-					0,
-					51.5146
-				]
+				"t": [-0.07956, 0, 51.5146]
 			},
-			"inputs": [
-				"add1"
-			]
+			"inputs": ["add1"]
 		},
 		"mapboxTransform1": {
 			"type": "mapboxTransform",
 			"params": {
 				"mapboxCamera": "../../mapboxCamera1"
 			},
-			"inputs": [
-				"transform1"
-			]
+			"inputs": ["transform1"]
 		},
 		"CSS2DObject1": {
 			"type": "CSS2DObject",
 			"params": {
 				"html": "<div class=\"my-marker\">This is the marker content</div>"
 			},
-			"inputs": [
-				"mapboxTransform1"
-			],
+			"inputs": ["mapboxTransform1"],
 			"flags": {
 				"display": true
 			}

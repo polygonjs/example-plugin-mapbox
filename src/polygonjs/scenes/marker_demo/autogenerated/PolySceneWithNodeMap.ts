@@ -4,15 +4,16 @@ import { PolyScene } from "@polygonjs/polygonjs/dist/src/engine/scene/PolyScene"
 // obj
 import { GeoObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo";
 import { HemisphereLightObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/HemisphereLight";
-import { MapboxCameraObjNode } from "@polygonjs/plugin-mapbox/dist/src/engine/nodes/obj/MapboxCamera";
 import { PerspectiveCameraObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/PerspectiveCamera";
 import { RenderersNetworkObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/RenderersNetwork";
+// plugin-mapbox
+import { MapboxCameraObjNode } from "@polygonjs/plugin-mapbox/dist";
+import { MapboxTransformSopNode } from "@polygonjs/plugin-mapbox/dist";
 // sop
 import { AddSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Add";
 import { BoxSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Box";
 import { CSS2DObjectSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/CSS2DObject";
 import { EventsNetworkSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/EventsNetwork";
-import { MapboxTransformSopNode } from "@polygonjs/plugin-mapbox/dist/src/engine/nodes/sop/MapboxTransform";
 import { PlaneHelperSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/PlaneHelper";
 import { TransformSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Transform";
 // event

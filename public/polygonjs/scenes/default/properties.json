@@ -1,10 +1,10 @@
 {
-	"frame": 254,
+	"frame": 238,
 	"maxFrame": 600,
 	"maxFrameLocked": false,
 	"realtimeState": true,
 	"mainCameraPath": "/mapboxCamera1",
 	"versions": {
-		"polygonjs": "1.2.19"
+		"polygonjs": "1.2.30"
 	}
 }

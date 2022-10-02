@@ -13,8 +13,5 @@
 				"url": "/tex/dinosaur2.jpeg?`js('Date.now()')`"
 			}
 		}
-	},
-	"selection": [
-		"dinosaur2"
-	]
+	}
 }

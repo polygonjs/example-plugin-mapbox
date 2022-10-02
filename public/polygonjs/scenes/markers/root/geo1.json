@@ -13,74 +13,52 @@
 		"transform1": {
 			"type": "transform",
 			"params": {
-				"t": [
-					-0.07956,
-					0,
-					51.5146
-				]
+				"t": [-0.07956, 0, 51.5146]
 			},
-			"inputs": [
-				"add1"
-			]
+			"inputs": ["add1"]
 		},
 		"mapboxTransform1": {
 			"type": "mapboxTransform",
 			"params": {
 				"mapboxCamera": "../../mapboxCamera1"
 			},
-			"inputs": [
-				"transform1"
-			]
+			"inputs": ["transform1"]
 		},
 		"copy1": {
 			"type": "copy",
-			"inputs": [
-				"material1",
-				"mapboxTransform1"
-			]
+			"inputs": ["material1", "mapboxTransform1"]
 		},
 		"hierarchy1": {
 			"type": "hierarchy",
 			"params": {
 				"mode": 1
 			},
-			"inputs": [
-				"fileGLTF1"
-			]
+			"inputs": ["fileGLTF1"]
 		},
 		"CSS2DObject1": {
 			"type": "CSS2DObject",
 			"params": {
 				"html": "<div class='my-marker'>dangerous dyno</div>"
 			},
-			"inputs": [
-				"mapboxTransform1"
-			]
+			"inputs": ["mapboxTransform1"]
 		},
 		"merge1": {
 			"type": "merge",
-			"inputs": [
-				"copy1",
-				"CSS2DObject1"
-			]
+			"inputs": ["copy1", "CSS2DObject1"]
 		},
 		"transform2": {
 			"type": "transform",
 			"params": {
 				"scale": 9.7
 			},
-			"inputs": [
-				"hierarchy1"
-			]
+			"inputs": ["hierarchy1"]
 		},
 		"material1": {
 			"type": "material",
 			"params": {
 				"material": "../MAT/meshStandard1"
 			},
-			"inputs": [
-				"transform2"
-			]
+			"inputs": ["transform2"]
 		},
 		"add2": {
 			"type": "add"
@@ -94,81 +72,56 @@
 		"transform3": {
 			"type": "transform",
 			"params": {
-				"t": [
-					-0.07756,
-					0,
-					51.5126
-				]
+				"t": [-0.07756, 0, 51.5126]
 			},
-			"inputs": [
-				"add2"
-			]
+			"inputs": ["add2"]
 		},
 		"mapboxTransform2": {
 			"type": "mapboxTransform",
 			"params": {
 				"mapboxCamera": "../../mapboxCamera1"
 			},
-			"inputs": [
-				"transform3"
-			]
+			"inputs": ["transform3"]
 		},
 		"copy2": {
 			"type": "copy",
-			"inputs": [
-				"material2",
-				"mapboxTransform2"
-			]
+			"inputs": ["material2", "mapboxTransform2"]
 		},
 		"hierarchy2": {
 			"type": "hierarchy",
 			"params": {
 				"mode": 1
 			},
-			"inputs": [
-				"fileGLTF2"
-			]
+			"inputs": ["fileGLTF2"]
 		},
 		"CSS2DObject2": {
 			"type": "CSS2DObject",
 			"params": {
 				"html": "<div class='my-marker'>not so dangerous dyno</div>"
 			},
-			"inputs": [
-				"mapboxTransform2"
-			]
+			"inputs": ["mapboxTransform2"]
 		},
 		"merge2": {
 			"type": "merge",
-			"inputs": [
-				"copy2",
-				"CSS2DObject2"
-			]
+			"inputs": ["copy2", "CSS2DObject2"]
 		},
 		"transform4": {
 			"type": "transform",
 			"params": {
 				"scale": 9.7
 			},
-			"inputs": [
-				"hierarchy2"
-			]
+			"inputs": ["hierarchy2"]
 		},
 		"material2": {
 			"type": "material",
 			"params": {
 				"material": "../MAT/meshStandard1"
 			},
-			"inputs": [
-				"transform4"
-			]
+			"inputs": ["transform4"]
 		},
 		"merge3": {
 			"type": "merge",
-			"inputs": [
-				"merge1",
-				"merge2"
-			],
+			"inputs": ["merge1", "merge2"],
 			"flags": {
 				"display": true
 			}

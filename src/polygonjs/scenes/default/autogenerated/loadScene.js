@@ -1,6 +1,6 @@
 import { loadSceneData_default } from "./loadSceneData.js";
 
-export const loadSceneAsync_default = async function (options = {}) {
+export const loadScene_default = async function (options = {}) {
   const {
     onProgress,
     domElement,
@@ -14,6 +14,7 @@ export const loadSceneAsync_default = async function (options = {}) {
     renderer,
     cameraMaskOverride,
   } = options;
+  let sceneData = options.sceneData;
 
   const runRegister = options.runRegister != null ? options.runRegister : true;
   const loadModules = options.loadModules != null ? options.loadModules : true;
@@ -21,11 +22,17 @@ export const loadSceneAsync_default = async function (options = {}) {
   const moduleNames = loadModules ? [] : [];
   const promises = [
     import("./loadSceneFromSceneData.js"),
-    loadSceneData_default({ onProgress, sceneDataRoot }),
+    sceneData == null
+      ? loadSceneData_default({ onProgress, sceneDataRoot })
+      : (() => {
+          return new Promise((resolve) => resolve());
+        })(),
   ];
   const results = await Promise.all(promises);
   const { Poly, loadSceneFromSceneData_default } = results[0];
-  const sceneData = results[1];
+  if (sceneData == null) {
+    sceneData = results[1];
+  }
   if (configureSceneData) {
     configureSceneData(sceneData);
   }

@@ -18,8 +18,5 @@
 	"params": {
 		"backgroundMode": 0,
 		"mainCameraPath": "/mapboxCamera1"
-	},
-	"selection": [
-		"geo1"
-	]
+	}
 }

@@ -4,9 +4,11 @@ import { PolyScene } from "@polygonjs/polygonjs/dist/src/engine/scene/PolyScene"
 // obj
 import { GeoObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo";
 import { HemisphereLightObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/HemisphereLight";
-import { MapboxCameraObjNode } from "@polygonjs/plugin-mapbox/dist/src/engine/nodes/obj/MapboxCamera";
 import { PerspectiveCameraObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/PerspectiveCamera";
 import { RenderersNetworkObjNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/obj/RenderersNetwork";
+// plugin-mapbox
+import { MapboxCameraObjNode } from "@polygonjs/plugin-mapbox/dist";
+import { MapboxTransformSopNode } from "@polygonjs/plugin-mapbox/dist";
 // sop
 import { AddSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Add";
 import { CSS2DObjectSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/CSS2DObject";
@@ -14,7 +16,6 @@ import { CopySopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Copy
 import { EventsNetworkSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/EventsNetwork";
 import { FileGLTFSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/FileGLTF";
 import { HierarchySopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Hierarchy";
-import { MapboxTransformSopNode } from "@polygonjs/plugin-mapbox/dist/src/engine/nodes/sop/MapboxTransform";
 import { MaterialSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Material";
 import { MaterialsNetworkSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/MaterialsNetwork";
 import { MergeSopNode } from "@polygonjs/polygonjs/dist/src/engine/nodes/sop/Merge";

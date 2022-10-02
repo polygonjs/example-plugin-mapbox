@@ -4,9 +4,7 @@
 		"split_panel0": {
 			"split_ratio": 0.5,
 			"split_panel0": {
-				"panelTypes": [
-					"viewer"
-				],
+				"panelTypes": ["viewer"],
 				"currentPanelIndex": 0,
 				"panel_data": {
 					"camera": "/mapboxCamera1",
@@ -14,9 +12,7 @@
 				}
 			},
 			"split_panel1": {
-				"panelTypes": [
-					"params"
-				],
+				"panelTypes": ["params"],
 				"currentPanelIndex": 0,
 				"panel_data": {
 					"active_folder": null,
@@ -26,11 +22,7 @@
 			"split_mode": "vertical"
 		},
 		"split_panel1": {
-			"panelTypes": [
-				"network",
-				"params",
-				"viewer"
-			],
+			"panelTypes": ["network", "params", "viewer"],
 			"currentPanelIndex": 0,
 			"panel_data": {
 				"camera": {
@@ -82,16 +74,7 @@
 		},
 		"split_mode": "horizontal"
 	},
-	"currentNodes": [
-		"/geo1",
-		"/",
-		"/",
-		"/",
-		"/",
-		"/",
-		"/",
-		"/"
-	],
+	"currentNodes": ["/geo1", "/", "/", "/", "/", "/", "/", "/"],
 	"navigationHistory": {
 		"nodePaths": {
 			"1": [

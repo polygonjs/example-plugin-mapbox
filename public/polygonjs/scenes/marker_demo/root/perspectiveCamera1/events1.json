@@ -4,8 +4,5 @@
 		"cameraOrbitControls1": {
 			"type": "cameraOrbitControls"
 		}
-	},
-	"selection": [
-		"cameraOrbitControls1"
-	]
+	}
 }
